@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,77 +10,58 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa; /* Light gray background */
-            color: #343a40; /* Dark gray text */
         }
         .section-title {
-            font-size: 2.5rem; /* 40px */
             font-weight: 600;
-            margin-bottom: 2.5rem; /* 40px */
+            margin-bottom: 2.5rem; 
             text-align: center;
-            color: #212529; /* Near black */
         }
         .nav-link {
             transition: color 0.3s ease;
         }
-        .nav-link:hover {
-            color: #007bff; /* Primary blue for hover */
+        .card-glass { 
+            background-color: rgba(255, 255, 255, 0.07); /* Slightly milky base for the glass */
+            backdrop-filter: blur(20px); /* Increased blur strength */
+            -webkit-backdrop-filter: blur(20px); 
+            border: 1px solid rgba(255, 255, 255, 0.15); /* Slightly more visible border */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
-        .card {
-            background-color: #ffffff;
-            border-radius: 0.75rem; /* 12px */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
+        .card-glass:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* Enhanced hover shadow */
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly brighter on hover */
         }
-        .tag {
-            background-color: #e9ecef; /* Light gray for tags */
-            color: #495057; /* Darker gray for tag text */
-            padding: 0.25rem 0.75rem;
-            border-radius: 0.5rem; /* 8px */
-            font-size: 0.875rem; /* 14px */
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-            display: inline-block;
+        .tag-glass { 
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px); /* Slightly less blur for tags to maintain readability */
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #e2e8f0; 
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         .btn-primary {
-            background-color: #007bff;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .btn-primary:hover {
-            background-color: #0056b3;
+            transform: scale(1.05);
         }
-        .icon {
-            width: 1.5rem; /* 24px */
-            height: 1.5rem; /* 24px */
-            margin-right: 0.5rem; /* 8px */
-        }
-        /* Smooth scroll for anchor links */
+
         html {
             scroll-behavior: smooth;
         }
-        /* Custom scrollbar for a more modern feel (optional) */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+            background: #0f172a; 
         }
         ::-webkit-scrollbar-thumb {
-            background: #888;
+            background: #334155; 
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #555;
+            background: #475569; 
         }
-        /* Animation for section appearance */
         .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
@@ -92,49 +73,51 @@
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="bg-slate-950 text-slate-300 antialiased">
 
-    <nav id="navbar" class="bg-white/80 backdrop-blur-md shadow-md fixed w-full z-50 top-0 transition-all duration-300">
+    <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 bg-slate-800/40 backdrop-blur-xl border-b border-slate-700/60 shadow-lg"> 
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-800">Prakhar Indoria</a>
-            <div class="hidden md:flex space-x-4">
-                <a href="#about" class="nav-link text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md">About</a>
-                <a href="#experience" class="nav-link text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md">Experience</a>
-                <a href="#education" class="nav-link text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md">Education</a>
-                <a href="#skills" class="nav-link text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md">Skills</a>
-                <a href="#projects" class="nav-link text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md">Projects</a>
-                <a href="#contact" class="nav-link text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md">Contact</a>
-            </div>
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
+            <a href="#" class="text-2xl font-bold text-slate-100">Prakhar Indoria</a>
+            <div class="flex items-center space-x-4">
+                <div class="hidden md:flex space-x-2">
+                    <a href="#about" class="nav-link text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md">About</a>
+                    <a href="#experience" class="nav-link text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md">Experience</a>
+                    <a href="#education" class="nav-link text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md">Education</a>
+                    <a href="#skills" class="nav-link text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md">Skills</a>
+                    <a href="#projects" class="nav-link text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md">Projects</a>
+                    <a href="#contact" class="nav-link text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-200 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
             </div>
         </div>
-        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
-            <a href="#about" class="block nav-link text-gray-600 hover:text-blue-500 px-4 py-2">About</a>
-            <a href="#experience" class="block nav-link text-gray-600 hover:text-blue-500 px-4 py-2">Experience</a>
-            <a href="#education" class="block nav-link text-gray-600 hover:text-blue-500 px-4 py-2">Education</a>
-            <a href="#skills" class="block nav-link text-gray-600 hover:text-blue-500 px-4 py-2">Skills</a>
-            <a href="#projects" class="block nav-link text-gray-600 hover:text-blue-500 px-4 py-2">Projects</a>
-            <a href="#contact" class="block nav-link text-gray-600 hover:text-blue-500 px-4 py-2">Contact</a>
+        <div id="mobile-menu" class="md:hidden hidden bg-slate-800/60 backdrop-blur-lg shadow-lg"> {/* Increased blur */}
+            <a href="#about" class="block nav-link text-slate-300 hover:text-blue-400 px-4 py-2">About</a>
+            <a href="#experience" class="block nav-link text-slate-300 hover:text-blue-400 px-4 py-2">Experience</a>
+            <a href="#education" class="block nav-link text-slate-300 hover:text-blue-400 px-4 py-2">Education</a>
+            <a href="#skills" class="block nav-link text-slate-300 hover:text-blue-400 px-4 py-2">Skills</a>
+            <a href="#projects" class="block nav-link text-slate-300 hover:text-blue-400 px-4 py-2">Projects</a>
+            <a href="#contact" class="block nav-link text-slate-300 hover:text-blue-400 px-4 py-2">Contact</a>
         </div>
     </nav>
 
-    <header id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-700 text-white pt-20">
+    <header id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-black to-slate-800 text-white pt-20">
         <div class="text-center p-6">
             <img 
                 src="https://github.com/prakharindoria.png" 
                 alt="Prakhar Indoria" 
-                class="w-36 h-36 md:w-48 md:h-48 rounded-full mx-auto mb-8 border-4 border-slate-500 shadow-xl object-cover"
-                onerror="this.onerror=null; this.src='https://placehold.co/150x150/FFFFFF/333333?text=PI';"
+                class="w-36 h-36 md:w-48 md:h-48 rounded-full mx-auto mb-8 border-4 border-slate-600 shadow-xl object-cover"
+                onerror="this.onerror=null; this.src='https://placehold.co/150x150/0F172A/E2E8F0?text=PI';" 
             >
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Prakhar Indoria</h1>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-slate-100">Prakhar Indoria</h1>
             <p class="text-xl md:text-2xl text-slate-300 mb-2">Software Engineer</p>
             <p class="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto">
                 Tech Enthusiast | Passionate Developer 
             </p>
-            <a href="#about" class="btn-primary bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105">
+            <a href="#about" class="btn-primary bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg text-lg">
                 Learn More <i class="fas fa-arrow-down ml-2"></i>
             </a>
         </div>
@@ -142,50 +125,57 @@
 
     <section id="about" class="py-16 md:py-24 fade-in-section">
         <div class="container mx-auto px-6">
-            <h2 class="section-title">About Me</h2>
-            <div class="max-w-3xl mx-auto text-center text-lg text-gray-700 space-y-6">
-                <p>
-                    I am a Software Engineer at Tata Consultancy Services (TCS), holding a Bachelor of Technology in Computer Science Engineering. My professional journey is driven by a profound enthusiasm for technology and a commitment to continuous learning and innovation.
-                </p>
-                <p>
-                    As a dedicated team player, I thrive on collaboration and am always seeking ways to improve processes and deliver high-quality software solutions. My proactive engagement with the tech landscape is reflected in my active project repository and ongoing learning objectives.
-                </p>
-                <p>
-                    Currently, I'm deepening my expertise in <strong class="font-semibold text-blue-600">React</strong> and exploring the world of <strong class="font-semibold text-blue-600">Docker</strong> and <strong class="font-semibold text-blue-600">Cloud Concepts</strong>. I'm passionate about web development and open to discussions about tech, nature, or history.
-                </p>
-                <p class="text-md text-gray-600 italic mt-6">
-                    "Fun fact: Even the Black Holes can't swallow the NullPointerException." 😉
-                </p>
+            <h2 class="section-title text-4xl text-slate-100">About Me</h2>
+            <div class="max-w-4xl mx-auto card-glass p-8 md:p-10 rounded-xl">
+                <div class="text-lg text-slate-300 space-y-6">
+                    <div class="space-y-4 text-left md:text-justify">
+                        <p>
+                            A Software Engineer at Tata Consultancy Services (TCS) with a Bachelor of Technology in Computer Science Engineering, my professional journey is fueled by a profound enthusiasm for technology and a steadfast commitment to continuous learning and innovation.
+                        </p>
+                        <p>
+                            As a dedicated team player, I thrive on collaboration and am always seeking avenues to enhance processes and deliver high-quality, impactful software solutions. My proactive engagement with the ever-evolving tech landscape is evident in my active project repository and clearly defined learning objectives.
+                        </p>
+                        <p>
+                            Currently, I'm focused on deepening my expertise in <strong class="font-semibold text-blue-400">React</strong>, while actively exploring the realms of <strong class="font-semibold text-blue-400">Docker</strong> and foundational <strong class="font-semibold text-blue-400">Cloud Concepts</strong>. I am passionate about web development and always open to engaging discussions about technology, nature, or history.
+                        </p>
+                    </div>
+                    <div class="mt-8 md:mt-6 p-6 bg-slate-700/30 rounded-lg shadow-inner">
+                         <p class="text-md text-slate-200 italic text-center">
+                            "Fun fact: Even the Black Holes can't swallow the NullPointerException." 😉
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-16 md:py-24 bg-white fade-in-section">
+    <section id="experience" class="py-16 md:py-24 bg-slate-900 fade-in-section">
         <div class="container mx-auto px-6">
-            <h2 class="section-title">Experience</h2>
-            <div class="max-w-4xl mx-auto space-y-12">
-                <div class="card p-6 md:p-8 flex flex-col md:flex-row items-start">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-8">
-                        <h3 class="text-xl font-semibold text-blue-600">Tata Consultancy Services</h3>
-                        <p class="text-gray-500">Software Engineer</p>
-                        <p class="text-sm text-gray-400">2021 - Present | Mumbai, India</p>
-                        <p class="text-sm text-gray-400">Over 3 years of experience</p>
+            <h2 class="section-title text-4xl text-slate-100">Experience</h2>
+            <div class="max-w-4xl mx-auto space-y-10">
+                <div class="card-glass p-6 md:p-8 flex flex-col md:flex-row items-start rounded-xl">
+                    <div class="md:w-1/3 mb-4 md:mb-0 md:pr-8">
+                        <h3 class="text-xl font-semibold text-blue-400">Tata Consultancy Services</h3>
+                        <p class="text-slate-400">Software Engineer</p>
+                        <p class="text-sm text-slate-500">2021 - Present</p>
+                        <p class="text-sm text-slate-500">Mumbai, India</p>
                     </div>
-                    <div class="md:w-3/4">
-                        <p class="text-gray-700 leading-relaxed">
+                    <div class="md:w-2/3">
+                        <p class="text-slate-300 leading-relaxed text-justify">
                             Developing and maintaining robust software applications for diverse clients. My role involves a strong focus on delivering high-quality, efficient solutions and continuously seeking opportunities for process improvement and workflow optimization within a dynamic team environment.
                         </p>
                     </div>
                 </div>
-                <div class="card p-6 md:p-8 flex flex-col md:flex-row items-start">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-8">
-                        <h3 class="text-xl font-semibold text-blue-600">A2infotech</h3>
-                        <p class="text-gray-500">Software Developer</p>
-                        <p class="text-sm text-gray-400">2021 - 2021 | Bhopal, India</p>
+                <div class="card-glass p-6 md:p-8 flex flex-col md:flex-row items-start rounded-xl">
+                    <div class="md:w-1/3 mb-4 md:mb-0 md:pr-8">
+                        <h3 class="text-xl font-semibold text-blue-400">A2infotech</h3>
+                        <p class="text-slate-400">Software Developer</p>
+                        <p class="text-sm text-slate-500">2021 (Short tenure)</p> 
+                        <p class="text-sm text-slate-500">Bhopal, India</p>
                     </div>
-                    <div class="md:w-3/4">
-                        <p class="text-gray-700 leading-relaxed">
-                            Contributed to foundational software development projects, gaining initial industry experience and applying core programming principles in a professional setting.
+                    <div class="md:w-2/3">
+                        <p class="text-slate-300 leading-relaxed text-justify">
+                            Contributed to foundational software development projects, gaining initial industry experience and applying core programming principles in a professional setting before transitioning to TCS.
                         </p>
                     </div>
                 </div>
@@ -195,68 +185,68 @@
 
     <section id="education" class="py-16 md:py-24 fade-in-section">
         <div class="container mx-auto px-6">
-            <h2 class="section-title">Education</h2>
+            <h2 class="section-title text-4xl text-slate-100">Education</h2>
             <div class="max-w-3xl mx-auto space-y-8">
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold text-blue-600">University Institute of Technology, RGPV</h3>
-                    <p class="text-gray-600">Bachelor of Technology (B.Tech), Computer Science Engineering</p>
-                    <p class="text-sm text-gray-400">2017 - 2021</p>
+                <div class="card-glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold text-blue-400">University Institute of Technology, RGPV</h3>
+                    <p class="text-slate-300">Bachelor of Technology (B.Tech), Computer Science Engineering</p>
+                    <p class="text-sm text-slate-500">2017 - 2021</p>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold text-blue-600">Mithi Gobindram Public School</h3>
-                    <p class="text-gray-600">Higher Secondary Education</p>
-                    <p class="text-sm text-gray-400">2004 - 2016</p>
+                <div class="card-glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold text-blue-400">Mithi Gobindram Public School</h3>
+                    <p class="text-slate-300">Higher Secondary Education</p>
+                    <p class="text-sm text-slate-500">2004 - 2016</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-16 md:py-24 bg-white fade-in-section">
+    <section id="skills" class="py-16 md:py-24 bg-slate-900 fade-in-section"> 
         <div class="container mx-auto px-6">
-            <h2 class="section-title">Skills</h2>
+            <h2 class="section-title text-4xl text-slate-100">Skills</h2>
             <div class="max-w-4xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div>
-                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Programming Languages</h3>
-                        <div class="flex flex-wrap">
-                            <span class="tag">Java SE</span><span class="tag">Java EE</span><span class="tag">Python</span>
-                            <span class="tag">C</span><span class="tag">HTML5</span><span class="tag">XML</span><span class="tag">JSON</span>
+                        <h3 class="text-xl font-semibold mb-4 text-slate-200">Programming Languages</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Java SE</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Java EE</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Python</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">C</span><span class="tag-glass px-3 py-1 rounded-md text-sm">HTML5</span><span class="tag-glass px-3 py-1 rounded-md text-sm">XML</span><span class="tag-glass px-3 py-1 rounded-md text-sm">JSON</span>
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Frameworks & Libraries</h3>
-                        <div class="flex flex-wrap">
-                            <span class="tag">Hibernate</span><span class="tag">Servlets</span><span class="tag">JSP</span>
-                            <span class="tag">React.js</span><span class="tag">jQuery</span><span class="tag">AJAX</span>
-                            <span class="tag">Bootstrap</span><span class="tag">Tkinter</span>
+                        <h3 class="text-xl font-semibold mb-4 text-slate-200">Frameworks & Libraries</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Hibernate</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Servlets</span><span class="tag-glass px-3 py-1 rounded-md text-sm">JSP</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">React.js</span><span class="tag-glass px-3 py-1 rounded-md text-sm">jQuery</span><span class="tag-glass px-3 py-1 rounded-md text-sm">AJAX</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Bootstrap</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Tkinter</span>
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Databases</h3>
-                        <div class="flex flex-wrap">
-                            <span class="tag">Oracle</span><span class="tag">DBMS</span><span class="tag">MySQL</span>
+                        <h3 class="text-xl font-semibold mb-4 text-slate-200">Databases</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Oracle</span><span class="tag-glass px-3 py-1 rounded-md text-sm">DBMS</span><span class="tag-glass px-3 py-1 rounded-md text-sm">MySQL</span>
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Tools & Platforms</h3>
-                        <div class="flex flex-wrap">
-                            <span class="tag">Docker</span><span class="tag">Maven</span><span class="tag">GitHub</span>
-                            <span class="tag">Microsoft Azure</span><span class="tag">Linux</span>
+                        <h3 class="text-xl font-semibold mb-4 text-slate-200">Tools & Platforms</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Docker</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Maven</span><span class="tag-glass px-3 py-1 rounded-md text-sm">GitHub</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Microsoft Azure</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Linux</span>
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Concepts & Methodologies</h3>
-                        <div class="flex flex-wrap">
-                            <span class="tag">Agile</span><span class="tag">DevOps</span><span class="tag">Cloud Computing</span>
-                            <span class="tag">Full-Stack Dev</span><span class="tag">MVC</span><span class="tag">OOP</span>
-                            <span class="tag">REST APIs</span><span class="tag">Algorithms</span><span class="tag">Persistence</span>
+                        <h3 class="text-xl font-semibold mb-4 text-slate-200">Concepts & Methodologies</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Agile</span><span class="tag-glass px-3 py-1 rounded-md text-sm">DevOps</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Cloud Computing</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Full-Stack Dev</span><span class="tag-glass px-3 py-1 rounded-md text-sm">MVC</span><span class="tag-glass px-3 py-1 rounded-md text-sm">OOP</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">REST APIs</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Algorithms</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Persistence</span>
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Soft Skills</h3>
-                        <div class="flex flex-wrap">
-                            <span class="tag">Team Management</span><span class="tag">Productivity Improvement</span>
-                            <span class="tag">Collaboration</span><span class="tag">Problem Solving</span>
+                        <h3 class="text-xl font-semibold mb-4 text-slate-200">Soft Skills</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Team Management</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Productivity Improvement</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Collaboration</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Problem Solving</span>
                         </div>
                     </div>
                 </div>
@@ -266,56 +256,53 @@
 
     <section id="projects" class="py-16 md:py-24 fade-in-section">
         <div class="container mx-auto px-6">
-            <h2 class="section-title">Projects</h2>
+            <h2 class="section-title text-4xl text-slate-100">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 max-w-3xl mx-auto">
-                <div class="card overflow-hidden">
-                    <img src="https://placehold.co/600x400/3498db/ffffff?text=MyCovidShop+Project" alt="MyCovidShop E-Commerce Application" class="w-full h-64 object-cover">
+                <div class="card-glass overflow-hidden rounded-xl">
+                    <img src="https://placehold.co/600x400/1E293B/E0E7FF?text=MyCovidShop+Project" alt="MyCovidShop E-Commerce Application" class="w-full h-64 object-cover opacity-75 group-hover:opacity-100 transition-opacity duration-300">
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-3 text-blue-600">MyCovidShop - E-Commerce Web Application</h3>
-                        <p class="text-gray-700 mb-4 leading-relaxed">
+                        <h3 class="text-2xl font-semibold mb-3 text-blue-400">MyCovidShop - E-Commerce Web Application</h3>
+                        <p class="text-slate-300 mb-4 leading-relaxed text-justify">
                             A comprehensive E-Commerce platform demonstrating full-stack capabilities. Built with a focus on user experience and robust backend functionality during the challenging times of the pandemic.
                         </p>
-                        <p class="text-sm text-gray-500 mb-1">Technologies Used:</p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tag">Java EE</span><span class="tag">JSP</span><span class="tag">Servlets</span>
-                            <span class="tag">JavaScript</span><span class="tag">jQuery</span><span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span><span class="tag">Bootstrap 5</span><span class="tag">JSON</span>
-                            <span class="tag">XML</span><span class="tag">Hibernate ORM</span><span class="tag">MySQL</span>
+                        <p class="text-sm text-slate-400 mb-2">Technologies Used:</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Java EE</span><span class="tag-glass px-3 py-1 rounded-md text-sm">JSP</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Servlets</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">JavaScript</span><span class="tag-glass px-3 py-1 rounded-md text-sm">jQuery</span><span class="tag-glass px-3 py-1 rounded-md text-sm">HTML5</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">CSS3</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Bootstrap 5</span><span class="tag-glass px-3 py-1 rounded-md text-sm">JSON</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">XML</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Hibernate ORM</span><span class="tag-glass px-3 py-1 rounded-md text-sm">MySQL</span>
                         </div>
-                        <a href="https://github.com/prakharindoria/MyCovidShop-Ecommerce-Web-Application" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center">
-                            <i class="fab fa-github icon"></i> View on GitHub
+                        <a href="https://github.com/prakharindoria/MyCovidShop-Ecommerce-Web-Application" target="_blank" rel="noopener noreferrer" class="btn-primary bg-blue-500 hover:bg-blue-600 inline-flex items-center text-white">
+                            <i class="fab fa-github icon mr-2"></i> View on GitHub
                         </a>
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="py-16 md:py-24 bg-gray-800 text-white fade-in-section">
+    <section id="contact" class="py-16 md:py-24 bg-slate-900 text-white fade-in-section">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="section-title text-white">Get In Touch</h2>
-            <p class="text-lg text-gray-300 mb-8 max-w-xl mx-auto">
+            <h2 class="section-title text-4xl text-slate-100">Get In Touch</h2>
+            <p class="text-lg text-slate-300 mb-8 max-w-xl mx-auto">
                 I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing. Feel free to reach out!
             </p>
             <div class="flex justify-center space-x-6 mb-10">
-                <a href="https://github.com/prakharindoria" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-blue-400 transition duration-300">
+                <a href="https://github.com/prakharindoria" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-blue-400 transition duration-300">
                     <i class="fab fa-github fa-3x"></i>
                 </a>
-                <a href="https://linkedin.com/in/prakharindoria" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-blue-400 transition duration-300">
+                <a href="https://linkedin.com/in/prakharindoria" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-blue-400 transition duration-300">
                     <i class="fab fa-linkedin fa-3x"></i>
                 </a>
-                <a href="mailto:contact@prakharindoria.dev" class="text-gray-300 hover:text-blue-400 transition duration-300">
+                <a href="mailto:prakhar.indoria@gmail.com" class="text-slate-300 hover:text-blue-400 transition duration-300">
                     <i class="fas fa-envelope fa-3x"></i>
                 </a>
-                <!-- <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-blue-400 transition duration-300">
-                    <i class="fab fa-twitter fa-3x"></i>
-                </a> -->
             </div>
-            <p class="text-gray-400">Email: <a href="mailto:contact@prakharindoria.dev" class="hover:text-blue-400 underline">contact@prakharindoria.dev</a> (Placeholder)</p>
+            <p class="text-slate-400">Email: <a href="mailto:prakhar.indoria@gmail.com" class="hover:text-blue-400 underline">prakhar.indoria@gmail.com</a></p>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
+    <footer class="bg-black text-slate-500 py-8 text-center">
         <div class="container mx-auto px-6">
             <p>&copy; <span id="currentYear"></span> Prakhar Indoria. All Rights Reserved.</p>
             <p class="text-sm">Designed with <i class="fas fa-heart text-red-500"></i> and Tailwind CSS.</p>
@@ -323,90 +310,86 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when a link is clicked
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-        
-        // Navbar shrink on scroll
-        const navbar = document.getElementById('navbar');
-        window.onscroll = () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('py-2', 'shadow-lg');
-                navbar.classList.remove('py-3');
-            } else {
-                navbar.classList.add('py-3');
-                navbar.classList.remove('py-2', 'shadow-lg');
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if(mobileMenuButton && mobileMenu){
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
             }
-        };
 
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // Intersection Observer for fade-in sections
-        const sections = document.querySelectorAll('.fade-in-section');
-        const options = {
-            root: null, // relative to document viewport
-            rootMargin: '0px', // margin around root. Values are similar to css property. Unitless values not allowed
-            threshold: 0.1 // visible amount of item shown in relation to root
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // Optional: stop observing once it's visible
-                }
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if(mobileMenu) mobileMenu.classList.add('hidden');
+                });
             });
-        }, options);
+            
+            const navbar = document.getElementById('navbar');
+            if(navbar) {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('py-2', 'shadow-xl'); 
+                    navbar.classList.remove('py-3', 'shadow-lg');
+                } else {
+                    navbar.classList.add('py-3', 'shadow-lg');
+                    navbar.classList.remove('py-2', 'shadow-xl');
+                }
+                window.onscroll = () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('py-2', 'shadow-xl');
+                        navbar.classList.remove('py-3', 'shadow-lg');
+                    } else {
+                        navbar.classList.add('py-3', 'shadow-lg');
+                        navbar.classList.remove('py-2', 'shadow-xl');
+                    }
+                };
+            }
 
-        sections.forEach(section => {
-            observer.observe(section);
-        });
+            const currentYearElement = document.getElementById('currentYear');
+            if(currentYearElement) currentYearElement.textContent = new Date().getFullYear();
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const targetId = this.getAttribute('href');
+            const sections = document.querySelectorAll('.fade-in-section');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
 
-                // Check if the link is intended for section navigation or is the top logo link
-                if (targetId === '#' || this.closest('#mobile-menu') || this.closest('#navbar div:not(#mobile-menu)')) {
-                    e.preventDefault(); // Prevent default anchor behavior
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
 
-                    if (targetId === '#') {
-                        // If href is just "#" (e.g., the logo/brand link), scroll to the top of the page.
-                        window.scrollTo({
-                            top: 0,
-                            behavior: "smooth"
-                        });
-                    } else if (targetId.length > 1) {
-                        // For links like "#about", "#experience", etc.
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            // Calculate offset for fixed navbar
-                            const navbarHeight = document.getElementById('navbar').offsetHeight;
-                            const elementPosition = targetElement.getBoundingClientRect().top;
-                            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-                            
-                            window.scrollTo({
-                                top: offsetPosition,
-                                behavior: "smooth"
-                            });
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#' || this.closest('#mobile-menu') || (this.closest('#navbar') && !this.closest('#mobile-menu-button'))) {
+                        e.preventDefault(); 
+
+                        if (targetId === '#') {
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                        } else if (targetId.length > 1) {
+                            const targetElement = document.querySelector(targetId);
+                            if (targetElement) {
+                                const navbarHeight = document.getElementById('navbar') ? document.getElementById('navbar').offsetHeight : 0;
+                                const elementPosition = targetElement.getBoundingClientRect().top;
+                                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+                                
+                                window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                            }
                         }
                     }
-                }
+                });
             });
         });
-
     </script>
 </body>
 </html>
