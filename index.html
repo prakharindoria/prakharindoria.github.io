@@ -1,75 +1,83 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prakhar Indoria - Software Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             /* Deep Dark Theme Variables */
-            --primary-bg-start: #0D0D0D; /* Near black */
-            --primary-bg-mid1: #1A1A2E; /* Deep dark blue/purple */
-            --primary-bg-mid2: #16213E; /* Another dark blue shade */
-            --primary-bg-end: #0F3460;  /* Darker, richer blue */
-            
-            /* Glass Effect Variables remain the same */
-            --glass-fill-subtle: rgba(255, 255, 255, 0.02); 
-            --glass-border-subtle: rgba(255, 255, 255, 0.05);
+            --primary-bg: #0A0A0A;
+            --glass-fill-subtle: rgba(255, 255, 255, 0.06);
+            /* was 0.02 */
+            --glass-border-subtle: rgba(255, 255, 255, 0.08);
+            /* was 0.05 */
             --glass-shadow-subtle: rgba(0, 0, 0, 0.35);
-            --glass-blur-subtle: 30px;
-
-            --prominent-glass-fill: rgba(255, 255, 255, 0.04); 
-            --prominent-glass-border: rgba(255, 255, 255, 0.06);
-            --prominent-glass-shadow: rgba(0, 0, 0, 0.55); 
-            --prominent-glass-blur: 40px;
-            
-            --primary-text: #F5F5F5; 
-            --secondary-text: #A0A0A0; 
-            --accent-color: #FF8C00; 
-            --highlight-text-color: rgba(255, 165, 0, 0.95); 
-
-            /* Warm Glow Colors for Sections */
-            --glow-color-center: rgba(255, 100, 0, 0.45); 
+            --glass-blur-subtle: 40px;
+            /* was 30px */
+            --prominent-glass-fill: rgba(255, 255, 255, 0.08);
+            /* was 0.04 */
+            --prominent-glass-border: rgba(255, 255, 255, 0.1);
+            /* was 0.06 */
+            --prominent-glass-shadow: rgba(0, 0, 0, 0.55);
+            --prominent-glass-blur: 60px;
+            /* was 40px */
+            --primary-text: #F5F5F5;
+            --secondary-text: #A0A0A0;
+            --accent-color: #FF8C00;
+            --highlight-text-color: rgba(255, 165, 0, 0.95);
+            --glow-color-center: rgba(255, 100, 0, 0.45);
             --glow-color-mid: rgba(255, 140, 0, 0.2);
             --glow-color-outer: rgba(255, 180, 0, 0.08);
-
-            /* Hero CTA Button Colors */
-            --hero-cta-bg: #FF8C00; 
-            --hero-cta-hover-bg: #FFA500; 
+            --hero-cta-bg: #FF8C00;
+            --hero-cta-hover-bg: #FFA500;
             --hero-cta-text: #1A1A1A;
             --hero-cta-shadow: rgba(255, 140, 0, 0.3);
             --hero-cta-hover-shadow: rgba(255, 140, 0, 0.45);
         }
 
         body {
-            font-family: 'Inter', sans-serif; 
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
             color: var(--primary-text);
-            position: relative; 
-            overflow-x: hidden; 
+            position: relative;
+            overflow-x: hidden;
             /* Animated Gradient Background */
-            background: linear-gradient(270deg, var(--primary-bg-start), var(--primary-bg-mid1), var(--primary-bg-mid2), var(--primary-bg-end), var(--primary-bg-start));
-            background-size: 400% 400%; 
-            animation: animatedGradient 25s ease infinite;
+            background: linear-gradient(135deg, var(--primary-bg-start, #0D0D0D), var(--primary-bg-mid1, #1A1A2E), var(--primary-bg-mid2, #16213E), var(--primary-bg-end, #0F3460), var(--primary-bg-start, #0D0D0D));
+            background-size: 400% 400%;
+            animation: animatedGradient 20s ease infinite;
         }
 
         @keyframes animatedGradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
+
 
         .section-title {
             font-weight: 600;
-            margin-bottom: 2.5rem; 
+            margin-bottom: 2.5rem;
             text-align: center;
             color: var(--primary-text);
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease-out, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
         .section-title.is-visible {
             opacity: 1;
             transform: translateY(0);
@@ -79,197 +87,278 @@
             color: var(--primary-text);
             transition: color 0.3s ease, transform 0.2s ease-out;
         }
+
         .nav-link:hover {
-            color: var(--highlight-text-color); 
+            color: var(--highlight-text-color);
             transform: translateY(-2px);
         }
+
         .nav-link.active {
-            color: var(--highlight-text-color); 
+            color: var(--highlight-text-color);
             font-weight: 500;
         }
 
-        .glass-effect-subtle { 
-            background-color: var(--glass-fill-subtle); 
-            backdrop-filter: blur(var(--glass-blur-subtle)) saturate(160%); 
-            -webkit-backdrop-filter: blur(var(--glass-blur-subtle)) saturate(160%); 
-            border: 1px solid var(--glass-border-subtle); 
+        .glass-effect-subtle {
+            background-color: rgba(255, 255, 255, 0.06);
+            /* Increase from 0.02 */
+            backdrop-filter: blur(40px) saturate(180%);
+            /* Increase blur from 30px */
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            /* Increase from 0.05 */
+            -webkit-backdrop-filter: blur(var(--glass-blur-subtle)) saturate(160%);
             box-shadow: 0 8px 32px 0 var(--glass-shadow-subtle);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
         }
+
         .glass-effect-subtle:hover {
-            transform: translateY(-8px) scale(1.02); 
-            box-shadow: 0 12px 40px 0 rgba(0,0,0, 0.45); 
-            background-color: rgba(255, 255, 255, 0.04); 
-            border-color: rgba(255, 255, 255, 0.07); 
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
+            background-color: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.07);
         }
-        
-        .prominent-glass-card { 
-            background-color: var(--prominent-glass-fill);
-            backdrop-filter: blur(var(--prominent-glass-blur)) saturate(180%); 
+
+        .prominent-glass-card {
+            background-color: rgba(255, 255, 255, 0.08);
+            /* Increase from 0.04 */
+            backdrop-filter: blur(60px) saturate(200%);
+            /* Increase blur from 40px */
             -webkit-backdrop-filter: blur(var(--prominent-glass-blur)) saturate(180%);
-            border: 1px solid var(--prominent-glass-border);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            /* Increase from 0.06 */
             box-shadow: 0 10px 50px var(--prominent-glass-shadow);
-            border-radius: 30px; 
-            position: relative; 
+            border-radius: 30px;
+            position: relative;
             z-index: 10;
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
         }
+
+
         .prominent-glass-card:hover {
             transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 15px 60px rgba(0,0,0,0.65);
-            border-color: rgba(255,255,255,0.1); 
+            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.65);
+            border-color: rgba(255, 255, 255, 0.1);
         }
 
-        .tag-glass { 
-            background-color: rgba(255, 255, 255, 0.04); 
-            backdrop-filter: blur(10px) saturate(130%); 
+        .tag-glass {
+            background-color: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(10px) saturate(130%);
             -webkit-backdrop-filter: blur(10px) saturate(130%);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            color: var(--secondary-text); 
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease-out;
+            color: var(--secondary-text);
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
         }
+
         .tag-glass:hover {
-            transform: scale(1.08);
+            transform: scale(1.1) rotateX(10deg) rotateY(5deg) translateY(-3px);
             background-color: rgba(255, 255, 255, 0.07);
             color: var(--primary-text);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
+
         .btn-hero-cta {
             background-color: var(--hero-cta-bg);
             color: var(--hero-cta-text);
             font-weight: 600;
             padding: 0.75rem 2rem;
             border-radius: 0.75rem;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-            box-shadow: 0 4px 15px var(--hero-cta-shadow), 0 0 0 1px rgba(255,255,255,0.05) inset;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px var(--hero-cta-shadow), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+
         .btn-hero-cta:hover {
             background-color: var(--hero-cta-hover-bg);
             transform: scale(1.05) translateY(-3px);
-            box-shadow: 0 8px 25px var(--hero-cta-hover-shadow), 0 0 0 1px rgba(255,255,255,0.1) inset;
+            box-shadow: 0 8px 25px var(--hero-cta-hover-shadow), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
         }
-
 
         .profile-image-container {
             perspective: 1000px;
-            position: relative; 
+            position: relative;
         }
-        .profile-image-depth { 
+
+        .profile-image-depth {
             position: absolute;
-            top: 5px; 
-            left: 5px; 
+            top: 5px;
+            left: 5px;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.2); 
+            background-color: rgba(0, 0, 0, 0.2);
             border-radius: 50%;
-            filter: blur(8px); 
-            z-index: -1; 
-            transform: scale(0.98); 
+            filter: blur(8px);
+            z-index: -1;
+            transform: scale(0.98);
         }
+
         .profile-image {
             transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             transform-style: preserve-3d;
-            position: relative; 
+            position: relative;
             z-index: 1;
         }
+
         .profile-image-container:hover .profile-image {
             transform: rotateY(180deg);
         }
+
         .profile-image-container:hover .profile-image-depth {
-            transform: scale(0.98) rotateY(180deg) translateZ(-10px); 
-             transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: scale(0.98) rotateY(180deg) translateZ(-10px);
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-
         .btn-github {
-            background-color: rgba(255,255,255,0.07); 
-            color: var(--primary-text); 
+            background-color: rgba(255, 255, 255, 0.07);
+            color: var(--primary-text);
             padding: 0.75rem 1.5rem;
             border-radius: 0.5rem;
             transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, color 0.3s ease;
             display: inline-flex;
             align-items: center;
             text-decoration: none;
-            font-weight: 500; 
-            border: 1px solid rgba(255,255,255,0.09); 
-            box-shadow: 0 4px 15px 0 rgba(0,0,0, 0.2); 
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
         }
+
         .btn-github:hover {
-            background-color: rgba(255,255,255,0.1); 
-            color: var(--highlight-text-color); 
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--highlight-text-color);
             transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 6px 20px 0 rgba(0,0,0, 0.25);
+            box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.25);
         }
+
         .btn-github .fab {
             transition: transform 0.3s ease;
-            margin-right: 0.5rem; 
+            margin-right: 0.5rem;
         }
+
         .btn-github:hover .fab {
-            transform: scale(1.1); 
+            transform: scale(1.1);
         }
 
         html {
             scroll-behavior: smooth;
         }
+
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
-            background: #050505; 
+            background: #050505;
         }
+
         ::-webkit-scrollbar-thumb {
-            background: #2a2a2a; 
+            background: #2a2a2a;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
-            background: #3a3a3a; 
+            background: #3a3a3a;
         }
+
         .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.7s ease-out, transform 0.7s ease-out;
         }
+
         .fade-in-section.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .section-glow-container { 
+        .section-glow-container {
             position: relative;
         }
-        .section-glow { 
+
+        .section-glow {
             position: absolute;
-            top: 40%;    
-            left: 70%; 
-            width: 180%; 
+            top: 40%;
+            left: 70%;
+            width: 180%;
             height: 180%;
-            background: radial-gradient(circle at center, 
-                var(--glow-color-center) 0%,
-                var(--glow-color-mid) 30%, 
-                var(--glow-color-outer) 50%,
-                rgba(255, 180, 0, 0) 65% 
-            );
-            transform: translate(-50%, -50%); 
-            filter: blur(140px); 
-            z-index: 0; 
-            opacity: 0.65; 
-            pointer-events: none; 
-            border-radius: 50%; 
-            animation: subtleGlowPulse 15s ease-in-out infinite alternate; 
+            background: radial-gradient(circle at center, var(--glow-color-center) 0%, var(--glow-color-mid) 30%, var(--glow-color-outer) 50%, rgba(255, 180, 0, 0) 65%);
+            transform: translate(-50%, -50%);
+            filter: blur(140px);
+            z-index: 0;
+            opacity: 0.65;
+            pointer-events: none;
+            border-radius: 50%;
+            animation: subtleGlowPulse 15s ease-in-out infinite alternate;
         }
 
         @keyframes subtleGlowPulse {
-            0% { opacity: 0.60; transform: translate(-50%, -50%) scale(1); }
-            50% { opacity: 0.70; transform: translate(-50%, -50%) scale(1.03); }
-            100% { opacity: 0.60; transform: translate(-50%, -50%) scale(1); }
+            0% {
+                opacity: 0.60;
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                opacity: 0.70;
+                transform: translate(-50%, -50%) scale(1.03);
+            }
+
+            100% {
+                opacity: 0.60;
+                transform: translate(-50%, -50%) scale(1);
+            }
         }
 
+        /* Parallax Elements */
+        .parallax-element {
+            position: fixed;
+            /* Changed to fixed for true parallax against scroll */
+            z-index: -10;
+            border-radius: 50%;
+            opacity: 0.08;
+            pointer-events: none;
+            transition: opacity 0.5s ease-out;
+            /* For fade-in/out if needed */
+        }
+
+        #parallax-1 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 165, 0, 0.15) 0%, transparent 70%);
+            top: 10vh;
+            left: 5vw;
+            filter: blur(60px);
+        }
+
+        #parallax-2 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--accent-color, #FF8C00), transparent 70%);
+            opacity: 0.05;
+            top: 60vh;
+            right: 10vw;
+            filter: blur(50px);
+        }
+
+        #parallax-3 {
+            /* This one might be too low for initial view, adjust 'top' if needed */
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.02) 0%, transparent 60%);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            top: 150vh;
+            left: 15vw;
+            /* Will only appear on longer pages */
+            filter: blur(20px);
+        }
     </style>
 </head>
+
 <body class="antialiased">
 
-    <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 glass-effect-subtle shadow-lg"> 
+    <div id="parallax-1" class="parallax-element" data-speed="0.2"></div>
+    <div id="parallax-2" class="parallax-element" data-speed="0.5"></div>
+    <div id="parallax-3" class="parallax-element" data-speed="0.35"></div>
+
+
+    <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 glass-effect-subtle shadow-lg">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-[var(--primary-text)]">Prakhar Indoria</a>
             <div class="flex items-center space-x-4">
@@ -283,7 +372,11 @@
                 </div>
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-[var(--primary-text)] focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -298,22 +391,21 @@
         </div>
     </nav>
 
-    <header id="hero" class="min-h-screen flex items-center justify-center text-[var(--primary-text)] pt-20 section-glow-container">
-        <div class="section-glow" style="left: 50%; top: 50%; width: 120%; height: 120%; opacity: 0.35; filter: blur(180px);"></div> 
+    <header id="hero"
+        class="min-h-screen flex items-center justify-center text-[var(--primary-text)] pt-20 section-glow-container">
+        <div class="section-glow"
+            style="left: 50%; top: 50%; width: 120%; height: 120%; opacity: 0.35; filter: blur(180px);"></div>
         <div class="text-center p-6 relative z-10">
             <div class="profile-image-container mx-auto mb-8 w-36 h-36 md:w-48 md:h-48">
-                <div class="profile-image-depth"></div> 
-                <img 
-                    src="https://github.com/prakharindoria.png" 
-                    alt="Prakhar Indoria" 
+                <div class="profile-image-depth"></div>
+                <img src="https://github.com/prakharindoria.png" alt="Prakhar Indoria"
                     class="profile-image w-full h-full rounded-full border-4 border-[rgba(255,255,255,0.1)] shadow-xl object-cover"
-                    onerror="this.onerror=null; this.src='https://placehold.co/150x150/0A0A0A/F5F5F5?text=PI';" 
-                >
+                    onerror="this.onerror=null; this.src='https://placehold.co/150x150/0A0A0A/F5F5F5?text=PI';">
             </div>
             <h1 class="text-4xl md:text-6xl font-bold mb-4">Prakhar Indoria</h1>
             <p class="text-xl md:text-2xl text-[var(--secondary-text)] mb-2">Software Engineer</p>
             <p class="text-lg md:text-xl text-[var(--secondary-text)] opacity-80 mb-8 max-w-2xl mx-auto">
-                Tech Enthusiast | Passionate Developer 
+                Tech Enthusiast | Passionate Developer
             </p>
             <a href="#about" class="btn-hero-cta font-semibold py-3 px-8 rounded-lg text-lg">
                 Learn More <i class="fas fa-arrow-down ml-2"></i>
@@ -321,26 +413,38 @@
         </div>
     </header>
 
-    <section id="about" class="py-16 md:py-24 section-glow-container"> 
-        <div class="section-glow"></div> 
-        <div class="container mx-auto px-6 relative z-10"> 
+    <section id="about" class="py-16 md:py-24 section-glow-container">
+        <div class="section-glow"></div>
+        <div class="container mx-auto px-6 relative z-10">
             <h2 class="section-title text-4xl">About Me</h2>
             <div class="max-w-4xl mx-auto prominent-glass-card p-8 md:p-10 fade-in-section">
                 <div class="text-lg text-[var(--primary-text)] space-y-6">
                     <div class="space-y-4 text-left md:text-justify">
                         <p>
-                            A Software Engineer at Tata Consultancy Services (TCS) with a Bachelor of Technology in Computer Science Engineering, my professional journey is fueled by a profound enthusiasm for technology and a steadfast commitment to continuous learning and innovation.
+                            A Software Engineer at Tata Consultancy Services (TCS) with a Bachelor of Technology in
+                            Computer Science Engineering, my professional journey is fueled by a profound enthusiasm for
+                            technology and a steadfast commitment to continuous learning and innovation.
                         </p>
                         <p>
-                            As a Problem Solver, I am always seeking avenues to enhance processes and deliver high-quality, impactful software solutions. My proactive engagement with the ever-evolving tech landscape is evident in my work ethic and clearly defined learning objectives.
+                            As a Problem Solver, I am always seeking avenues to enhance processes and deliver
+                            high-quality, impactful software solutions. My proactive engagement with the ever-evolving
+                            tech landscape is evident in my work ethic and clearly defined learning objectives.
                         </p>
                         <p>
-                            Currently, I'm focused on deepening my expertise in <strong class="font-semibold text-[var(--highlight-text-color)]">Spring Boot</strong>, while actively exploring the realms of <strong class="font-semibold text-[var(--highlight-text-color)]">AI</strong> and foundational <strong class="font-semibold text-[var(--highlight-text-color)]">Cloud Concepts</strong>. I am passionate about new age tech and always open to engaging discussions about technology, nature, or history.
+                            Currently, I'm focused on deepening my expertise in <strong
+                                class="font-semibold text-[var(--highlight-text-color)]">Spring Boot</strong>, while
+                            actively exploring the realms of <strong
+                                class="font-semibold text-[var(--highlight-text-color)]">AI</strong> and foundational
+                            <strong class="font-semibold text-[var(--highlight-text-color)]">Cloud Concepts</strong>. I
+                            am passionate about new age tech and always open to engaging discussions about technology,
+                            nature, or history.
                         </p>
                     </div>
-                    <div class="mt-8 md:mt-6 p-6 bg-[rgba(255,255,255,0.03)] rounded-lg shadow-inner border border-[rgba(255,255,255,0.07)]">
-                         <p class="text-md text-[var(--secondary-text)] italic text-center">
-                            "Fun fact: I architect solutions like I plan mountain treks—mapping every possible route, preparing for the unexpected, and enjoying the climb to the summit." 😉
+                    <div
+                        class="mt-8 md:mt-6 p-6 bg-[rgba(255,255,255,0.03)] rounded-lg shadow-inner border border-[rgba(255,255,255,0.07)]">
+                        <p class="text-md text-[var(--secondary-text)] italic text-center">
+                            "Fun fact: I architect solutions like I plan mountain treks—mapping every possible route,
+                            preparing for the unexpected, and enjoying the climb to the summit." 😉
                         </p>
                     </div>
                 </div>
@@ -349,20 +453,23 @@
     </section>
 
     <section id="experience" class="py-16 md:py-24 section-glow-container">
-        <div class="section-glow" style="opacity: 0.5; left: 30%; top: 70%; filter: blur(120px); width: 160%; height: 160%;"></div>
+        <div class="section-glow"
+            style="opacity: 0.5; left: 30%; top: 70%; filter: blur(120px); width: 160%; height: 160%;"></div>
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="section-title text-4xl">Experience</h2>
             <div class="max-w-4xl mx-auto space-y-10 fade-in-section">
                 <div class="glass-effect-subtle p-6 md:p-8 flex flex-col md:flex-row items-start rounded-xl">
                     <div class="md:w-1/3 mb-4 md:mb-0 md:pr-8">
-                        <h3 class="text-xl font-semibold text-[var(--highlight-text-color)] opacity-90">Tata Consultancy Services</h3>
+                        <h3 class="text-xl font-semibold text-[var(--highlight-text-color)] opacity-90">TCS</h3>
                         <p class="text-[var(--secondary-text)]">Software Engineer</p>
                         <p class="text-sm text-[var(--secondary-text)] opacity-70">2021 - Present</p>
                         <p class="text-sm text-[var(--secondary-text)] opacity-70">Mumbai, India</p>
                     </div>
                     <div class="md:w-2/3">
                         <p class="text-[var(--primary-text)] leading-relaxed text-justify">
-                            Developing robust software applications for diverse clients. My role involves a strong focus on delivering high-quality, efficient solutions and continuously seeking opportunities for process improvement and workflow optimization within a dynamic team environment.
+                            Developing robust software applications for diverse clients. My role involves a strong focus
+                            on delivering high-quality, efficient solutions and continuously seeking opportunities for
+                            process improvement and workflow optimization within a dynamic team environment.
                         </p>
                     </div>
                 </div>
@@ -370,12 +477,14 @@
                     <div class="md:w-1/3 mb-4 md:mb-0 md:pr-8">
                         <h3 class="text-xl font-semibold text-[var(--highlight-text-color)] opacity-90">A2Infotech</h3>
                         <p class="text-[var(--secondary-text)]">Software Developer</p>
-                        <p class="text-sm text-[var(--secondary-text)] opacity-70">2021 (Short tenure)</p> 
+                        <p class="text-sm text-[var(--secondary-text)] opacity-70">2021 (Short tenure)</p>
                         <p class="text-sm text-[var(--secondary-text)] opacity-70">Bhopal, India</p>
                     </div>
                     <div class="md:w-2/3">
                         <p class="text-[var(--primary-text)] leading-relaxed text-justify">
-                            Contributed to foundational software development projects, gaining initial industry experience and applying core programming principles in a professional setting for various clients.
+                            Contributed to foundational software development projects, gaining initial industry
+                            experience and applying core programming principles in a professional setting for various
+                            clients.
                         </p>
                     </div>
                 </div>
@@ -384,17 +493,21 @@
     </section>
 
     <section id="education" class="py-16 md:py-24 section-glow-container">
-        <div class="section-glow" style="opacity: 0.45; left: 75%; top: 30%; width:140%; height:140%; filter: blur(110px);"></div>
+        <div class="section-glow"
+            style="opacity: 0.45; left: 75%; top: 30%; width:140%; height:140%; filter: blur(110px);"></div>
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="section-title text-4xl">Education</h2>
             <div class="max-w-3xl mx-auto space-y-8 fade-in-section">
                 <div class="glass-effect-subtle p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold text-[var(--highlight-text-color)] opacity-90">University Institute of Technology, RGPV</h3>
-                    <p class="text-[var(--primary-text)]">Bachelor of Technology (B.Tech), Computer Science Engineering</p>
+                    <h3 class="text-xl font-semibold text-[var(--highlight-text-color)] opacity-90">University Institute
+                        of Technology, RGPV</h3>
+                    <p class="text-[var(--primary-text)]">Bachelor of Technology (B.Tech), Computer Science Engineering
+                    </p>
                     <p class="text-sm text-[var(--secondary-text)] opacity-70">2017 - 2021</p>
                 </div>
                 <div class="glass-effect-subtle p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold text-[var(--highlight-text-color)] opacity-90">Mithi Gobindram Public School</h3>
+                    <h3 class="text-xl font-semibold text-[var(--highlight-text-color)] opacity-90">Mithi Gobindram
+                        Public School</h3>
                     <p class="text-[var(--primary-text)]">Higher Secondary Education</p>
                     <p class="text-sm text-[var(--secondary-text)] opacity-70">2004 - 2016</p>
                 </div>
@@ -402,8 +515,9 @@
         </div>
     </section>
 
-    <section id="skills" class="py-16 md:py-24 section-glow-container"> 
-        <div class="section-glow" style="opacity: 0.5; left: 20%; top: 55%; filter: blur(120px); width: 170%; height:170%;"></div>
+    <section id="skills" class="py-16 md:py-24 section-glow-container">
+        <div class="section-glow"
+            style="opacity: 0.5; left: 20%; top: 55%; filter: blur(120px); width: 170%; height:170%;"></div>
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="section-title text-4xl">Skills</h2>
             <div class="max-w-4xl mx-auto fade-in-section">
@@ -411,44 +525,66 @@
                     <div>
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Programming Languages</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Java</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Python</span><span class="tag-glass px-3 py-1 rounded-md text-sm">C++</span>
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">C</span><span class="tag-glass px-3 py-1 rounded-md text-sm">JS</span><span class="tag-glass px-3 py-1 rounded-md text-sm">SQL</span><span class="tag-glass px-3 py-1 rounded-md text-sm">JSON</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Java</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Python</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">C++</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">C</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">JS</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">SQL</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">JSON</span>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Frameworks & Libraries</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Spring Boot</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Hibernate</span><span class="tag-glass px-3 py-1 rounded-md text-sm">JSP</span>
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">React</span><span class="tag-glass px-3 py-1 rounded-md text-sm">jQuery</span><span class="tag-glass px-3 py-1 rounded-md text-sm">AJAX</span>
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Bootstrap</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Tkinter</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Spring Boot</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Hibernate</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">JSP</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">React</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">jQuery</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">AJAX</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Bootstrap</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Tkinter</span>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Databases</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Oracle</span><span class="tag-glass px-3 py-1 rounded-md text-sm">MySQL</span><span class="tag-glass px-3 py-1 rounded-md text-sm">DBMS</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Oracle</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">MySQL</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">DBMS</span>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Tools & Platforms</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Docker</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Maven</span><span class="tag-glass px-3 py-1 rounded-md text-sm">GitHub</span>
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Microsoft Azure</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Linux</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Docker</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Maven</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">GitHub</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Microsoft Azure</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Linux</span>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Concepts & Methodologies</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Agile</span><span class="tag-glass px-3 py-1 rounded-md text-sm">DevOps</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Cloud Native</span>
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">DS</span><span class="tag-glass px-3 py-1 rounded-md text-sm">MVC</span><span class="tag-glass px-3 py-1 rounded-md text-sm">OOPS</span>
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">REST API</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Algorithms</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Agile</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">DevOps</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Cloud Native</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">DS</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">MVC</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">OOPS</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">REST API</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Algorithms</span>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Soft Skills</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Team Management</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Communication</span>
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Collaboration</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Problem Solving</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Team Management</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Communication</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Collaboration</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Problem Solving</span>
                             <span class="tag-glass px-3 py-1 rounded-md text-sm">Persistence</span>
                         </div>
                     </div>
@@ -458,62 +594,86 @@
     </section>
 
     <section id="projects" class="py-16 md:py-24 section-glow-container">
-        <div class="section-glow" style="opacity: 0.65; left: 70%; top: 40%; width:180%; height:180%; filter: blur(140px);"></div>
+        <div class="section-glow"
+            style="opacity: 0.65; left: 70%; top: 40%; width:180%; height:180%; filter: blur(140px);"></div>
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="section-title text-4xl">Projects</h2>
             <div class="max-w-3xl mx-auto space-y-12 fade-in-section">
-                <div class="prominent-glass-card overflow-hidden group p-6 md:p-8"> 
-                    <h3 class="text-2xl font-semibold mb-3 text-center text-[var(--highlight-text-color)] opacity-90">MyCovidShop</h3>
+                <div class="prominent-glass-card overflow-hidden group p-6 md:p-8">
+                    <h3 class="text-2xl font-semibold mb-3 text-center text-[var(--highlight-text-color)] opacity-90">
+                        MyCovidShop</h3>
                     <p class="text-md text-[var(--secondary-text)] mb-4 text-center">E-Commerce Web Application</p>
                     <p class="text-[var(--primary-text)] mb-4 leading-relaxed text-justify text-sm">
-                        A comprehensive E-Commerce platform demonstrating full-stack capabilities. Built with a focus on user experience and robust backend functionality during the challenging times of the pandemic.
+                        A comprehensive E-Commerce platform demonstrating full-stack capabilities. Built with a focus on
+                        user experience and robust backend functionality during the challenging times of the pandemic.
                     </p>
                     <p class="text-sm text-[var(--secondary-text)] mb-2 mt-4">Key Technologies:</p>
-                    <div class="flex flex-wrap gap-1.5 mb-6"> 
-                        <span class="tag-glass px-2 py-0.5 rounded text-xs">Java EE</span><span class="tag-glass px-2 py-0.5 rounded text-xs">JSP</span><span class="tag-glass px-2 py-0.5 rounded text-xs">Servlets</span>
-                        <span class="tag-glass px-2 py-0.5 rounded text-xs">JavaScript</span><span class="tag-glass px-2 py-0.5 rounded text-xs">jQuery</span><span class="tag-glass px-2 py-0.5 rounded text-xs">HTML5</span>
-                        <span class="tag-glass px-2 py-0.5 rounded text-xs">CSS3</span><span class="tag-glass px-2 py-0.5 rounded text-xs">Bootstrap 5</span><span class="tag-glass px-2 py-0.5 rounded text-xs">JSON</span>
-                        <span class="tag-glass px-2 py-0.5 rounded text-xs">XML</span><span class="tag-glass px-2 py-0.5 rounded text-xs">Hibernate</span><span class="tag-glass px-2 py-0.5 rounded text-xs">MySQL</span>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="tag-glass px-2 py-0.5 rounded text-xs">Java EE</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">JSP</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">Servlets</span>
+                        <span class="tag-glass px-2 py-0.5 rounded text-xs">JavaScript</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">jQuery</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">HTML5</span>
+                        <span class="tag-glass px-2 py-0.5 rounded text-xs">CSS3</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">Bootstrap 5</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">JSON</span>
+                        <span class="tag-glass px-2 py-0.5 rounded text-xs">XML</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">Hibernate</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">MySQL</span>
                     </div>
-                    <div class="text-center"> 
-                        <a href="https://github.com/prakharindoria/MyCovidShop-Ecommerce-Web-Application" target="_blank" rel="noopener noreferrer" class="btn-github text-sm py-2 px-4"> 
-                             View on GitHub <i class="fab fa-github icon ml-1.5"></i>
+                    <div class="text-center">
+                        <a href="https://github.com/prakharindoria/MyCovidShop-Ecommerce-Web-Application"
+                            target="_blank" rel="noopener noreferrer" class="btn-github text-sm py-2 px-4">
+                            View on GitHub <i class="fab fa-github icon ml-1.5"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="prominent-glass-card overflow-hidden group p-6 md:p-8"> 
-                    <h3 class="text-2xl font-semibold mb-3 text-center text-[var(--highlight-text-color)] opacity-90">Notepad with Sentiment Analysis</h3>
+                <div class="prominent-glass-card overflow-hidden group p-6 md:p-8">
+                    <h3 class="text-2xl font-semibold mb-3 text-center text-[var(--highlight-text-color)] opacity-90">
+                        Notepad with Sentiment Analysis</h3>
                     <p class="text-md text-[var(--secondary-text)] mb-4 text-center">Desktop Application</p>
                     <p class="text-[var(--primary-text)] mb-4 leading-relaxed text-justify text-sm">
-                        A desktop notepad application enhanced with real-time sentiment analysis of the text being written, providing insights into the emotional tone of the content.
+                        A desktop notepad application enhanced with real-time sentiment analysis of the text being
+                        written, providing insights into the emotional tone of the content.
                     </p>
                     <p class="text-sm text-[var(--secondary-text)] mb-2 mt-4">Key Technologies:</p>
-                    <div class="flex flex-wrap gap-1.5 mb-6"> 
-                        <span class="tag-glass px-2 py-0.5 rounded text-xs">Python</span><span class="tag-glass px-2 py-0.5 rounded text-xs">Tkinter</span><span class="tag-glass px-2 py-0.5 rounded text-xs">NLTK</span>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="tag-glass px-2 py-0.5 rounded text-xs">Python</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">Tkinter</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">NLTK</span>
                         <span class="tag-glass px-2 py-0.5 rounded text-xs">VADER Sentiment</span>
                     </div>
-                    <div class="text-center"> 
-                        <a href="https://github.com/prakharindoria/Notepad-with-Sentiment-Analysis" target="_blank" rel="noopener noreferrer" class="btn-github text-sm py-2 px-4"> 
-                             View on GitHub <i class="fab fa-github icon ml-1.5"></i>
+                    <div class="text-center">
+                        <a href="https://github.com/prakharindoria/Notepad-with-Sentiment-Analysis" target="_blank"
+                            rel="noopener noreferrer" class="btn-github text-sm py-2 px-4">
+                            View on GitHub <i class="fab fa-github icon ml-1.5"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="prominent-glass-card overflow-hidden group p-6 md:p-8"> 
-                    <h3 class="text-2xl font-semibold mb-3 text-center text-[var(--highlight-text-color)] opacity-90">MedGuide - Hospital Management</h3>
+                <div class="prominent-glass-card overflow-hidden group p-6 md:p-8">
+                    <h3 class="text-2xl font-semibold mb-3 text-center text-[var(--highlight-text-color)] opacity-90">
+                        MedGuide - Hospital Management</h3>
                     <p class="text-md text-[var(--secondary-text)] mb-4 text-center">Web Application</p>
                     <p class="text-[var(--primary-text)] mb-4 leading-relaxed text-justify text-sm">
-                        A web-based hospital management system designed to streamline patient records, appointments, and administrative tasks for medical facilities.
+                        A web-based hospital management system designed to streamline patient records, appointments, and
+                        administrative tasks for medical facilities.
                     </p>
                     <p class="text-sm text-[var(--secondary-text)] mb-2 mt-4">Key Technologies:</p>
-                    <div class="flex flex-wrap gap-1.5 mb-6"> 
-                        <span class="tag-glass px-2 py-0.5 rounded text-xs">Java</span><span class="tag-glass px-2 py-0.5 rounded text-xs">Spring Boot</span><span class="tag-glass px-2 py-0.5 rounded text-xs">MySQL</span>
-                        <span class="tag-glass px-2 py-0.5 rounded text-xs">HTML</span><span class="tag-glass px-2 py-0.5 rounded text-xs">CSS</span><span class="tag-glass px-2 py-0.5 rounded text-xs">JavaScript</span>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="tag-glass px-2 py-0.5 rounded text-xs">Java</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">Spring Boot</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">MySQL</span>
+                        <span class="tag-glass px-2 py-0.5 rounded text-xs">HTML</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">CSS</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">JavaScript</span>
                     </div>
-                    <div class="text-center"> 
-                        <a href="https://github.com/prakharindoria/MedGuide-Hospital-Management-System" target="_blank" rel="noopener noreferrer" class="btn-github text-sm py-2 px-4"> 
-                             View on GitHub <i class="fab fa-github icon ml-1.5"></i>
+                    <div class="text-center">
+                        <a href="https://github.com/prakharindoria/MedGuide-Hospital-Management-System" target="_blank"
+                            rel="noopener noreferrer" class="btn-github text-sm py-2 px-4">
+                            View on GitHub <i class="fab fa-github icon ml-1.5"></i>
                         </a>
                     </div>
                 </div>
@@ -526,27 +686,33 @@
         <div class="container mx-auto px-6 text-center fade-in-section relative z-10">
             <h2 class="section-title text-4xl">Get In Touch</h2>
             <p class="text-lg text-[var(--secondary-text)] mb-8 max-w-xl mx-auto">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing. Feel free to reach out!
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of something
+                amazing. Feel free to reach out!
             </p>
             <div class="flex justify-center space-x-6 mb-10">
-                <a href="https://github.com/prakharindoria" target="_blank" rel="noopener noreferrer" class="text-[var(--secondary-text)] hover:text-[var(--highlight-text-color)] transition duration-300 hover:scale-110">
+                <a href="https://github.com/prakharindoria" target="_blank" rel="noopener noreferrer"
+                    class="text-[var(--secondary-text)] hover:text-[var(--highlight-text-color)] transition duration-300 hover:scale-110">
                     <i class="fab fa-github fa-3x"></i>
                 </a>
-                <a href="https://linkedin.com/in/prakharindoria" target="_blank" rel="noopener noreferrer" class="text-[var(--secondary-text)] hover:text-[var(--highlight-text-color)] transition duration-300 hover:scale-110">
+                <a href="https://linkedin.com/in/prakharindoria" target="_blank" rel="noopener noreferrer"
+                    class="text-[var(--secondary-text)] hover:text-[var(--highlight-text-color)] transition duration-300 hover:scale-110">
                     <i class="fab fa-linkedin fa-3x"></i>
                 </a>
-                <a href="mailto:prakhar.indoria@gmail.com" class="text-[var(--secondary-text)] hover:text-[var(--highlight-text-color)] transition duration-300 hover:scale-110">
+                <a href="mailto:prakhar.indoria@gmail.com"
+                    class="text-[var(--secondary-text)] hover:text-[var(--highlight-text-color)] transition duration-300 hover:scale-110">
                     <i class="fas fa-envelope fa-3x"></i>
                 </a>
             </div>
-            <p class="text-[var(--secondary-text)] opacity-80">Email: <a href="mailto:prakhar.indoria@gmail.com" class="hover:text-[var(--highlight-text-color)] underline">prakhar.indoria@gmail.com</a></p>
+            <p class="text-[var(--secondary-text)] opacity-80">Email: <a href="mailto:prakhar.indoria@gmail.com"
+                    class="hover:text-[var(--highlight-text-color)] underline">prakhar.indoria@gmail.com</a></p>
         </div>
     </section>
 
     <footer class="bg-black text-[var(--secondary-text)] opacity-70 py-8 text-center">
         <div class="container mx-auto px-6">
             <p>&copy; <span id="currentYear"></span> Prakhar Indoria. All Rights Reserved.</p>
-            <p class="text-sm opacity-70">Designed with <i class="fas fa-heart text-[var(--highlight-text-color)] opacity-70"></i> and Tailwind CSS.</p>
+            <p class="text-sm opacity-70">Designed with <i
+                    class="fas fa-heart text-[var(--highlight-text-color)] opacity-70"></i> and Tailwind CSS.</p>
         </div>
     </footer>
 
@@ -554,7 +720,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            if(mobileMenuButton && mobileMenu){
+            if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
                 });
@@ -562,20 +728,17 @@
 
             document.querySelectorAll('#mobile-menu a').forEach(link => {
                 link.addEventListener('click', () => {
-                    if(mobileMenu) mobileMenu.classList.add('hidden');
+                    if (mobileMenu) mobileMenu.classList.add('hidden');
                 });
             });
-            
+
             const navbar = document.getElementById('navbar');
-            if(navbar) {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('shadow-xl'); 
-                    navbar.classList.remove('shadow-lg');
-                } else {
-                    navbar.classList.add('shadow-lg');
-                    navbar.classList.remove('shadow-xl');
-                }
-                window.onscroll = () => {
+            const parallaxElements = document.querySelectorAll('.parallax-element');
+            let scrollTimeout;
+
+            function handleScroll() {
+                // Navbar shadow
+                if (navbar) {
                     if (window.scrollY > 50) {
                         navbar.classList.add('shadow-xl');
                         navbar.classList.remove('shadow-lg');
@@ -583,11 +746,47 @@
                         navbar.classList.add('shadow-lg');
                         navbar.classList.remove('shadow-xl');
                     }
-                };
+                }
+
+                // Parallax effect
+                const scrollValue = window.pageYOffset;
+                parallaxElements.forEach(el => {
+                    const speed = parseFloat(el.dataset.speed) || 0.5; // Default speed if not set
+                    // Apply transform only if speed is not 0 to avoid unnecessary style changes
+                    if (speed !== 0) {
+                        el.style.transform = `translateY(${scrollValue * speed * 0.1}px)`; // Reduced multiplier for subtlety
+                    }
+                });
             }
 
+            if (navbar || parallaxElements.length > 0) {
+                // Initial call for navbar shadow
+                if (navbar && window.scrollY > 50) {
+                    navbar.classList.add('shadow-xl');
+                    navbar.classList.remove('shadow-lg');
+                } else if (navbar) {
+                    navbar.classList.add('shadow-lg');
+                    navbar.classList.remove('shadow-xl');
+                }
+
+                // Throttled scroll listener using requestAnimationFrame
+                let ticking = false;
+                window.addEventListener('scroll', function () {
+                    if (!ticking) {
+                        window.requestAnimationFrame(function () {
+                            handleScroll();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+                // Initial parallax position
+                handleScroll();
+            }
+
+
             const currentYearElement = document.getElementById('currentYear');
-            if(currentYearElement) currentYearElement.textContent = new Date().getFullYear();
+            if (currentYearElement) currentYearElement.textContent = new Date().getFullYear();
 
             const observerTargets = document.querySelectorAll('.fade-in-section, .section-title');
             const options = {
@@ -614,7 +813,7 @@
                 anchor.addEventListener('click', function (e) {
                     const targetId = this.getAttribute('href');
                     if (targetId === '#' || this.closest('#mobile-menu') || (this.closest('#navbar') && !this.closest('#mobile-menu-button'))) {
-                        e.preventDefault(); 
+                        e.preventDefault();
 
                         if (targetId === '#') {
                             window.scrollTo({ top: 0, behavior: "smooth" });
@@ -624,7 +823,7 @@
                                 const navbarHeight = document.getElementById('navbar') ? document.getElementById('navbar').offsetHeight : 0;
                                 const elementPosition = targetElement.getBoundingClientRect().top;
                                 const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-                                
+
                                 window.scrollTo({ top: offsetPosition, behavior: "smooth" });
                             }
                         }
@@ -634,4 +833,5 @@
         });
     </script>
 </body>
+
 </html>
