@@ -10,9 +10,12 @@
     <style>
         :root {
             /* Deep Dark Theme Variables */
-            --primary-bg: #0A0A0A; 
+            --primary-bg-start: #0D0D0D; /* Near black */
+            --primary-bg-mid1: #1A1A2E; /* Deep dark blue/purple */
+            --primary-bg-mid2: #16213E; /* Another dark blue shade */
+            --primary-bg-end: #0F3460;  /* Darker, richer blue */
             
-            /* Enhanced Glass Effect - Increased Transparency & Blur */
+            /* Glass Effect Variables remain the same */
             --glass-fill-subtle: rgba(255, 255, 255, 0.02); 
             --glass-border-subtle: rgba(255, 255, 255, 0.05);
             --glass-shadow-subtle: rgba(0, 0, 0, 0.35);
@@ -25,8 +28,8 @@
             
             --primary-text: #F5F5F5; 
             --secondary-text: #A0A0A0; 
-            --accent-color: #FF8C00; /* Changed from Soft Teal to DarkOrange for general accents */
-            --highlight-text-color: rgba(255, 165, 0, 0.95); /* Bright Orange for keywords */
+            --accent-color: #FF8C00; 
+            --highlight-text-color: rgba(255, 165, 0, 0.95); 
 
             /* Warm Glow Colors for Sections */
             --glow-color-center: rgba(255, 100, 0, 0.45); 
@@ -34,20 +37,30 @@
             --glow-color-outer: rgba(255, 180, 0, 0.08);
 
             /* Hero CTA Button Colors */
-            --hero-cta-bg: #FF8C00; /* DarkOrange */
-            --hero-cta-hover-bg: #FFA500; /* Orange */
+            --hero-cta-bg: #FF8C00; 
+            --hero-cta-hover-bg: #FFA500; 
             --hero-cta-text: #1A1A1A;
             --hero-cta-shadow: rgba(255, 140, 0, 0.3);
             --hero-cta-hover-shadow: rgba(255, 140, 0, 0.45);
         }
 
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: var(--primary-bg);
+            font-family: 'Inter', sans-serif; 
             color: var(--primary-text);
             position: relative; 
             overflow-x: hidden; 
+            /* Animated Gradient Background */
+            background: linear-gradient(270deg, var(--primary-bg-start), var(--primary-bg-mid1), var(--primary-bg-mid2), var(--primary-bg-end), var(--primary-bg-start));
+            background-size: 400% 400%; 
+            animation: animatedGradient 25s ease infinite;
         }
+
+        @keyframes animatedGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .section-title {
             font-weight: 600;
             margin-bottom: 2.5rem; 
@@ -67,11 +80,11 @@
             transition: color 0.3s ease, transform 0.2s ease-out;
         }
         .nav-link:hover {
-            color: var(--highlight-text-color); /* Changed to warm highlight */
+            color: var(--highlight-text-color); 
             transform: translateY(-2px);
         }
         .nav-link.active {
-            color: var(--highlight-text-color); /* Changed to warm highlight */
+            color: var(--highlight-text-color); 
             font-weight: 500;
         }
 
@@ -140,14 +153,34 @@
 
         .profile-image-container {
             perspective: 1000px;
+            position: relative; 
+        }
+        .profile-image-depth { 
+            position: absolute;
+            top: 5px; 
+            left: 5px; 
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.2); 
+            border-radius: 50%;
+            filter: blur(8px); 
+            z-index: -1; 
+            transform: scale(0.98); 
         }
         .profile-image {
             transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             transform-style: preserve-3d;
+            position: relative; 
+            z-index: 1;
         }
         .profile-image-container:hover .profile-image {
             transform: rotateY(180deg);
         }
+        .profile-image-container:hover .profile-image-depth {
+            transform: scale(0.98) rotateY(180deg) translateZ(-10px); 
+             transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
 
         .btn-github {
             background-color: rgba(255,255,255,0.07); 
@@ -164,7 +197,7 @@
         }
         .btn-github:hover {
             background-color: rgba(255,255,255,0.1); 
-            color: var(--highlight-text-color); /* Changed to warm highlight */
+            color: var(--highlight-text-color); 
             transform: scale(1.05) translateY(-2px);
             box-shadow: 0 6px 20px 0 rgba(0,0,0, 0.25);
         }
@@ -223,11 +256,18 @@
             opacity: 0.65; 
             pointer-events: none; 
             border-radius: 50%; 
+            animation: subtleGlowPulse 15s ease-in-out infinite alternate; 
+        }
+
+        @keyframes subtleGlowPulse {
+            0% { opacity: 0.60; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.70; transform: translate(-50%, -50%) scale(1.03); }
+            100% { opacity: 0.60; transform: translate(-50%, -50%) scale(1); }
         }
 
     </style>
 </head>
-<body class="antialiased bg-[var(--primary-bg)]">
+<body class="antialiased">
 
     <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 glass-effect-subtle shadow-lg"> 
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
@@ -258,10 +298,11 @@
         </div>
     </nav>
 
-    <header id="hero" class="min-h-screen flex items-center justify-center text-[var(--primary-text)] pt-20 bg-gradient-to-br from-black via-[var(--primary-bg)] to-black section-glow-container">
-        <div class="section-glow" style="left: 50%; top: 50%; width: 100%; height: 100%; opacity: 0.4; filter: blur(150px);"></div>
+    <header id="hero" class="min-h-screen flex items-center justify-center text-[var(--primary-text)] pt-20 section-glow-container">
+        <div class="section-glow" style="left: 50%; top: 50%; width: 120%; height: 120%; opacity: 0.35; filter: blur(180px);"></div> 
         <div class="text-center p-6 relative z-10">
             <div class="profile-image-container mx-auto mb-8 w-36 h-36 md:w-48 md:h-48">
+                <div class="profile-image-depth"></div> 
                 <img 
                     src="https://github.com/prakharindoria.png" 
                     alt="Prakhar Indoria" 
@@ -481,8 +522,8 @@
         </div>
     </section>
 
-    <section id="contact" class="py-16 md:py-24 bg-gradient-to-b from-black via-[var(--primary-bg)] to-black text-[var(--primary-text)]">
-        <div class="container mx-auto px-6 text-center fade-in-section">
+    <section id="contact" class="pt-8 md:pt-12 pb-16 md:pb-24 text-[var(--primary-text)] relative">
+        <div class="container mx-auto px-6 text-center fade-in-section relative z-10">
             <h2 class="section-title text-4xl">Get In Touch</h2>
             <p class="text-lg text-[var(--secondary-text)] mb-8 max-w-xl mx-auto">
                 I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing. Feel free to reach out!
@@ -502,7 +543,7 @@
         </div>
     </section>
 
-    <footer class="bg-black text-[var(--secondary-text)] opacity-70 py-8 text-center"> 
+    <footer class="bg-black text-[var(--secondary-text)] opacity-70 py-8 text-center">
         <div class="container mx-auto px-6">
             <p>&copy; <span id="currentYear"></span> Prakhar Indoria. All Rights Reserved.</p>
             <p class="text-sm opacity-70">Designed with <i class="fas fa-heart text-[var(--highlight-text-color)] opacity-70"></i> and Tailwind CSS.</p>
