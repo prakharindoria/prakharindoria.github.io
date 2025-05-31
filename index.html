@@ -58,6 +58,7 @@
             100% { background-position: 0% 50%; }
         }
         
+
         .section-title {
             font-weight: 600; margin-bottom: 2.5rem; text-align: center; color: var(--primary-text);
             opacity: 0; transform: translateY(30px);
@@ -69,9 +70,9 @@
         .nav-link.active { color: var(--highlight-text-color); font-weight: 500; }
 
         .glass-effect-subtle { 
-            background-color: var(--glass-fill-subtle); 
-            backdrop-filter: blur(var(--glass-blur-subtle)) saturate(180%); 
-            border: 1px solid var(--glass-border-subtle); 
+            background-color: rgba(255, 255, 255, 0.06); 
+            backdrop-filter: blur(40px) saturate(180%); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
             -webkit-backdrop-filter: blur(var(--glass-blur-subtle)) saturate(160%); 
             box-shadow: 0 8px 32px 0 var(--glass-shadow-subtle);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
@@ -80,14 +81,15 @@
         .glass-effect-subtle:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 12px 40px 0 rgba(0,0,0, 0.45); background-color: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.07); }
         
         .prominent-glass-card { 
-            background-color: var(--prominent-glass-fill); 
-            backdrop-filter: blur(var(--prominent-glass-blur)) saturate(200%); 
+            background-color: rgba(255, 255, 255, 0.08); 
+            backdrop-filter: blur(60px) saturate(200%); 
             -webkit-backdrop-filter: blur(var(--prominent-glass-blur)) saturate(180%);
-            border: 1px solid var(--prominent-glass-border); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
             box-shadow: 0 10px 50px var(--prominent-glass-shadow);
             border-radius: 30px; position: relative; z-index: 10;
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
         }
+
       
         .prominent-glass-card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 15px 60px rgba(0,0,0,0.65); border-color: rgba(255,255,255,0.1); }
 
@@ -118,6 +120,7 @@
         .btn-github .fab { transition: transform 0.3s ease; margin-right: 0.5rem; }
         .btn-github:hover .fab { transform: scale(1.1); }
         
+        /* Scrollbar Styles - Replaced to hide scrollbar */
         ::-webkit-scrollbar {
             display: none; /* Hides scrollbar for WebKit browsers */
         }
@@ -125,22 +128,8 @@
         .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
         .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
         .section-glow-container { position: relative; }
-        .section-glow { 
-            position: absolute; 
-            top: 40%; left: 70%; /* Default, often overridden by inline styles */
-            width: 180%; height: 180%; 
-            background: radial-gradient(circle at center, var(--glow-color-center) 0%, var(--glow-color-mid) 30%, var(--glow-color-outer) 50%, rgba(255, 180, 0, 0) 65% ); 
-            transform: translate(-50%, -50%); 
-            filter: blur(140px); 
-            z-index: 0; opacity: 0.65; 
-            pointer-events: none; border-radius: 50%; 
-            animation: subtleGlowPulse 15s ease-in-out infinite alternate; 
-        }
-        @keyframes subtleGlowPulse { 
-            0% { opacity: 0.60; transform: translate(-50%, -50%) scale(1); } 
-            50% { opacity: 0.70; transform: translate(-50%, -50%) scale(1.03); } 
-            100% { opacity: 0.60; transform: translate(-50%, -50%) scale(1); } 
-        }
+        .section-glow { position: absolute; top: 40%; left: 70%; width: 180%; height: 180%; background: radial-gradient(circle at center, var(--glow-color-center) 0%, var(--glow-color-mid) 30%, var(--glow-color-outer) 50%, rgba(255, 180, 0, 0) 65% ); transform: translate(-50%, -50%); filter: blur(140px); z-index: 0; opacity: 0.65; pointer-events: none; border-radius: 50%; animation: subtleGlowPulse 15s ease-in-out infinite alternate; }
+        @keyframes subtleGlowPulse { 0% { opacity: 0.60; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 0.70; transform: translate(-50%, -50%) scale(1.03); } 100% { opacity: 0.60; transform: translate(-50%, -50%) scale(1); } }
         
         /* Parallax Elements */
         .parallax-element {
@@ -149,72 +138,27 @@
             border-radius: 50%;
             opacity: 0.08;
             pointer-events: none;
-            transition: opacity 0.5s ease-out, transform 0.3s ease-out; /* Added transform transition */
+            transition: opacity 0.5s ease-out; 
         }
         #parallax-1 {
-            width: 300px; height: 300px; /* Reduced base size */
+            width: 400px; height: 400px;
             background: radial-gradient(circle, rgba(255,165,0,0.15) 0%, transparent 70%);
             top: 10vh; left: 5vw;
-            filter: blur(50px); /* Slightly reduced blur */
+            filter: blur(60px);
         }
         #parallax-2 {
-            width: 200px; height: 200px; /* Reduced base size */
+            width: 300px; height: 300px;
             background: radial-gradient(circle, var(--accent-color, #FF8C00), transparent 70%);
              opacity: 0.05;
             top: 60vh; right: 10vw;
-            filter: blur(40px); /* Slightly reduced blur */
+            filter: blur(50px);
         }
          #parallax-3 { 
-            width: 150px; height: 150px; /* Reduced base size */
+            width: 250px; height: 250px;
             background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 60%);
             border: 1px solid rgba(255,255,255,0.03);
             top: 150vh; left: 15vw; 
-            filter: blur(15px); /* Slightly reduced blur */
-        }
-
-        /* Media query for smaller screens (mobile optimization) */
-        @media (max-width: 767px) { /* Tailwind's md breakpoint is 768px, this targets below that */
-            #parallax-1 {
-                width: 200px; height: 200px;
-                filter: blur(40px);
-                opacity: 0.06;
-            }
-            #parallax-2 {
-                width: 150px; height: 150px;
-                filter: blur(30px);
-                opacity: 0.04;
-            }
-            #parallax-3 {
-                /* Optionally hide the third parallax on very small screens or make it smaller */
-                width: 100px; height: 100px;
-                filter: blur(10px);
-                opacity: 0.03;
-            }
-            .section-glow { /* Reduce intensity of general glows on mobile */
-                filter: blur(80px) !important; /* Use !important to override inline styles if necessary, or ensure specificity */
-                opacity: 0.4 !important;
-            }
-            /* Specifically target hero glow if its inline style is too strong */
-            #hero .section-glow {
-                filter: blur(100px) !important; /* Example: further reduce hero glow */
-                opacity: 0.25 !important;
-                width: 150% !important; /* Adjust size if needed */
-                height: 150% !important;
-            }
-
-            /* Adjust glass effect blurs for mobile if they cause performance issues */
-            .glass-effect-subtle {
-                backdrop-filter: blur(20px) saturate(160%); 
-                -webkit-backdrop-filter: blur(20px) saturate(160%); 
-            }
-            .prominent-glass-card {
-                backdrop-filter: blur(30px) saturate(180%); 
-                -webkit-backdrop-filter: blur(30px) saturate(180%);
-            }
-            .tag-glass {
-                backdrop-filter: blur(5px) saturate(120%); 
-                -webkit-backdrop-filter: blur(5px) saturate(120%);
-            }
+            filter: blur(20px);
         }
     </style>
 </head>
@@ -223,6 +167,7 @@
     <div id="parallax-1" class="parallax-element" data-speed="0.2"></div>
     <div id="parallax-2" class="parallax-element" data-speed="0.5"></div>
     <div id="parallax-3" class="parallax-element" data-speed="0.35"></div>
+
 
     <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 glass-effect-subtle shadow-lg"> 
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
@@ -277,7 +222,8 @@
     </header>
 
     <section id="about" class="py-16 md:py-24 section-glow-container"> 
-        <div class="section-glow"></div> <div class="container mx-auto px-6 relative z-10"> 
+        <div class="section-glow"></div> 
+        <div class="container mx-auto px-6 relative z-10"> 
             <h2 class="section-title text-4xl">About Me</h2>
             <div class="max-w-4xl mx-auto prominent-glass-card p-8 md:p-10 fade-in-section">
                 <div class="text-lg text-[var(--primary-text)] space-y-6">
@@ -471,6 +417,7 @@
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -507,14 +454,12 @@
         document.addEventListener('DOMContentLoaded', function () {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            // Ensure elements exist before adding event listeners
             if(mobileMenuButton && mobileMenu){
                 mobileMenuButton.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
                 });
             }
 
-            // Close mobile menu when a link is clicked
             document.querySelectorAll('#mobile-menu a').forEach(link => {
                 link.addEventListener('click', () => {
                     if(mobileMenu) mobileMenu.classList.add('hidden');
@@ -523,9 +468,10 @@
             
             const navbar = document.getElementById('navbar');
             const parallaxElements = document.querySelectorAll('.parallax-element');
-            
+            // Removed scrollTimeout as it's not used with requestAnimationFrame
+
             function handleScroll() {
-                // Navbar shadow based on scroll position
+                // Navbar shadow
                 if (navbar) {
                     if (window.scrollY > 50) {
                         navbar.classList.add('shadow-xl'); 
@@ -536,20 +482,18 @@
                     }
                 }
 
-                // Parallax effect for background elements
+                // Parallax effect
                 const scrollValue = window.pageYOffset;
                 parallaxElements.forEach(el => {
                     const speed = parseFloat(el.dataset.speed) || 0.5; 
-                    if (speed !== 0) { // Avoid division by zero or no movement
-                        // The 0.1 factor makes the parallax effect very subtle
+                    if (speed !== 0) { 
                         el.style.transform = `translateY(${scrollValue * speed * 0.1}px)`; 
                     }
                 });
             }
             
-            // Initial setup and scroll listener for navbar and parallax
             if(navbar || parallaxElements.length > 0) {
-                // Set initial navbar shadow state
+                // Initial call for navbar shadow
                 if (navbar && window.scrollY > 50) {
                     navbar.classList.add('shadow-xl'); 
                     navbar.classList.remove('shadow-lg');
@@ -558,7 +502,7 @@
                     navbar.classList.remove('shadow-xl');
                 }
                 
-                // Use requestAnimationFrame for smoother scroll animations
+                // Throttled scroll listener using requestAnimationFrame
                 let ticking = false;
                 window.addEventListener('scroll', function() {
                     if (!ticking) {
@@ -569,27 +513,26 @@
                         ticking = true;
                     }
                 });
-                // Apply initial parallax positions
+                // Initial parallax position
                 handleScroll(); 
             }
 
-            // Set current year in the footer
+
             const currentYearElement = document.getElementById('currentYear');
             if(currentYearElement) currentYearElement.textContent = new Date().getFullYear();
 
-            // Intersection Observer for fade-in animations on scroll
             const observerTargets = document.querySelectorAll('.fade-in-section, .section-title');
             const options = {
-                root: null, // Use the viewport as the root
+                root: null,
                 rootMargin: '0px',
                 threshold: 0.1 // Trigger when 10% of the element is visible
             };
 
-            const observer = new IntersectionObserver((entries, observerInstance) => {
+            const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observerInstance.unobserve(entry.target); // Stop observing once visible to save resources
+                        observer.unobserve(entry.target); // Stop observing once visible
                     }
                 });
             }, options);
@@ -598,32 +541,34 @@
                 observer.observe(target);
             });
 
-            // Smooth scroll for anchor links, considering fixed navbar height
+
+            // Smooth scroll for anchor links, considering navbar height
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     const targetId = this.getAttribute('href');
-                    
-                    if (targetId && targetId.length > 1) { // Check if it's a valid internal link (e.g., "#about")
+                    // Prevent default only if it's a valid internal link (not just "#")
+                    // and it's a main navigation link or mobile menu link triggering scroll
+                    if (targetId && targetId.length > 1) { 
                         const targetElement = document.querySelector(targetId);
                         if (targetElement) {
                             e.preventDefault(); // Prevent default jump
                             
                             const navbarHeight = document.getElementById('navbar') ? document.getElementById('navbar').offsetHeight : 0;
-                            const elementPosition = targetElement.getBoundingClientRect().top; // Position relative to viewport
-                            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight; // Calculate actual scroll position
+                            const elementPosition = targetElement.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
                             
                             window.scrollTo({
                                 top: offsetPosition,
                                 behavior: "smooth"
                             });
 
-                            // If it's a mobile menu link, close the menu after navigation
+                            // If it's a mobile menu link, close the menu
                             if (this.closest('#mobile-menu')) {
                                 const mobileMenu = document.getElementById('mobile-menu');
                                 if (mobileMenu) mobileMenu.classList.add('hidden');
                             }
                         }
-                    } else if (targetId === '#') { // Handle href="#" to scroll to the top of the page
+                    } else if (targetId === '#') { // Handle href="#" to scroll to top
                         e.preventDefault();
                         window.scrollTo({ top: 0, behavior: "smooth" });
                          // If it's a mobile menu link, close the menu
