@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prakhar Indoria - Software Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             /* Deep Dark Theme Variables */
-            --primary-bg: #0A0A0A; 
+            --primary-bg: #0A0A0A;
             --glass-fill-subtle: rgba(255, 255, 255, 0.06);
             --glass-border-subtle: rgba(255, 255, 255, 0.08);
             --glass-shadow-subtle: rgba(0, 0, 0, 0.35);
             --glass-blur-subtle: 40px;
             --prominent-glass-fill: rgba(255, 255, 255, 0.08);
             --prominent-glass-border: rgba(255, 255, 255, 0.1);
-            --prominent-glass-shadow: rgba(0, 0, 0, 0.55); 
+            --prominent-glass-shadow: rgba(0, 0, 0, 0.55);
             --prominent-glass-blur: 60px;
-            --primary-text: #F5F5F5; 
-            --secondary-text: #A0A0A0; 
-            --accent-color: #FF8C00; 
-            --highlight-text-color: rgba(255, 165, 0, 0.95); 
-            --glow-color-center: rgba(255, 100, 0, 0.45); 
+            --primary-text: #F5F5F5;
+            --secondary-text: #A0A0A0;
+            --accent-color: #FF8C00;
+            --highlight-text-color: rgba(255, 165, 0, 0.95);
+            --glow-color-center: rgba(255, 100, 0, 0.45);
             --glow-color-mid: rgba(255, 140, 0, 0.2);
             --glow-color-outer: rgba(255, 180, 0, 0.08);
-            --hero-cta-bg: #FF8C00; 
-            --hero-cta-hover-bg: #FFA500; 
+            --hero-cta-bg: #FF8C00;
+            --hero-cta-hover-bg: #FFA500;
             --hero-cta-text: #1A1A1A;
             --hero-cta-shadow: rgba(255, 140, 0, 0.3);
             --hero-cta-hover-shadow: rgba(255, 140, 0, 0.45);
@@ -36,140 +37,426 @@
 
         html {
             scroll-behavior: smooth;
-            scrollbar-width: none; /* For Firefox */
+            scrollbar-width: none;
+            /* For Firefox */
+            overflow-x: hidden;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Sora', sans-serif;
+            /* Fallback font */
             background-color: var(--primary-bg);
             color: var(--primary-text);
-            position: relative; 
-            overflow-x: hidden; 
+            position: relative;
+            overflow-x: hidden;
             /* Animated Gradient Background */
             background: linear-gradient(135deg, var(--primary-bg-start, #0D0D0D), var(--primary-bg-mid1, #1A1A2E), var(--primary-bg-mid2, #16213E), var(--primary-bg-end, #0F3460), var(--primary-bg-start, #0D0D0D));
-            background-size: 400% 400%; 
+            background-size: 400% 400%;
             animation: animatedGradient 20s ease infinite;
-            -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+            -ms-overflow-style: none;
+            /* For Internet Explorer and Edge */
         }
 
         @keyframes animatedGradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
-        
 
         .section-title {
-            font-weight: 600; margin-bottom: 2.5rem; text-align: center; color: var(--primary-text);
-            opacity: 0; transform: translateY(30px);
+            font-family: 'Inter', 'Sora', sans-serif;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            color: var(--primary-text);
+            opacity: 0;
+            transform: translateY(30px);
             transition: opacity 0.6s ease-out, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        .section-title.is-visible { opacity: 1; transform: translateY(0); }
-        .nav-link { color: var(--primary-text); transition: color 0.3s ease, transform 0.2s ease-out; }
-        .nav-link:hover { color: var(--highlight-text-color); transform: translateY(-2px); }
-        .nav-link.active { color: var(--highlight-text-color); font-weight: 500; }
 
-        .glass-effect-subtle { 
-            background-color: rgba(255, 255, 255, 0.06); 
-            backdrop-filter: blur(40px) saturate(180%); 
-            border: 1px solid rgba(255, 255, 255, 0.08); 
-            -webkit-backdrop-filter: blur(var(--glass-blur-subtle)) saturate(160%); 
-            box-shadow: 0 8px 32px 0 var(--glass-shadow-subtle);
+        .section-title.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', 'Sora', sans-serif;
+            font-weight: 700;
+        }
+
+        .nav-link {
+            color: var(--primary-text);
+            transition: color 0.3s ease, transform 0.2s ease-out;
+        }
+
+        .nav-link:hover {
+            color: var(--highlight-text-color);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: var(--highlight-text-color);
+            font-weight: 500;
+        }
+
+        .glass-effect-subtle {
+            position: relative;
+            background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+            backdrop-filter: blur(20px) saturate(140%);
+            -webkit-backdrop-filter: blur(20px) saturate(140%);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18), 0 1.5px 8px 0 rgba(0,0,0,0.08);
+            overflow: hidden;
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
         }
-   
-        .glass-effect-subtle:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 12px 40px 0 rgba(0,0,0, 0.45); background-color: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.07); }
-        
-        .prominent-glass-card { 
-            background-color: rgba(255, 255, 255, 0.08); 
-            backdrop-filter: blur(60px) saturate(200%); 
-            -webkit-backdrop-filter: blur(var(--prominent-glass-blur)) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            box-shadow: 0 10px 50px var(--prominent-glass-shadow);
-            border-radius: 30px; position: relative; z-index: 10;
+        .glass-effect-subtle::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: url('https://www.transparenttextures.com/patterns/noise.png');
+            opacity: 0.07;
+            z-index: 1;
+        }
+        .glass-effect-subtle > * {
+            position: relative;
+            z-index: 2;
+        }
+        .glass-effect-subtle:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 8px 36px 0 rgba(0,0,0,0.22), 0 2px 12px 0 rgba(0,0,0,0.10);
+            background: linear-gradient(135deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.03) 100%);
+            border-color: rgba(255, 255, 255, 0.13);
+        }
+
+        .prominent-glass-card {
+            position: relative;
+            background: linear-gradient(120deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.03) 100%);
+            backdrop-filter: blur(28px) saturate(150%);
+            -webkit-backdrop-filter: blur(28px) saturate(150%);
+            border: 1.5px solid rgba(255, 255, 255, 0.13);
+            box-shadow: 0 8px 36px 0 rgba(0,0,0,0.20), 0 2px 12px 0 rgba(0,0,0,0.10);
+            border-radius: 30px;
+            z-index: 10;
+            overflow: hidden;
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
         }
+        .prominent-glass-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: url('https://www.transparenttextures.com/patterns/noise.png');
+            opacity: 0.05;
+            z-index: 1;
+        }
+        .prominent-glass-card > * {
+            position: relative;
+            z-index: 2;
+        }
+        .prominent-glass-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 16px 48px 0 rgba(0,0,0,0.24), 0 4px 16px 0 rgba(0,0,0,0.13);
+            border-color: rgba(255, 255, 255, 0.16);
+            background: linear-gradient(120deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.05) 100%);
+        }
 
-      
-        .prominent-glass-card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 15px 60px rgba(0,0,0,0.65); border-color: rgba(255,255,255,0.1); }
-
-        .tag-glass { 
-            background-color: rgba(255, 255, 255, 0.04); 
-            backdrop-filter: blur(10px) saturate(130%); 
+        .tag-glass {
+            background-color: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(10px) saturate(130%);
             -webkit-backdrop-filter: blur(10px) saturate(130%);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            color: var(--secondary-text); 
+            color: var(--secondary-text);
             transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform-style: preserve-3d; 
-        }
-        .tag-glass:hover { transform: scale(1.1) rotateX(10deg) rotateY(5deg) translateY(-3px); background-color: rgba(255, 255, 255, 0.07); color: var(--primary-text); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-        
-        .btn-hero-cta {
-            background-color: var(--hero-cta-bg); color: var(--hero-cta-text); font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.75rem;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.1); box-shadow: 0 4px 15px var(--hero-cta-shadow), 0 0 0 1px rgba(255,255,255,0.05) inset;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .btn-hero-cta:hover { background-color: var(--hero-cta-hover-bg); transform: scale(1.05) translateY(-3px); box-shadow: 0 8px 25px var(--hero-cta-hover-shadow), 0 0 0 1px rgba(255,255,255,0.1) inset; }
-        .profile-image-container { perspective: 1000px; position: relative; }
-        .profile-image-depth { position: absolute; top: 5px; left: 5px; width: 100%; height: 100%; background-color: rgba(0,0,0,0.2); border-radius: 50%; filter: blur(8px); z-index: -1; transform: scale(0.98); }
-        .profile-image { transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); transform-style: preserve-3d; position: relative; z-index: 1; }
-        .profile-image-container:hover .profile-image { transform: rotateY(180deg); }
-        .profile-image-container:hover .profile-image-depth { transform: scale(0.98) rotateY(180deg) translateZ(-10px); transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-        .btn-github { background-color: rgba(255,255,255,0.07); color: var(--primary-text); padding: 0.75rem 1.5rem; border-radius: 0.5rem; transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, color 0.3s ease; display: inline-flex; align-items: center; text-decoration: none; font-weight: 500; border: 1px solid rgba(255,255,255,0.09); box-shadow: 0 4px 15px 0 rgba(0,0,0, 0.2); }
-        .btn-github:hover { background-color: rgba(255,255,255,0.1); color: var(--highlight-text-color); transform: scale(1.05) translateY(-2px); box-shadow: 0 6px 20px 0 rgba(0,0,0, 0.25); }
-        .btn-github .fab { transition: transform 0.3s ease; margin-right: 0.5rem; }
-        .btn-github:hover .fab { transform: scale(1.1); }
-        
-        /* Scrollbar Styles - Replaced to hide scrollbar */
-        ::-webkit-scrollbar {
-            display: none; /* Hides scrollbar for WebKit browsers */
+            transform-style: preserve-3d;
         }
 
-        .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
-        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
-        .section-glow-container { position: relative; }
-        .section-glow { position: absolute; top: 40%; left: 70%; width: 180%; height: 180%; background: radial-gradient(circle at center, var(--glow-color-center) 0%, var(--glow-color-mid) 30%, var(--glow-color-outer) 50%, rgba(255, 180, 0, 0) 65% ); transform: translate(-50%, -50%); filter: blur(140px); z-index: 0; opacity: 0.65; pointer-events: none; border-radius: 50%; animation: subtleGlowPulse 15s ease-in-out infinite alternate; }
-        @keyframes subtleGlowPulse { 0% { opacity: 0.60; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 0.70; transform: translate(-50%, -50%) scale(1.03); } 100% { opacity: 0.60; transform: translate(-50%, -50%) scale(1); } }
-        
+        .tag-glass:hover {
+            transform: scale(1.1) rotateX(10deg) rotateY(5deg) translateY(-3px);
+            background-color: rgba(255, 255, 255, 0.07);
+            color: var(--primary-text);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-hero-cta {
+            background-color: var(--hero-cta-bg);
+            color: var(--hero-cta-text);
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 0.75rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px var(--hero-cta-shadow), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-hero-cta:hover {
+            background-color: var(--hero-cta-hover-bg);
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 8px 25px var(--hero-cta-hover-shadow), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+        }
+
+        .profile-image-container {
+            perspective: 1000px;
+            position: relative;
+        }
+
+        .profile-image-depth {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            filter: blur(8px);
+            z-index: -1;
+            transform: scale(0.98);
+        }
+
+        .profile-image {
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform-style: preserve-3d;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-image-container:hover .profile-image {
+            transform: rotateY(180deg);
+        }
+
+        .profile-image-container:hover .profile-image-depth {
+            transform: scale(0.98) rotateY(180deg) translateZ(-10px);
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .btn-github {
+            background-color: rgba(255, 255, 255, 0.07);
+            color: var(--primary-text);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-github:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--highlight-text-color);
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-github .fab {
+            transition: transform 0.3s ease;
+            margin-right: 0.5rem;
+        }
+
+        .btn-github:hover .fab {
+            transform: scale(1.1);
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+            /* Hides scrollbar for WebKit browsers */
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-glow-container {
+            position: relative;
+        }
+
+        .section-glow {
+            position: absolute;
+            top: 40%;
+            left: 70%;
+            /* Default, often overridden by inline styles */
+            width: 180%;
+            height: 180%;
+            background: radial-gradient(circle at center, var(--glow-color-center) 0%, var(--glow-color-mid) 30%, var(--glow-color-outer) 50%, rgba(255, 180, 0, 0) 65%);
+            transform: translate(-50%, -50%);
+            filter: blur(140px);
+            z-index: 0;
+            opacity: 0.65;
+            pointer-events: none;
+            border-radius: 50%;
+            animation: subtleGlowPulse 15s ease-in-out infinite alternate;
+            max-width: 100vw;
+            max-height: 100vh;
+        }
+
+        @keyframes subtleGlowPulse {
+            0% {
+                opacity: 0.60;
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                opacity: 0.70;
+                transform: translate(-50%, -50%) scale(1.03);
+            }
+
+            100% {
+                opacity: 0.60;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
         /* Parallax Elements */
         .parallax-element {
-            position: fixed; 
-            z-index: -10; 
+            position: fixed;
+            z-index: -10;
             border-radius: 50%;
             opacity: 0.08;
             pointer-events: none;
-            transition: opacity 0.5s ease-out; 
+            transition: opacity 0.5s ease-out, transform 0.3s ease-out;
+            /* Added transform transition */
+            max-width: 100vw;
+            max-height: 100vh;
         }
+
         #parallax-1 {
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(255,165,0,0.15) 0%, transparent 70%);
-            top: 10vh; left: 5vw;
-            filter: blur(60px);
-        }
-        #parallax-2 {
-            width: 300px; height: 300px;
-            background: radial-gradient(circle, var(--accent-color, #FF8C00), transparent 70%);
-             opacity: 0.05;
-            top: 60vh; right: 10vw;
+            width: 300px;
+            height: 300px;
+            /* Reduced base size */
+            background: radial-gradient(circle, rgba(255, 165, 0, 0.15) 0%, transparent 70%);
+            top: 10vh;
+            left: 5vw;
             filter: blur(50px);
+            /* Slightly reduced blur */
         }
-         #parallax-3 { 
-            width: 250px; height: 250px;
-            background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 60%);
-            border: 1px solid rgba(255,255,255,0.03);
-            top: 150vh; left: 15vw; 
-            filter: blur(20px);
+
+        #parallax-2 {
+            width: 200px;
+            height: 200px;
+            /* Reduced base size */
+            background: radial-gradient(circle, var(--accent-color, #FF8C00), transparent 70%);
+            opacity: 0.05;
+            top: 60vh;
+            right: 10vw;
+            filter: blur(40px);
+            /* Slightly reduced blur */
+        }
+
+        #parallax-3 {
+            width: 150px;
+            height: 150px;
+            /* Reduced base size */
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.02) 0%, transparent 60%);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            top: 150vh;
+            left: 15vw;
+            filter: blur(15px);
+            /* Slightly reduced blur */
+        }
+
+        /* Media query for smaller screens (mobile optimization) */
+        @media (max-width: 767px) {
+
+            /* Tailwind's md breakpoint is 768px, this targets below that */
+            #parallax-1 {
+                width: 200px;
+                height: 200px;
+                filter: blur(40px);
+                opacity: 0.06;
+            }
+
+            #parallax-2 {
+                width: 150px;
+                height: 150px;
+                filter: blur(30px);
+                opacity: 0.04;
+            }
+
+            #parallax-3 {
+                /* Optionally hide the third parallax on very small screens or make it smaller */
+                width: 100px;
+                height: 100px;
+                filter: blur(10px);
+                opacity: 0.03;
+            }
+
+            .section-glow {
+                /* Reduce intensity of general glows on mobile */
+                filter: blur(80px) !important;
+                /* Use !important to override inline styles if necessary, or ensure specificity */
+                opacity: 0.4 !important;
+            }
+
+            /* Specifically target hero glow if its inline style is too strong */
+            #hero .section-glow {
+                filter: blur(100px) !important;
+                /* Example: further reduce hero glow */
+                opacity: 0.25 !important;
+                width: 150% !important;
+                /* Adjust size if needed */
+                height: 150% !important;
+            }
+
+            /* Adjust glass effect blurs for mobile if they cause performance issues */
+            .glass-effect-subtle {
+                backdrop-filter: blur(20px) saturate(160%);
+                -webkit-backdrop-filter: blur(20px) saturate(160%);
+            }
+
+            .prominent-glass-card {
+                backdrop-filter: blur(30px) saturate(180%);
+                -webkit-backdrop-filter: blur(30px) saturate(180%);
+            }
+
+            .tag-glass {
+                backdrop-filter: blur(5px) saturate(120%);
+                -webkit-backdrop-filter: blur(5px) saturate(120%);
+            }
+        }
+
+        .about-card {
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .about-card:hover {
+            transform: scale(1.035) translateY(-8px);
+            box-shadow: 0 10px 32px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(255, 140, 0, 0.07), 0 0 16px 0 rgba(255, 180, 0, 0.06);
+        }
+
+        @keyframes profile-spin-initial {
+            0% { transform: rotateY(0deg); }
+            80% { transform: rotateY(360deg); }
+            100% { transform: rotateY(0deg); }
+        }
+        .profile-spin-initial {
+            animation: profile-spin-initial 2.6s cubic-bezier(0.22, 1, 0.36, 1);
         }
     </style>
 </head>
+
 <body class="antialiased">
 
     <div id="parallax-1" class="parallax-element" data-speed="0.2"></div>
     <div id="parallax-2" class="parallax-element" data-speed="0.5"></div>
     <div id="parallax-3" class="parallax-element" data-speed="0.35"></div>
 
-
-    <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 glass-effect-subtle shadow-lg"> 
+    <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 glass-effect-subtle shadow-lg">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-[var(--primary-text)]">Prakhar Indoria</a>
             <div class="flex items-center space-x-4">
@@ -183,7 +470,11 @@
                 </div>
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-[var(--primary-text)] focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -198,22 +489,21 @@
         </div>
     </nav>
 
-    <header id="hero" class="min-h-screen flex items-center justify-center text-[var(--primary-text)] pt-20 section-glow-container">
-        <div class="section-glow" style="left: 50%; top: 50%; width: 120%; height: 120%; opacity: 0.35; filter: blur(180px);"></div> 
+    <header id="hero"
+        class="min-h-screen flex items-center justify-center text-[var(--primary-text)] pt-20 section-glow-container">
+        <div class="section-glow"
+            style="left: 50%; top: 50%; width: 120%; height: 120%; opacity: 0.35; filter: blur(180px);"></div>
         <div class="text-center p-6 relative z-10">
             <div class="profile-image-container mx-auto mb-8 w-36 h-36 md:w-48 md:h-48">
-                <div class="profile-image-depth"></div> 
-                <img 
-                    src="https://github.com/prakharindoria.png" 
-                    alt="Prakhar Indoria" 
+                <div class="profile-image-depth"></div>
+                <img src="https://github.com/prakharindoria.png" alt="Prakhar Indoria"
                     class="profile-image w-full h-full rounded-full border-4 border-[rgba(255,255,255,0.1)] shadow-xl object-cover"
-                    onerror="this.onerror=null; this.src='https://placehold.co/150x150/0A0A0A/F5F5F5?text=PI';" 
-                >
+                    onerror="this.onerror=null; this.src='https://placehold.co/150x150/0A0A0A/F5F5F5?text=PI';">
             </div>
             <h1 class="text-4xl md:text-6xl font-bold mb-4">Prakhar Indoria</h1>
             <p class="text-xl md:text-2xl text-[var(--secondary-text)] mb-2">Software Engineer</p>
             <p class="text-lg md:text-xl text-[var(--secondary-text)] opacity-80 mb-8 max-w-2xl mx-auto">
-                Tech Enthusiast | Passionate Developer 
+                Tech Enthusiast | Passionate Developer
             </p>
             <a href="#about" class="btn-hero-cta font-semibold py-3 px-8 rounded-lg text-lg">
                 Learn More <i class="fas fa-arrow-down ml-2"></i>
@@ -221,26 +511,38 @@
         </div>
     </header>
 
-    <section id="about" class="py-16 md:py-24 section-glow-container"> 
-        <div class="section-glow"></div> 
-        <div class="container mx-auto px-6 relative z-10"> 
+    <section id="about" class="py-16 md:py-24 section-glow-container">
+        <div class="section-glow"></div>
+        <div class="container mx-auto px-6 relative z-10">
             <h2 class="section-title text-4xl">About Me</h2>
-            <div class="max-w-4xl mx-auto prominent-glass-card p-8 md:p-10 fade-in-section">
+            <div class="max-w-4xl mx-auto prominent-glass-card about-card p-8 md:p-10 fade-in-section">
                 <div class="text-lg text-[var(--primary-text)] space-y-6">
                     <div class="space-y-4 text-left md:text-justify">
                         <p>
-                            A Software Engineer at Tata Consultancy Services (TCS) with a Bachelor of Technology in Computer Science Engineering, my professional journey is fueled by a profound enthusiasm for technology and a steadfast commitment to continuous learning and innovation.
+                            A Software Engineer at Tata Consultancy Services (TCS) with a Bachelor of Technology in
+                            Computer Science Engineering, my professional journey is fueled by a profound enthusiasm for
+                            technology and a steadfast commitment to continuous learning and innovation.
                         </p>
                         <p>
-                            As a Problem Solver, I am always seeking avenues to enhance processes and deliver high-quality, impactful software solutions. My proactive engagement with the ever-evolving tech landscape is evident in my work ethic and clearly defined learning objectives.
+                            As a Problem Solver, I am always seeking avenues to enhance processes and deliver
+                            high-quality, impactful software solutions. My proactive engagement with the ever-evolving
+                            tech landscape is evident in my work ethic and clearly defined learning objectives.
                         </p>
                         <p>
-                            Currently, I'm focused on deepening my expertise in <strong class="font-semibold text-[var(--highlight-text-color)]">Spring Boot</strong>, while actively exploring the realms of <strong class="font-semibold text-[var(--highlight-text-color)]">AI</strong> and foundational <strong class="font-semibold text-[var(--highlight-text-color)]">Cloud Concepts</strong>. I am passionate about new age tech and always open to engaging discussions about technology, nature, or history.
+                            Currently, I'm focused on deepening my expertise in <strong
+                                class="font-semibold text-[var(--highlight-text-color)]">Spring Boot</strong>, while
+                            actively exploring the realms of <strong
+                                class="font-semibold text-[var(--highlight-text-color)]">AI</strong> and foundational
+                            <strong class="font-semibold text-[var(--highlight-text-color)]">Cloud Concepts</strong>. I
+                            am passionate about new age tech and always open to engaging discussions about technology,
+                            nature, or history.
                         </p>
                     </div>
-                    <div class="mt-8 md:mt-6 p-6 bg-[rgba(255,255,255,0.03)] rounded-lg shadow-inner border border-[rgba(255,255,255,0.07)]">
-                         <p class="text-md text-[var(--secondary-text)] italic text-center">
-                            "Fun fact: I architect solutions like I plan mountain treks—mapping every possible route, preparing for the unexpected, and enjoying the climb to the summit." 😉
+                    <div
+                        class="mt-8 md:mt-6 p-6 bg-[rgba(255,255,255,0.03)] rounded-lg shadow-inner border border-[rgba(255,255,255,0.07)]">
+                        <p class="text-md text-[var(--secondary-text)] italic text-center">
+                            "Fun fact: I architect solutions like I plan mountain treks—mapping every possible route,
+                            preparing for the unexpected, and enjoying the climb to the summit." 😉
                         </p>
                     </div>
                 </div>
@@ -249,7 +551,8 @@
     </section>
 
     <section id="experience" class="py-16 md:py-24 section-glow-container">
-        <div class="section-glow" style="opacity: 0.5; left: 30%; top: 70%; filter: blur(120px); width: 160%; height: 160%;"></div>
+        <div class="section-glow"
+            style="opacity: 0.5; left: 30%; top: 70%; filter: blur(120px); width: 160%; height: 160%;"></div>
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="section-title text-4xl">Experience</h2>
             <div class="max-w-4xl mx-auto space-y-10 fade-in-section">
@@ -262,7 +565,9 @@
                     </div>
                     <div class="md:w-2/3">
                         <p class="text-[var(--primary-text)] leading-relaxed text-justify">
-                            Developing robust software applications for diverse clients. My role involves a strong focus on delivering high-quality, efficient solutions and continuously seeking opportunities for process improvement and workflow optimization within a dynamic team environment.
+                            Developing robust software applications for diverse clients. My role involves a strong focus
+                            on delivering high-quality, efficient solutions and continuously seeking opportunities for
+                            process improvement and workflow optimization within a dynamic team environment.
                         </p>
                     </div>
                 </div>
@@ -270,12 +575,14 @@
                     <div class="md:w-1/3 mb-4 md:mb-0 md:pr-8">
                         <h3 class="text-xl font-semibold text-[var(--highlight-text-color)] opacity-90">A2 Infotech</h3>
                         <p class="text-[var(--secondary-text)]">Software Developer</p>
-                        <p class="text-sm text-[var(--secondary-text)] opacity-70">2021 (Short tenure)</p> 
+                        <p class="text-sm text-[var(--secondary-text)] opacity-70">2021 (Short tenure)</p>
                         <p class="text-sm text-[var(--secondary-text)] opacity-70">Bhopal, India</p>
                     </div>
                     <div class="md:w-2/3">
                         <p class="text-[var(--primary-text)] leading-relaxed text-justify">
-                            Contributed to foundational software development projects, gaining initial industry experience and applying core programming principles in a professional setting for various clients.
+                            Contributed to foundational software development projects, gaining initial industry
+                            experience and applying core programming principles in a professional setting for various
+                            clients.
                         </p>
                     </div>
                 </div>
@@ -284,17 +591,21 @@
     </section>
 
     <section id="education" class="py-16 md:py-24 section-glow-container">
-        <div class="section-glow" style="opacity: 0.45; left: 75%; top: 30%; width:140%; height:140%; filter: blur(110px);"></div>
+        <div class="section-glow"
+            style="opacity: 0.45; left: 75%; top: 30%; width:140%; height:140%; filter: blur(110px);"></div>
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="section-title text-4xl">Education</h2>
             <div class="max-w-3xl mx-auto space-y-8 fade-in-section">
                 <div class="glass-effect-subtle p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold text-[var(--highlight-text-color)] opacity-90">University Institute of Technology, RGPV</h3>
-                    <p class="text-[var(--primary-text)]">Bachelor of Technology (B.Tech), Computer Science Engineering</p>
+                    <h3 class="text-xl font-semibold text-[var(--highlight-text-color)] opacity-90">University Institute
+                        of Technology, RGPV</h3>
+                    <p class="text-[var(--primary-text)]">Bachelor of Technology (B.Tech), Computer Science Engineering
+                    </p>
                     <p class="text-sm text-[var(--secondary-text)] opacity-70">2017 - 2021</p>
                 </div>
                 <div class="glass-effect-subtle p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold text-[var(--highlight-text-color)] opacity-90">Mithi Gobindram Public School</h3>
+                    <h3 class="text-xl font-semibold text-[var(--highlight-text-color)] opacity-90">Mithi Gobindram
+                        Public School</h3>
                     <p class="text-[var(--primary-text)]">Higher Secondary Education</p>
                     <p class="text-sm text-[var(--secondary-text)] opacity-70">2004 - 2016</p>
                 </div>
@@ -302,8 +613,9 @@
         </div>
     </section>
 
-    <section id="skills" class="py-16 md:py-24 section-glow-container"> 
-        <div class="section-glow" style="opacity: 0.5; left: 20%; top: 55%; filter: blur(120px); width: 170%; height:170%;"></div>
+    <section id="skills" class="py-16 md:py-24 section-glow-container">
+        <div class="section-glow"
+            style="opacity: 0.5; left: 20%; top: 55%; filter: blur(120px); width: 170%; height:170%;"></div>
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="section-title text-4xl">Skills</h2>
             <div class="max-w-4xl mx-auto fade-in-section">
@@ -311,44 +623,66 @@
                     <div>
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Programming Languages</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Java</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Python</span><span class="tag-glass px-3 py-1 rounded-md text-sm">C++</span>
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">C</span><span class="tag-glass px-3 py-1 rounded-md text-sm">JS</span><span class="tag-glass px-3 py-1 rounded-md text-sm">SQL</span><span class="tag-glass px-3 py-1 rounded-md text-sm">JSON</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Java</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Python</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">C++</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">C</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">JS</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">SQL</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">JSON</span>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Frameworks & Libraries</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Spring Boot</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Hibernate</span><span class="tag-glass px-3 py-1 rounded-md text-sm">JSP</span>
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">React</span><span class="tag-glass px-3 py-1 rounded-md text-sm">jQuery</span><span class="tag-glass px-3 py-1 rounded-md text-sm">AJAX</span>
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Bootstrap</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Tkinter</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Spring Boot</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Hibernate</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">JSP</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">React</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">jQuery</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">AJAX</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Bootstrap</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Tkinter</span>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Databases</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Oracle</span><span class="tag-glass px-3 py-1 rounded-md text-sm">MySQL</span><span class="tag-glass px-3 py-1 rounded-md text-sm">DBMS</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Oracle</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">MySQL</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">DBMS</span>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Tools & Platforms</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Docker</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Maven</span><span class="tag-glass px-3 py-1 rounded-md text-sm">GitHub</span>
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Microsoft Azure</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Linux</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Docker</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Maven</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">GitHub</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Microsoft Azure</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Linux</span>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Concepts & Methodologies</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Agile</span><span class="tag-glass px-3 py-1 rounded-md text-sm">DevOps</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Cloud Native</span>
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">DS</span><span class="tag-glass px-3 py-1 rounded-md text-sm">MVC</span><span class="tag-glass px-3 py-1 rounded-md text-sm">OOPS</span>
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">REST API</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Algorithms</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Agile</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">DevOps</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Cloud Native</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">DS</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">MVC</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">OOPS</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">REST API</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Algorithms</span>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Soft Skills</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Team Management</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Communication</span>
-                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Collaboration</span><span class="tag-glass px-3 py-1 rounded-md text-sm">Problem Solving</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Team Management</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Communication</span>
+                            <span class="tag-glass px-3 py-1 rounded-md text-sm">Collaboration</span><span
+                                class="tag-glass px-3 py-1 rounded-md text-sm">Problem Solving</span>
                             <span class="tag-glass px-3 py-1 rounded-md text-sm">Persistence</span>
                         </div>
                     </div>
@@ -358,66 +692,89 @@
     </section>
 
     <section id="projects" class="py-16 md:py-24 section-glow-container">
-        <div class="section-glow" style="opacity: 0.65; left: 70%; top: 40%; width:180%; height:180%; filter: blur(140px);"></div>
+        <div class="section-glow"
+            style="opacity: 0.65; left: 70%; top: 40%; width:180%; height:180%; filter: blur(140px);"></div>
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="section-title text-4xl">Projects</h2>
             <div class="max-w-3xl mx-auto space-y-12 fade-in-section">
-                <div class="prominent-glass-card overflow-hidden group p-6 md:p-8"> 
-                    <h3 class="text-2xl font-semibold mb-3 text-center text-[var(--highlight-text-color)] opacity-90">Covid Shield</h3>
+                <div class="prominent-glass-card overflow-hidden group p-6 md:p-8">
+                    <h3 class="text-2xl font-semibold mb-3 text-center text-[var(--highlight-text-color)] opacity-90">
+                        Covid Shield</h3>
                     <p class="text-md text-[var(--secondary-text)] mb-4 text-center">E-Commerce Web Application</p>
                     <p class="text-[var(--primary-text)] mb-4 leading-relaxed text-justify text-sm">
-                        A comprehensive E-Commerce platform demonstrating full-stack capabilities. Built with a focus on user experience and robust backend functionality during the challenging times of the pandemic.
+                        A comprehensive E-Commerce platform demonstrating full-stack capabilities. Built with a focus on
+                        user experience and robust backend functionality during the challenging times of the pandemic.
                     </p>
                     <p class="text-sm text-[var(--secondary-text)] mb-2 mt-4">Key Technologies:</p>
-                    <div class="flex flex-wrap gap-1.5 mb-6"> 
-                        <span class="tag-glass px-2 py-0.5 rounded text-xs">Java EE</span><span class="tag-glass px-2 py-0.5 rounded text-xs">JSP</span><span class="tag-glass px-2 py-0.5 rounded text-xs">Servlets</span>
-                        <span class="tag-glass px-2 py-0.5 rounded text-xs">JavaScript</span><span class="tag-glass px-2 py-0.5 rounded text-xs">jQuery</span><span class="tag-glass px-2 py-0.5 rounded text-xs">HTML5</span>
-                        <span class="tag-glass px-2 py-0.5 rounded text-xs">CSS3</span><span class="tag-glass px-2 py-0.5 rounded text-xs">Bootstrap 5</span><span class="tag-glass px-2 py-0.5 rounded text-xs">JSON</span>
-                        <span class="tag-glass px-2 py-0.5 rounded text-xs">XML</span><span class="tag-glass px-2 py-0.5 rounded text-xs">Hibernate</span><span class="tag-glass px-2 py-0.5 rounded text-xs">MySQL</span>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="tag-glass px-2 py-0.5 rounded text-xs">Java EE</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">JSP</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">Servlets</span>
+                        <span class="tag-glass px-2 py-0.5 rounded text-xs">JavaScript</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">jQuery</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">HTML5</span>
+                        <span class="tag-glass px-2 py-0.5 rounded text-xs">CSS3</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">Bootstrap 5</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">JSON</span>
+                        <span class="tag-glass px-2 py-0.5 rounded text-xs">XML</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">Hibernate</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">MySQL</span>
                     </div>
-                    <div class="text-center"> 
-                        <a href="https://github.com/prakharindoria/MyCovidShop-Ecommerce-Web-Application" target="_blank" rel="noopener noreferrer" class="btn-github text-sm py-2 px-4"> 
-                             View on GitHub <i class="fab fa-github icon ml-1.5"></i>
+                    <div class="text-center">
+                        <a href="https://github.com/prakharindoria/MyCovidShop-Ecommerce-Web-Application"
+                            target="_blank" rel="noopener noreferrer" class="btn-github text-sm py-2 px-4">
+                            View on GitHub <i class="fab fa-github icon ml-1.5"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="prominent-glass-card overflow-hidden group p-6 md:p-8"> 
-                    <h3 class="text-2xl font-semibold mb-3 text-center text-[var(--highlight-text-color)] opacity-90">Notepad with Sentiment Analysis</h3>
+                <div class="prominent-glass-card overflow-hidden group p-6 md:p-8">
+                    <h3 class="text-2xl font-semibold mb-3 text-center text-[var(--highlight-text-color)] opacity-90">
+                        Notepad with Sentiment Analysis</h3>
                     <p class="text-md text-[var(--secondary-text)] mb-4 text-center">Desktop Application</p>
                     <p class="text-[var(--primary-text)] mb-4 leading-relaxed text-justify text-sm">
-                        A desktop notepad application enhanced with real-time sentiment analysis of the text being written, providing insights into the emotional tone of the content.
+                        A desktop notepad application enhanced with real-time sentiment analysis of the text being
+                        written, providing insights into the emotional tone of the content.
                     </p>
                     <p class="text-sm text-[var(--secondary-text)] mb-2 mt-4">Key Technologies:</p>
-                    <div class="flex flex-wrap gap-1.5 mb-6"> 
-                        <span class="tag-glass px-2 py-0.5 rounded text-xs">Python</span><span class="tag-glass px-2 py-0.5 rounded text-xs">Tkinter</span><span class="tag-glass px-2 py-0.5 rounded text-xs">NLTK</span>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="tag-glass px-2 py-0.5 rounded text-xs">Python</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">Tkinter</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">NLTK</span>
                         <span class="tag-glass px-2 py-0.5 rounded text-xs">VADER Sentiment</span>
                     </div>
-                    <div class="text-center"> 
-                        <a href="https://github.com/prakharindoria/Notepad-with-Sentiment-Analysis" target="_blank" rel="noopener noreferrer" class="btn-github text-sm py-2 px-4"> 
-                             View on GitHub <i class="fab fa-github icon ml-1.5"></i>
+                    <div class="text-center">
+                        <a href="https://github.com/prakharindoria/Notepad-with-Sentiment-Analysis" target="_blank"
+                            rel="noopener noreferrer" class="btn-github text-sm py-2 px-4">
+                            View on GitHub <i class="fab fa-github icon ml-1.5"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="prominent-glass-card overflow-hidden group p-6 md:p-8"> 
-                    <h3 class="text-2xl font-semibold mb-3 text-center text-[var(--highlight-text-color)] opacity-90">Med Guide - Hospital Management</h3>
+                <div class="prominent-glass-card overflow-hidden group p-6 md:p-8">
+                    <h3 class="text-2xl font-semibold mb-3 text-center text-[var(--highlight-text-color)] opacity-90">
+                        Med Guide - Hospital Management</h3>
                     <p class="text-md text-[var(--secondary-text)] mb-4 text-center">Web Application</p>
                     <p class="text-[var(--primary-text)] mb-4 leading-relaxed text-justify text-sm">
-                        A web-based hospital management system designed to streamline patient records, appointments, and administrative tasks for medical facilities.
+                        A web-based hospital management system designed to streamline patient records, appointments, and
+                        administrative tasks for medical facilities.
                     </p>
                     <p class="text-sm text-[var(--secondary-text)] mb-2 mt-4">Key Technologies:</p>
-                    <div class="flex flex-wrap gap-1.5 mb-6"> 
-                        <span class="tag-glass px-2 py-0.5 rounded text-xs">Java</span><span class="tag-glass px-2 py-0.5 rounded text-xs">Spring Boot</span><span class="tag-glass px-2 py-0.5 rounded text-xs">MySQL</span>
-                        <span class="tag-glass px-2 py-0.5 rounded text-xs">HTML</span><span class="tag-glass px-2 py-0.5 rounded text-xs">CSS</span><span class="tag-glass px-2 py-0.5 rounded text-xs">JavaScript</span>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="tag-glass px-2 py-0.5 rounded text-xs">Java</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">Spring Boot</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">MySQL</span>
+                        <span class="tag-glass px-2 py-0.5 rounded text-xs">HTML</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">CSS</span><span
+                            class="tag-glass px-2 py-0.5 rounded text-xs">JavaScript</span>
                     </div>
-                    <div class="text-center"> 
-                        <a href="https://github.com/prakharindoria/MedGuide-Hospital-Management-System" target="_blank" rel="noopener noreferrer" class="btn-github text-sm py-2 px-4"> 
-                             View on GitHub <i class="fab fa-github icon ml-1.5"></i>
+                    <div class="text-center">
+                        <a href="https://github.com/prakharindoria/MedGuide-Hospital-Management-System" target="_blank"
+                            rel="noopener noreferrer" class="btn-github text-sm py-2 px-4">
+                            View on GitHub <i class="fab fa-github icon ml-1.5"></i>
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -426,152 +783,168 @@
         <div class="container mx-auto px-6 text-center fade-in-section relative z-10">
             <h2 class="section-title text-4xl">Get In Touch</h2>
             <p class="text-lg text-[var(--secondary-text)] mb-8 max-w-xl mx-auto">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing. Feel free to reach out!
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of something
+                amazing. Feel free to reach out!
             </p>
             <div class="flex justify-center space-x-6 mb-10">
-                <a href="https://github.com/prakharindoria" target="_blank" rel="noopener noreferrer" class="text-[var(--secondary-text)] hover:text-[var(--highlight-text-color)] transition duration-300 hover:scale-110">
+                <a href="https://github.com/prakharindoria" target="_blank" rel="noopener noreferrer"
+                    class="text-[var(--secondary-text)] hover:text-[var(--highlight-text-color)] transition duration-300 hover:scale-110">
                     <i class="fab fa-github fa-3x"></i>
                 </a>
-                <a href="https://linkedin.com/in/prakharindoria" target="_blank" rel="noopener noreferrer" class="text-[var(--secondary-text)] hover:text-[var(--highlight-text-color)] transition duration-300 hover:scale-110">
+                <a href="https://linkedin.com/in/prakharindoria" target="_blank" rel="noopener noreferrer"
+                    class="text-[var(--secondary-text)] hover:text-[var(--highlight-text-color)] transition duration-300 hover:scale-110">
                     <i class="fab fa-linkedin fa-3x"></i>
                 </a>
-                <a href="mailto:prakhar.indoria@gmail.com" class="text-[var(--secondary-text)] hover:text-[var(--highlight-text-color)] transition duration-300 hover:scale-110">
+                <a href="mailto:prakhar.indoria@gmail.com"
+                    class="text-[var(--secondary-text)] hover:text-[var(--highlight-text-color)] transition duration-300 hover:scale-110">
                     <i class="fas fa-envelope fa-3x"></i>
                 </a>
             </div>
-            <p class="text-[var(--secondary-text)] opacity-80">Email: <a href="mailto:prakhar.indoria@gmail.com" class="hover:text-[var(--highlight-text-color)] underline">prakhar.indoria@gmail.com</a></p>
+            <p class="text-[var(--secondary-text)] opacity-80">Email: <a href="mailto:prakhar.indoria@gmail.com"
+                    class="hover:text-[var(--highlight-text-color)] underline">prakhar.indoria@gmail.com</a></p>
         </div>
     </section>
 
-    <footer class="bg-black text-[var(--secondary-text)] opacity-70 py-8 text-center"> 
+    <footer class="bg-black text-[var(--secondary-text)] opacity-70 py-8 text-center">
         <div class="container mx-auto px-6">
             <p>&copy; <span id="currentYear"></span> Prakhar Indoria. All Rights Reserved.</p>
-            <p class="text-sm opacity-70">Designed with <i class="fas fa-heart text-[var(--highlight-text-color)] opacity-70"></i> and Tailwind CSS.</p>
+            <p class="text-sm opacity-70">Designed with <i
+                    class="fas fa-heart text-[var(--highlight-text-color)] opacity-70"></i> and Tailwind CSS.</p>
         </div>
     </footer>
 
     <script>
+        // This event listener ensures the DOM is fully loaded before executing the script
         document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle functionality
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            if(mobileMenuButton && mobileMenu){
+            // Ensure elements exist before adding event listeners to prevent errors
+            if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('hidden'); // Toggles visibility of the mobile menu
                 });
             }
 
+            // Close mobile menu when a navigation link within it is clicked
             document.querySelectorAll('#mobile-menu a').forEach(link => {
                 link.addEventListener('click', () => {
-                    if(mobileMenu) mobileMenu.classList.add('hidden');
+                    if (mobileMenu) mobileMenu.classList.add('hidden'); // Hides the mobile menu
                 });
             });
-            
+
+            // Navbar and parallax elements
             const navbar = document.getElementById('navbar');
             const parallaxElements = document.querySelectorAll('.parallax-element');
-            // Removed scrollTimeout as it's not used with requestAnimationFrame
 
+            // Function to handle scroll-based effects
             function handleScroll() {
-                // Navbar shadow
+                // Adjust navbar shadow based on scroll position
                 if (navbar) {
                     if (window.scrollY > 50) {
-                        navbar.classList.add('shadow-xl'); 
+                        navbar.classList.add('shadow-xl'); // Adds a larger shadow when scrolled down
                         navbar.classList.remove('shadow-lg');
                     } else {
-                        navbar.classList.add('shadow-lg');
+                        navbar.classList.add('shadow-lg'); // Default smaller shadow
                         navbar.classList.remove('shadow-xl');
                     }
                 }
 
-                // Parallax effect
-                const scrollValue = window.pageYOffset;
+                // Apply parallax effect to background elements
+                const scrollValue = window.pageYOffset; // Current vertical scroll position
                 parallaxElements.forEach(el => {
-                    const speed = parseFloat(el.dataset.speed) || 0.5; 
-                    if (speed !== 0) { 
-                        el.style.transform = `translateY(${scrollValue * speed * 0.1}px)`; 
+                    const speed = parseFloat(el.dataset.speed) || 0.5; // Get speed from data-attribute, default to 0.5
+                    if (speed !== 0) {
+                        // The 0.1 factor makes the parallax effect very subtle
+                        el.style.transform = `translateY(${scrollValue * speed * 0.1}px)`; // Moves element vertically based on scroll and speed
                     }
                 });
             }
-            
-            if(navbar || parallaxElements.length > 0) {
-                // Initial call for navbar shadow
+
+            // Initial setup and scroll listener for navbar and parallax effects
+            if (navbar || parallaxElements.length > 0) {
+                // Set initial navbar shadow state based on current scroll position
                 if (navbar && window.scrollY > 50) {
-                    navbar.classList.add('shadow-xl'); 
+                    navbar.classList.add('shadow-xl');
                     navbar.classList.remove('shadow-lg');
                 } else if (navbar) {
                     navbar.classList.add('shadow-lg');
                     navbar.classList.remove('shadow-xl');
                 }
-                
-                // Throttled scroll listener using requestAnimationFrame
-                let ticking = false;
-                window.addEventListener('scroll', function() {
+
+                // Use requestAnimationFrame for smoother scroll animations to optimize performance
+                let ticking = false; // Flag to ensure handleScroll isn't called too frequently
+                window.addEventListener('scroll', function () {
                     if (!ticking) {
-                        window.requestAnimationFrame(function() {
-                            handleScroll();
-                            ticking = false;
+                        window.requestAnimationFrame(function () {
+                            handleScroll(); // Execute scroll handling
+                            ticking = false; // Reset flag
                         });
-                        ticking = true;
+                        ticking = true; // Set flag
                     }
                 });
-                // Initial parallax position
-                handleScroll(); 
+                // Apply initial parallax positions on page load
+                handleScroll();
             }
 
-
+            // Set the current year in the footer
             const currentYearElement = document.getElementById('currentYear');
-            if(currentYearElement) currentYearElement.textContent = new Date().getFullYear();
+            if (currentYearElement) currentYearElement.textContent = new Date().getFullYear(); // Dynamically sets the year
 
+            // Intersection Observer for fade-in animations on scroll for sections
             const observerTargets = document.querySelectorAll('.fade-in-section, .section-title');
             const options = {
-                root: null,
-                rootMargin: '0px',
+                root: null, // Observes intersections relative to the viewport
+                rootMargin: '0px', // No margin around the root
                 threshold: 0.1 // Trigger when 10% of the element is visible
             };
 
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries, observerInstance) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Stop observing once visible
+                    if (entry.isIntersecting) { // If the element is in view
+                        entry.target.classList.add('is-visible'); // Add class to trigger animation
+                        observerInstance.unobserve(entry.target); // Stop observing once visible to save resources
                     }
                 });
             }, options);
 
+            // Attach the observer to all targeted elements
             observerTargets.forEach(target => {
                 observer.observe(target);
             });
 
-
-            // Smooth scroll for anchor links, considering navbar height
+            // Smooth scroll for anchor links (e.g., #about, #projects)
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    const targetId = this.getAttribute('href');
-                    // Prevent default only if it's a valid internal link (not just "#")
-                    // and it's a main navigation link or mobile menu link triggering scroll
-                    if (targetId && targetId.length > 1) { 
-                        const targetElement = document.querySelector(targetId);
+                    const targetId = this.getAttribute('href'); // Get the href attribute (e.g., "#about")
+
+                    // Check if it's a valid internal link (not just "#")
+                    if (targetId && targetId.length > 1) {
+                        const targetElement = document.querySelector(targetId); // Find the target element by ID
                         if (targetElement) {
-                            e.preventDefault(); // Prevent default jump
-                            
+                            e.preventDefault(); // Prevent the default anchor jump
+
+                            // Calculate the offset considering the fixed navbar height
                             const navbarHeight = document.getElementById('navbar') ? document.getElementById('navbar').offsetHeight : 0;
-                            const elementPosition = targetElement.getBoundingClientRect().top;
-                            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-                            
+                            const elementPosition = targetElement.getBoundingClientRect().top; // Position of target relative to viewport
+                            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight; // Actual scroll position needed
+
+                            // Scroll smoothly to the calculated position
                             window.scrollTo({
                                 top: offsetPosition,
                                 behavior: "smooth"
                             });
 
-                            // If it's a mobile menu link, close the menu
+                            // If the link is part of the mobile menu, close the menu after navigation
                             if (this.closest('#mobile-menu')) {
                                 const mobileMenu = document.getElementById('mobile-menu');
                                 if (mobileMenu) mobileMenu.classList.add('hidden');
                             }
                         }
-                    } else if (targetId === '#') { // Handle href="#" to scroll to top
+                    } else if (targetId === '#') { // Handle href="#" to scroll to the top of the page
                         e.preventDefault();
                         window.scrollTo({ top: 0, behavior: "smooth" });
-                         // If it's a mobile menu link, close the menu
+                        // If it's a mobile menu link, close the menu
                         if (this.closest('#mobile-menu')) {
                             const mobileMenu = document.getElementById('mobile-menu');
                             if (mobileMenu) mobileMenu.classList.add('hidden');
@@ -579,7 +952,18 @@
                     }
                 });
             });
+
+            // Profile image 360 spin on initial load
+            const profileImg = document.querySelector('.profile-image');
+            if (profileImg) {
+                profileImg.classList.add('profile-spin-initial');
+                profileImg.addEventListener('animationend', function handler() {
+                    profileImg.classList.remove('profile-spin-initial');
+                    profileImg.removeEventListener('animationend', handler);
+                });
+            }
         });
     </script>
 </body>
+
 </html>
