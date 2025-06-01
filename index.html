@@ -39,7 +39,7 @@
             
             --glass-fill-funfact-light: rgba(255, 255, 255, 0.04); /* More subtle glass for fun fact */
             --glass-border-funfact-light: rgba(255, 255, 255, 0.06); /* More subtle glass for fun fact */
-
+            
             --glow-color-center: rgba(37, 99, 235, 0.10); /* Light theme glow */
             --glow-color-mid: rgba(37, 99, 235, 0.07);
             --glow-color-outer: rgba(37, 99, 235, 0.03);
@@ -1158,10 +1158,10 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const themeToggle = document.getElementById('theme-toggle'); 
+            const themeToggle = document.getElementById('theme-toggle');
             const htmlEl = document.documentElement;
             const profileImgElement = document.querySelector('.profile-image');
-            
+
             // Add dark-theme-active class to button based on initial theme
             // This class is used by CSS for specific hover effects on the button itself
             if (themeToggle && htmlEl.classList.contains('dark')) {
@@ -1241,14 +1241,14 @@
                         if (targetElement) {
                             e.preventDefault(); 
                             const navbarHeight = document.getElementById('navbar') ? document.getElementById('navbar').offsetHeight : 0;
-                            const elementPosition = targetElement.getBoundingClientRect().top;
-                            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+                            const elementPosition = targetElement.getBoundingClientRect().top; 
+                            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight; 
                             window.scrollTo({
                                 top: offsetPosition,
                                 behavior: "smooth"
                             });
                             // Close mobile menu if a link in it is clicked
-                            const mobileMenu = document.getElementById('mobile-menu');
+                                const mobileMenu = document.getElementById('mobile-menu');
                             if (this.closest('#mobile-menu') && mobileMenu) {
                                 mobileMenu.classList.add('hidden');
                             }
@@ -1256,7 +1256,7 @@
                     } else if (targetId === '#') { // Link to top of page
                         e.preventDefault();
                         window.scrollTo({ top: 0, behavior: "smooth" });
-                         const mobileMenu = document.getElementById('mobile-menu');
+                            const mobileMenu = document.getElementById('mobile-menu');
                         if (this.closest('#mobile-menu') && mobileMenu) {
                             mobileMenu.classList.add('hidden');
                         }
@@ -1330,6 +1330,8 @@
             }
 
             // Navbar shrink on scroll
+            /* Removed the following block to prevent navbar size change on scroll */
+            /*
             const navbar = document.getElementById('navbar');
             if (navbar) {
                 window.addEventListener('scroll', () => {
@@ -1342,6 +1344,8 @@
                     }
                 });
             }
+            */
+
         });
     </script>
 </body>
