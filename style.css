@@ -219,6 +219,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
     transform: translateZ(0); 
+    will-change: transform, box-shadow, background-color, border-color, backdrop-filter;
 }
 
 .glass-effect-subtle > *, .prominent-glass-card > *, .glass-effect-funfact > * {
@@ -371,6 +372,7 @@ html.dark .prominent-glass-card:hover {
     padding: 0.25rem 0.75rem; 
     border-radius: 0.375rem; 
     font-size: 0.875rem; 
+    will-change: transform, box-shadow, background-color, color, backdrop-filter;
 }
 html:not(.dark) .tag-glass { 
     background-color: rgba(240, 245, 255, 0.7);
@@ -498,6 +500,7 @@ html.dark .profile-image-depth {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Adjusted duration */
+    will-change: opacity, transform;
 }
 
 .fade-in-section.is-visible {
@@ -650,6 +653,7 @@ html.dark .bg-blur-circle { display: none; }
 .card-animate {
     opacity: 0;
     transform: translateY(40px) scale(0.98);
+    will-change: opacity, transform;
 }
 .card-animate.is-visible {
     opacity: 1;
