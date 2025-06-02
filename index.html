@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth"> 
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -8,9 +8,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Sora:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
 
@@ -35,14 +37,16 @@
                 </div>
 
                 <!-- NEW THEME TOGGLE BUTTON - Moved here to be visible on mobile -->
-                <button class="theme-toggle-button ml-2 md:ml-4" id="theme-toggle" aria-label="Toggle theme"> <!-- Adjusted ml for spacing -->
-                    <svg viewBox="0 0 64 64"> <defs>
+                <button class="theme-toggle-button ml-2 md:ml-4" id="theme-toggle" aria-label="Toggle theme">
+                    <!-- Adjusted ml for spacing -->
+                    <svg viewBox="0 0 64 64">
+                        <defs>
                             <mask id="moonMask">
                                 <rect x="0" y="0" width="64" height="64" fill="white" />
-                                <circle id="moon-mask-circle" cx="32" cy="32" r="17" /> 
+                                <circle id="moon-mask-circle" cx="32" cy="32" r="17" />
                             </mask>
                         </defs>
-                        
+
                         <circle id="sun-body" cx="32" cy="32" r="15" mask="url(#moonMask)" />
 
                         <g id="sun-rays-group">
@@ -50,8 +54,9 @@
                             <line class="sun-ray" x1="32" y1="54" x2="32" y2="62" />
                             <line class="sun-ray" x1="10" y1="32" x2="2" y2="32" />
                             <line class="sun-ray" x1="54" y1="32" x2="62" y2="32" />
-                            
-                            <line class="sun-ray" x1="19.9" y1="19.9" x2="13.5" y2="13.5" /> <line class="sun-ray" x1="44.1" y1="19.9" x2="50.5" y2="13.5" />
+
+                            <line class="sun-ray" x1="19.9" y1="19.9" x2="13.5" y2="13.5" />
+                            <line class="sun-ray" x1="44.1" y1="19.9" x2="50.5" y2="13.5" />
                             <line class="sun-ray" x1="19.9" y1="44.1" x2="13.5" y2="50.5" />
                             <line class="sun-ray" x1="44.1" y1="44.1" x2="50.5" y2="50.5" />
                         </g>
@@ -83,14 +88,16 @@
     <div class="bg-blur-circle bg-blur2"></div>
     <div class="bg-blur-circle bg-blur3"></div>
 
-    <section id="hero" style="z-index:2; position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center;" class="section-glow-container">
+    <section id="hero"
+        style="z-index:2; position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center;"
+        class="section-glow-container">
         <div class="section-glow"
             style="left: 50%; top: 50%; width: 120%; height: 120%; opacity: 0.35; filter: blur(180px);"></div>
         <div class="text-center p-6 relative z-10">
             <div class="profile-image-container mx-auto mb-8 w-36 h-36 md:w-48 md:h-48">
                 <div class="profile-image-depth"></div>
                 <img src="https://github.com/prakharindoria.png" alt="Prakhar Indoria"
-                    class="profile-image w-full h-full rounded-full shadow-xl object-cover" 
+                    class="profile-image w-full h-full rounded-full shadow-xl object-cover"
                     onerror="this.onerror=null; this.src='https://placehold.co/150x150/' + (document.documentElement.classList.contains('dark') ? '0A0A0A/F5F5F5' : 'E0E7EF/1A2233') + '?text=PI';">
             </div>
             <h1 class="text-4xl md:text-6xl font-bold mb-4">Prakhar Indoria</h1>
@@ -131,8 +138,7 @@
                             nature, or history.
                         </p>
                     </div>
-                    <div
-                        class="mt-8 md:mt-6 p-6 rounded-lg shadow-inner glass-effect-funfact">
+                    <div class="mt-8 md:mt-6 p-6 rounded-lg shadow-inner glass-effect-funfact">
                         <p class="text-md text-[var(--secondary-text)] italic text-center">
                             "Fun fact: I architect solutions like I plan mountain treks—mapping every possible route,
                             preparing for the unexpected, and enjoying the climb to the summit." 😉
@@ -149,7 +155,8 @@
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="section-title text-4xl">Experience</h2>
             <div class="max-w-4xl mx-auto space-y-10">
-                <div class="glass-effect-subtle p-6 md:p-8 flex flex-col md:flex-row items-start rounded-xl fade-in-section card-animate">
+                <div
+                    class="glass-effect-subtle p-6 md:p-8 flex flex-col md:flex-row items-start rounded-xl fade-in-section card-animate">
                     <div class="md:w-1/3 mb-4 md:mb-0 md:pr-8">
                         <h3 class="text-xl font-semibold text-[var(--highlight-text-color)] opacity-90">TCS</h3>
                         <p class="text-[var(--secondary-text)]">Software Engineer</p>
@@ -164,7 +171,8 @@
                         </p>
                     </div>
                 </div>
-                 <div class="glass-effect-subtle p-6 md:p-8 flex flex-col md:flex-row items-start rounded-xl fade-in-section card-animate">
+                <div
+                    class="glass-effect-subtle p-6 md:p-8 flex flex-col md:flex-row items-start rounded-xl fade-in-section card-animate">
                     <div class="md:w-1/3 mb-4 md:mb-0 md:pr-8">
                         <h3 class="text-xl font-semibold text-[var(--highlight-text-color)] opacity-90">A2 Infotech</h3>
                         <p class="text-[var(--secondary-text)]">Software Developer</p>
@@ -189,7 +197,7 @@
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="section-title text-4xl">Education</h2>
             <div class="max-w-3xl mx-auto space-y-8">
-                 <div class="glass-effect-subtle p-6 rounded-xl fade-in-section card-animate">
+                <div class="glass-effect-subtle p-6 rounded-xl fade-in-section card-animate">
                     <h3 class="text-xl font-semibold text-[var(--highlight-text-color)] opacity-90">University Institute
                         of Technology, RGPV</h3>
                     <p class="text-[var(--primary-text)]">Bachelor of Technology (B.Tech), Computer Science Engineering
@@ -211,71 +219,58 @@
             style="opacity: 0.5; left: 20%; top: 55%; filter: blur(120px); width: 170%; height:170%;"></div>
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="section-title text-4xl">Skills</h2>
-            <div class="max-w-4xl mx-auto fade-in-section"> 
+            <div class="max-w-4xl mx-auto fade-in-section">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div class="fade-in-section card-animate">
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Programming Languages</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass">Java</span><span
-                                class="tag-glass">Python</span><span
+                            <span class="tag-glass">Java</span><span class="tag-glass">Python</span><span
                                 class="tag-glass">C++</span>
-                            <span class="tag-glass">C</span><span
-                                class="tag-glass">JS</span><span
-                                class="tag-glass">SQL</span><span
-                                class="tag-glass">JSON</span>
+                            <span class="tag-glass">C</span><span class="tag-glass">JS</span><span
+                                class="tag-glass">SQL</span><span class="tag-glass">JSON</span>
                         </div>
                     </div>
                     <div class="fade-in-section card-animate">
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Frameworks & Libraries</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass">Spring Boot</span><span
-                                class="tag-glass">Hibernate</span><span
+                            <span class="tag-glass">Spring Boot</span><span class="tag-glass">Hibernate</span><span
                                 class="tag-glass">JSP</span>
-                            <span class="tag-glass">React</span><span
-                                class="tag-glass">jQuery</span><span
+                            <span class="tag-glass">React</span><span class="tag-glass">jQuery</span><span
                                 class="tag-glass">AJAX</span>
-                            <span class="tag-glass">Bootstrap</span><span
-                                class="tag-glass">Tkinter</span>
+                            <span class="tag-glass">Bootstrap</span><span class="tag-glass">Tkinter</span>
                         </div>
                     </div>
                     <div class="fade-in-section card-animate">
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Databases</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass">Oracle</span><span
-                                class="tag-glass">MySQL</span><span
+                            <span class="tag-glass">Oracle</span><span class="tag-glass">MySQL</span><span
                                 class="tag-glass">DBMS</span>
                         </div>
                     </div>
                     <div class="fade-in-section card-animate">
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Tools & Platforms</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass">Docker</span><span
-                                class="tag-glass">Maven</span><span
+                            <span class="tag-glass">Docker</span><span class="tag-glass">Maven</span><span
                                 class="tag-glass">GitHub</span>
-                            <span class="tag-glass">Microsoft Azure</span><span
-                                class="tag-glass">Linux</span>
+                            <span class="tag-glass">Microsoft Azure</span><span class="tag-glass">Linux</span>
                         </div>
                     </div>
                     <div class="fade-in-section card-animate">
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Concepts & Methodologies</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass">Agile</span><span
-                                class="tag-glass">DevOps</span><span
+                            <span class="tag-glass">Generative AI</span>
+                            <span class="tag-glass">Agile</span><span class="tag-glass">DevOps</span><span
                                 class="tag-glass">Cloud Native</span>
-                            <span class="tag-glass">DS</span><span
-                                class="tag-glass">MVC</span><span
+                            <span class="tag-glass">DS</span><span class="tag-glass">MVC</span><span
                                 class="tag-glass">OOPS</span>
-                            <span class="tag-glass">REST API</span><span
-                                class="tag-glass">Algorithms</span>
+                            <span class="tag-glass">REST API</span><span class="tag-glass">Algorithms</span>
                         </div>
                     </div>
                     <div class="fade-in-section card-animate">
                         <h3 class="text-xl font-semibold mb-4 text-[var(--primary-text)]">Soft Skills</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag-glass">Team Management</span><span
-                                class="tag-glass">Communication</span>
-                            <span class="tag-glass">Collaboration</span><span
-                                class="tag-glass">Problem Solving</span>
+                            <span class="tag-glass">Team Management</span><span class="tag-glass">Communication</span>
+                            <span class="tag-glass">Collaboration</span><span class="tag-glass">Problem Solving</span>
                             <span class="tag-glass">Persistence</span>
                         </div>
                     </div>
@@ -300,17 +295,13 @@
                     </p>
                     <p class="text-sm text-[var(--secondary-text)] mb-2 mt-4">Key Technologies:</p>
                     <div class="flex flex-wrap gap-1.5 mb-6">
-                        <span class="tag-glass">Java EE</span><span
-                            class="tag-glass">JSP</span><span
+                        <span class="tag-glass">Java EE</span><span class="tag-glass">JSP</span><span
                             class="tag-glass">Servlets</span>
-                        <span class="tag-glass">JavaScript</span><span
-                            class="tag-glass">jQuery</span><span
+                        <span class="tag-glass">JavaScript</span><span class="tag-glass">jQuery</span><span
                             class="tag-glass">HTML5</span>
-                        <span class="tag-glass">CSS3</span><span
-                            class="tag-glass">Bootstrap 5</span><span
+                        <span class="tag-glass">CSS3</span><span class="tag-glass">Bootstrap 5</span><span
                             class="tag-glass">JSON</span>
-                        <span class="tag-glass">XML</span><span
-                            class="tag-glass">Hibernate</span><span
+                        <span class="tag-glass">XML</span><span class="tag-glass">Hibernate</span><span
                             class="tag-glass">MySQL</span>
                     </div>
                     <div class="text-center">
@@ -330,8 +321,7 @@
                     </p>
                     <p class="text-sm text-[var(--secondary-text)] mb-2 mt-4">Key Technologies:</p>
                     <div class="flex flex-wrap gap-1.5 mb-6">
-                        <span class="tag-glass">Python</span><span
-                            class="tag-glass">Tkinter</span><span
+                        <span class="tag-glass">Python</span><span class="tag-glass">Tkinter</span><span
                             class="tag-glass">NLTK</span>
                         <span class="tag-glass">VADER Sentiment</span>
                     </div>
@@ -352,11 +342,9 @@
                     </p>
                     <p class="text-sm text-[var(--secondary-text)] mb-2 mt-4">Key Technologies:</p>
                     <div class="flex flex-wrap gap-1.5 mb-6">
-                        <span class="tag-glass">Java</span><span
-                            class="tag-glass">Spring Boot</span><span
+                        <span class="tag-glass">Java</span><span class="tag-glass">Spring Boot</span><span
                             class="tag-glass">MySQL</span>
-                        <span class="tag-glass">HTML</span><span
-                            class="tag-glass">CSS</span><span
+                        <span class="tag-glass">HTML</span><span class="tag-glass">CSS</span><span
                             class="tag-glass">JavaScript</span>
                     </div>
                     <div class="text-center">
@@ -396,7 +384,7 @@
         </div>
     </section>
 
-    <footer class="footer py-8 text-center"> 
+    <footer class="footer py-8 text-center">
         <div class="container mx-auto px-6">
             <p>&copy; <span id="currentYear"></span> Prakhar Indoria. All Rights Reserved.</p>
             <p class="text-sm opacity-70">Designed with <i
