@@ -110,7 +110,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', function() {
+            const isHidden = mobileMenu.classList.contains('hidden');
             mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', !isHidden);
         });
     }
 
