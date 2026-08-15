@@ -3,7 +3,7 @@
     <msapplication>
         <tile>
             <square150x150logo src="https://github.com/prakharindoria.png"/>
-            <TileColor>#2563eb</TileColor>
+            <TileColor>#050a12</TileColor>
         </tile>
     </msapplication>
 </browserconfig> 

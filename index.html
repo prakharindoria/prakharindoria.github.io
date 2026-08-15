@@ -2,15 +2,43 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Static, not injected. The runtime mounts <helmet> only after the body has
+     parsed, and link-preview crawlers (LinkedIn, Slack, X, WhatsApp) do not run
+     JavaScript at all — so anything they need has to be in the served HTML. -->
 <title>Prakhar Indoria · Software Engineer</title>
+<meta name="title" content="Prakhar Indoria · Software Engineer">
 <meta name="description" content="Software Engineer at Tata Consultancy Services (TCS) with expertise in Java, Spring Boot, React, and cloud technologies. Passionate about AI, problem-solving, and delivering high-quality software solutions.">
+<meta name="author" content="Prakhar Indoria">
+<meta name="keywords" content="Prakhar Indoria, Software Engineer, Full-Stack Developer, Java, Spring Boot, React, TCS, Tata Consultancy Services, Mumbai, India, Cloud, AI">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://prakharindoria.github.io/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://prakharindoria.github.io/">
+<meta property="og:title" content="Prakhar Indoria · Software Engineer">
+<meta property="og:description" content="Software Engineer at Tata Consultancy Services (TCS) with expertise in Java, Spring Boot, React, and cloud technologies. Passionate about AI, problem-solving, and delivering high-quality software solutions.">
+<meta property="og:image" content="https://prakharindoria.github.io/images/portfolio_preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Prakhar Indoria — Software Engineer">
+<meta property="og:site_name" content="Prakhar Indoria">
+<meta property="og:locale" content="en_US">
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://prakharindoria.github.io/">
+<meta property="twitter:title" content="Prakhar Indoria · Software Engineer">
+<meta property="twitter:description" content="Software Engineer at Tata Consultancy Services (TCS) with expertise in Java, Spring Boot, React, and cloud technologies. Passionate about AI, problem-solving, and delivering high-quality software solutions.">
+<meta property="twitter:image" content="https://prakharindoria.github.io/images/portfolio_preview.jpg">
+
+<meta name="theme-color" content="#050a12">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="apple-mobile-web-app-title" content="Prakhar Indoria">
+<link rel="icon" type="image/png" href="https://github.com/prakharindoria.png">
+<link rel="apple-touch-icon" href="https://github.com/prakharindoria.png">
+<link rel="manifest" href="/manifest.json">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -33,7 +61,29 @@ ol,ul{list-style:none}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}html{scroll-behavior:auto}}
 </style>
-</helmet>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Prakhar Indoria",
+    "jobTitle": "Software Engineer",
+    "url": "https://prakharindoria.github.io",
+    "image": "https://github.com/prakharindoria.png",
+    "email": "prakhar.indoria@gmail.com",
+    "worksFor": { "@type": "Organization", "name": "Tata Consultancy Services", "url": "https://www.tcs.com" },
+    "alumniOf": { "@type": "EducationalOrganization", "name": "University Institute of Technology, RGPV" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressCountry": "India" },
+    "sameAs": ["https://github.com/prakharindoria", "https://linkedin.com/in/prakharindoria"],
+    "knowsAbout": ["Java", "Spring Boot", "React", "Python", "Cloud Computing", "Artificial Intelligence", "Software Development", "Web Development", "Database Management", "DevOps"],
+    "description": "Software Engineer at Tata Consultancy Services (TCS) with expertise in Java, Spring Boot, React, and cloud technologies. Passionate about AI, problem-solving, and delivering high-quality software solutions."
+}
+</script>
+
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
 
 <div id="aur" style="position:relative;min-height:100vh;background:var(--sky);isolation:isolate">
 
