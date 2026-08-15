@@ -1,558 +1,605 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Static, not injected. The runtime mounts <helmet> only after the body has
+<!-- Static, not injected. The runtime mounts <helmet> only after the body has
      parsed, and link-preview crawlers (LinkedIn, Slack, X, WhatsApp) do not run
      JavaScript at all — so anything they need has to be in the served HTML. -->
-    <title>Prakhar Indoria · Software Engineer</title>
-    <meta name="title" content="Prakhar Indoria · Software Engineer">
-    <meta name="description" content="Software Engineer at Tata Consultancy Services (TCS) with expertise in Java, Spring Boot, React, and cloud technologies. Passionate about AI, problem-solving, and delivering high-quality software solutions.">
-    <meta name="author" content="Prakhar Indoria">
-    <meta name="keywords" content="Prakhar Indoria, Software Engineer, Full-Stack Developer, Java, Spring Boot, React, TCS, Tata Consultancy Services, Mumbai, India, Cloud, AI">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-    <link rel="canonical" href="https://prakharindoria.github.io/">
+<title>Prakhar Indoria · Software Engineer</title>
+<meta name="title" content="Prakhar Indoria · Software Engineer">
+<meta name="description" content="Software Engineer at Tata Consultancy Services (TCS) with expertise in Java, Spring Boot, React, and cloud technologies. Passionate about AI, problem-solving, and delivering high-quality software solutions.">
+<meta name="author" content="Prakhar Indoria">
+<meta name="keywords" content="Prakhar Indoria, Software Engineer, Full-Stack Developer, Java, Spring Boot, React, TCS, Tata Consultancy Services, Mumbai, India, Cloud, AI">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://prakharindoria.github.io/">
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://prakharindoria.github.io/">
-    <meta property="og:title" content="Prakhar Indoria · Software Engineer">
-    <meta property="og:description" content="Software Engineer at Tata Consultancy Services (TCS) with expertise in Java, Spring Boot, React, and cloud technologies. Passionate about AI, problem-solving, and delivering high-quality software solutions.">
-    <meta property="og:image" content="https://prakharindoria.github.io/images/portfolio_preview.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Prakhar Indoria — Software Engineer">
-    <meta property="og:site_name" content="Prakhar Indoria">
-    <meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://prakharindoria.github.io/">
+<meta property="og:title" content="Prakhar Indoria · Software Engineer">
+<meta property="og:description" content="Software Engineer at Tata Consultancy Services (TCS) with expertise in Java, Spring Boot, React, and cloud technologies. Passionate about AI, problem-solving, and delivering high-quality software solutions.">
+<meta property="og:image" content="https://prakharindoria.github.io/images/portfolio_preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Prakhar Indoria — Software Engineer">
+<meta property="og:site_name" content="Prakhar Indoria">
+<meta property="og:locale" content="en_US">
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://prakharindoria.github.io/">
-    <meta property="twitter:title" content="Prakhar Indoria · Software Engineer">
-    <meta property="twitter:description" content="Software Engineer at Tata Consultancy Services (TCS) with expertise in Java, Spring Boot, React, and cloud technologies. Passionate about AI, problem-solving, and delivering high-quality software solutions.">
-    <meta property="twitter:image" content="https://prakharindoria.github.io/images/portfolio_preview.jpg">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://prakharindoria.github.io/">
+<meta property="twitter:title" content="Prakhar Indoria · Software Engineer">
+<meta property="twitter:description" content="Software Engineer at Tata Consultancy Services (TCS) with expertise in Java, Spring Boot, React, and cloud technologies. Passionate about AI, problem-solving, and delivering high-quality software solutions.">
+<meta property="twitter:image" content="https://prakharindoria.github.io/images/portfolio_preview.jpg">
 
-    <meta name="theme-color" content="#050a12">
-    <meta name="msapplication-config" content="/browserconfig.xml">
-    <meta name="apple-mobile-web-app-title" content="Prakhar Indoria">
-    <link rel="icon" type="image/png" href="https://github.com/prakharindoria.png">
-    <link rel="apple-touch-icon" href="https://github.com/prakharindoria.png">
-    <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#050a12">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="apple-mobile-web-app-title" content="Prakhar Indoria">
+<link rel="icon" type="image/png" href="https://github.com/prakharindoria.png">
+<link rel="apple-touch-icon" href="https://github.com/prakharindoria.png">
+<link rel="manifest" href="/manifest.json">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
-    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap">
-    <style>
-         :root {
-            --sky: #050a12;
-            --ink: #e9f2f4;
-            --dim: #7f929c;
-            --grn: #5ffbc0;
-            --mag: #b98cff;
-            --ice: #8fd3ff;
-            --line: rgba(233, 242, 244, .14);
-            --hair: rgba(233, 242, 244, .055);
-            --tint: rgba(233, 242, 244, .035);
-            --glow: rgba(95, 251, 192, .1);
-            --star: rgba(233, 242, 244, .62);
-            --aur: 1
-        }
-        
-        :root[data-theme="day"] {
-            --sky: #e9eff1;
-            --ink: #08151d;
-            --dim: #5d6f79;
-            --grn: #07836a;
-            --mag: #6b3fb0;
-            --ice: #1b6b9e;
-            --line: rgba(8, 21, 29, .18);
-            --hair: rgba(8, 21, 29, .07);
-            --tint: rgba(8, 21, 29, .03);
-            --glow: rgba(7, 131, 106, .09);
-            --star: rgba(8, 21, 29, 0);
-            --aur: .4
-        }
-        
-        * {
-            box-sizing: border-box
-        }
-        
-        html {
-            -webkit-text-size-adjust: 100%;
-            scroll-behavior: smooth
-        }
-        
-        body {
-            margin: 0;
-            background: var(--sky);
-            color: var(--ink);
-            font-family: Satoshi, "Helvetica Neue", system-ui, sans-serif;
-            font-size: 15px;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden
-        }
-        
-        a {
-            color: var(--ink);
-            text-decoration: none
-        }
-        
-        a:hover {
-            color: var(--grn)
-        }
-        
-        h1,
-        h2,
-        h3,
-        p,
-        dl,
-        dt,
-        dd,
-        ol,
-        ul,
-        li,
-        figure,
-        blockquote {
-            margin: 0;
-            padding: 0
-        }
-        
-        ol,
-        ul {
-            list-style: none
-        }
-        
-        ::selection {
-            background: var(--grn);
-            color: var(--sky)
-        }
-        
-        .dsp {
-            font-family: Satoshi, "Helvetica Neue", system-ui, sans-serif;
-            font-weight: 400;
-            letter-spacing: -.03em
-        }
-        
-        #hud,
-        #local,
-        #kp,
-        #obs,
-        #bars,
-        time {
-            font-family: "IBM Plex Mono", ui-monospace, monospace;
-            font-variant-numeric: tabular-nums
-        }
-        
-        :focus-visible {
-            outline: 2px solid var(--grn);
-            outline-offset: 4px
-        }
-        
-        @keyframes tw {
-            0%,
-            100% {
-                opacity: .75
-            }
-            50% {
-                opacity: .28
-            }
-        }
-        
-        @keyframes rise {
-            from {
-                opacity: 0;
-                transform: translateY(14px)
-            }
-            to {
-                opacity: 1;
-                transform: none
-            }
-        }
-        
-        @media (prefers-reduced-motion:reduce) {
-            * {
-                animation-duration: .01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: .01ms !important
-            }
-            html {
-                scroll-behavior: auto
-            }
-        }
-    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap">
+<style>
+:root{--sky:#050a12;--ink:#e9f2f4;--dim:#7f929c;--grn:#5ffbc0;--mag:#b98cff;--ice:#8fd3ff;--line:rgba(233,242,244,.14);--hair:rgba(233,242,244,.055);--tint:rgba(233,242,244,.035);--glow:rgba(95,251,192,.1);--star:rgba(233,242,244,.62);--aur:1}
+:root[data-theme="day"]{--sky:#e9eff1;--ink:#08151d;--dim:#5d6f79;--grn:#07836a;--mag:#6b3fb0;--ice:#1b6b9e;--line:rgba(8,21,29,.18);--hair:rgba(8,21,29,.07);--tint:rgba(8,21,29,.03);--glow:rgba(7,131,106,.09);--star:rgba(8,21,29,0);--aur:.4}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--sky);color:var(--ink);font-family:Satoshi,"Helvetica Neue",system-ui,sans-serif;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--ink);text-decoration:none}
+a:hover{color:var(--grn)}
+h1,h2,h3,p,dl,dt,dd,ol,ul,li,figure,blockquote{margin:0;padding:0}
+ol,ul{list-style:none}
+::selection{background:var(--grn);color:var(--sky)}
+.dsp{font-family:Satoshi,"Helvetica Neue",system-ui,sans-serif;font-weight:400;letter-spacing:-.03em}
+#hud,#local,#kp,#obs,#bars,time{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--grn);outline-offset:4px}
+@keyframes tw{0%,100%{opacity:.75}50%{opacity:.28}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}html{scroll-behavior:auto}}
+</style>
 
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Prakhar Indoria",
-            "jobTitle": "Software Engineer",
-            "url": "https://prakharindoria.github.io",
-            "image": "https://github.com/prakharindoria.png",
-            "email": "prakhar.indoria@gmail.com",
-            "worksFor": {
-                "@type": "Organization",
-                "name": "Tata Consultancy Services",
-                "url": "https://www.tcs.com"
-            },
-            "alumniOf": {
-                "@type": "EducationalOrganization",
-                "name": "University Institute of Technology, RGPV"
-            },
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Mumbai",
-                "addressCountry": "India"
-            },
-            "sameAs": ["https://github.com/prakharindoria", "https://linkedin.com/in/prakharindoria"],
-            "knowsAbout": ["Java", "Spring Boot", "React", "Python", "Cloud Computing", "Artificial Intelligence", "Software Development", "Web Development", "Database Management", "DevOps"],
-            "description": "Software Engineer at Tata Consultancy Services (TCS) with expertise in Java, Spring Boot, React, and cloud technologies. Passionate about AI, problem-solving, and delivering high-quality software solutions."
-        }
-    </script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Prakhar Indoria",
+    "jobTitle": "Software Engineer",
+    "url": "https://prakharindoria.github.io",
+    "image": "https://github.com/prakharindoria.png",
+    "email": "prakhar.indoria@gmail.com",
+    "worksFor": { "@type": "Organization", "name": "Tata Consultancy Services", "url": "https://www.tcs.com" },
+    "alumniOf": { "@type": "EducationalOrganization", "name": "University Institute of Technology, RGPV" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressCountry": "India" },
+    "sameAs": ["https://github.com/prakharindoria", "https://linkedin.com/in/prakharindoria"],
+    "knowsAbout": ["Java", "Spring Boot", "React", "Python", "Cloud Computing", "Artificial Intelligence", "Software Development", "Web Development", "Database Management", "DevOps"],
+    "description": "Software Engineer at Tata Consultancy Services (TCS) with expertise in Java, Spring Boot, React, and cloud technologies. Passionate about AI, problem-solving, and delivering high-quality software solutions."
+}
+</script>
 
-    <script src="./support.js"></script>
+<script src="./support.js"></script>
 </head>
-
 <body>
-    <x-dc>
+<x-dc>
 
-        <div id="aur" style="position:relative;min-height:100vh;background:var(--sky);isolation:isolate">
+<div id="aur" style="position:relative;min-height:100vh;background:var(--sky);isolation:isolate">
 
-            <a href="#o1" style="position:fixed;top:-80px;left:12px;z-index:90;background:var(--grn);color:var(--sky);padding:10px 14px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:top .2s" style-focus="top:12px">Skip to content</a>
-            <canvas id="cv" aria-hidden="true" style="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:var(--aur);filter:blur(7px) saturate(1.2)"></canvas>
-            <div id="stars" aria-hidden="true" style="position:fixed;inset:0;z-index:1;pointer-events:none;animation:tw 9s ease-in-out infinite"></div>
-            <div aria-hidden="true" style="position:fixed;inset:0;z-index:2;pointer-events:none;background-image:repeating-linear-gradient(90deg,var(--hair) 0 1px,transparent 1px 11.111vw)"></div>
-            <div aria-hidden="true" style="position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(130% 90% at 50% 112%,transparent 55%,color-mix(in srgb,var(--sky) 45%,transparent) 100%)"></div>
+  <a href="#o1" style="position:fixed;top:-80px;left:12px;z-index:90;background:var(--grn);color:var(--sky);padding:10px 14px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:top .2s" style-focus="top:12px">Skip to content</a>
+  <canvas id="cv" aria-hidden="true" style="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:var(--aur);filter:blur(7px) saturate(1.2)"></canvas>
+  <div id="stars" aria-hidden="true" style="position:fixed;inset:0;z-index:1;pointer-events:none;animation:tw 9s ease-in-out infinite"></div>
+  <div aria-hidden="true" style="position:fixed;inset:0;z-index:2;pointer-events:none;background-image:repeating-linear-gradient(90deg,var(--hair) 0 1px,transparent 1px 11.111vw)"></div>
+  <div aria-hidden="true" style="position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(130% 90% at 50% 112%,transparent 55%,color-mix(in srgb,var(--sky) 45%,transparent) 100%)"></div>
 
-            <header style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:clamp(12px,1.5vw,18px) clamp(14px,3vw,38px);border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--sky) 72%,transparent);backdrop-filter:blur(14px)">
-                <i id="prog" aria-hidden="true" style="position:absolute;left:0;bottom:-1px;height:1px;width:0%;background:var(--grn);box-shadow:0 0 8px var(--grn)"></i>
-                <a href="#o0" style="display:flex;align-items:baseline;gap:11px">
-                    <span class="dsp" style="font-size:clamp(14px,1.4vw,18px);letter-spacing:.01em;font-weight:500">Prakhar Indoria</span>
-                    <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)">Nightwatch</span>
-                </a>
-                <div style="display:flex;align-items:center;gap:clamp(8px,1.6vw,18px)">
-                    <span id="hud" style="display:none;align-items:center;gap:10px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">
-        <span id="obs">Nightwatch</span>
-                    <span style="color:var(--line)">&middot;</span>
-                    <span style="display:flex;align-items:center;gap:6px">Activity
+  <header style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:clamp(12px,1.5vw,18px) clamp(14px,3vw,38px);border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--sky) 72%,transparent);backdrop-filter:blur(14px)">
+    <i id="prog" aria-hidden="true" style="position:absolute;left:0;bottom:-1px;height:1px;width:0%;background:var(--grn);box-shadow:0 0 8px var(--grn)"></i>
+    <a href="#o0" style="display:flex;align-items:baseline;gap:11px">
+      <span class="dsp" style="font-size:clamp(14px,1.4vw,18px);letter-spacing:.01em;font-weight:500">Prakhar Indoria</span>
+      <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)">Nightwatch</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:clamp(8px,1.6vw,18px)">
+      <span id="hud" style="display:none;align-items:center;gap:10px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">
+        <span id="obs">Nightfall</span>
+        <span style="color:var(--line)">&middot;</span>
+        <span style="display:flex;align-items:center;gap:6px">Activity
           <span id="bars" style="display:flex;align-items:flex-end;gap:2px;height:12px"></span>
-                    <span id="kp" style="color:var(--grn);font-variant-numeric:tabular-nums">0.0</span>
-                    </span>
-                    </span>
-                    <button id="theme" type="button" aria-label="Switch theme" style="appearance:none;border:1px solid var(--line);background:transparent;color:var(--dim);font:inherit;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 11px;cursor:pointer"
-                        style-hover="border-color:var(--grn);color:var(--grn)">Daylight</button>
-                    <a href="#o5" style="border:1px solid var(--ink);padding:7px 13px;font-size:10px;letter-spacing:.18em;text-transform:uppercase" style-hover="background:var(--grn);border-color:var(--grn);color:var(--sky)">Signal</a>
-                </div>
-            </header>
+          <span id="kp" style="color:var(--grn);font-variant-numeric:tabular-nums">0.0</span>
+        </span>
+      </span>
+      <button id="theme" type="button" aria-label="Switch theme" style="appearance:none;border:1px solid var(--line);background:transparent;color:var(--dim);font:inherit;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 11px;cursor:pointer" style-hover="border-color:var(--grn);color:var(--grn)">Daylight</button>
+      <a href="#o5" style="border:1px solid var(--ink);padding:7px 13px;font-size:10px;letter-spacing:.18em;text-transform:uppercase" style-hover="background:var(--grn);border-color:var(--grn);color:var(--sky)">Signal</a>
+    </div>
+  </header>
 
-            <nav id="rail" aria-label="Observations" style="position:fixed;left:clamp(12px,2vw,26px);top:50%;transform:translateY(-50%);z-index:55;display:none;flex-direction:column;gap:13px">
-                <a href="#o0" data-nav style="display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)"><i style="display:block;width:13px;height:1px;background:currentColor;transition:width .3s"></i>Nightwatch</a>
-                <a href="#o1" data-nav style="display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)"><i style="display:block;width:13px;height:1px;background:currentColor;transition:width .3s"></i>Observer</a>
-                <a href="#o2" data-nav style="display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)"><i style="display:block;width:13px;height:1px;background:currentColor;transition:width .3s"></i>Log</a>
-                <a href="#o3" data-nav style="display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)"><i style="display:block;width:13px;height:1px;background:currentColor;transition:width .3s"></i>Spectrum</a>
-                <a href="#o4" data-nav style="display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)"><i style="display:block;width:13px;height:1px;background:currentColor;transition:width .3s"></i>Sightings</a>
-                <a href="#o5" data-nav style="display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)"><i style="display:block;width:13px;height:1px;background:currentColor;transition:width .3s"></i>Signal</a>
-            </nav>
+  <nav id="rail" aria-label="Observations" style="position:fixed;left:clamp(12px,2vw,26px);top:50%;transform:translateY(-50%);z-index:55;display:none;flex-direction:column;gap:13px">
+    <a href="#o0" data-nav style="display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)"><i style="display:block;width:13px;height:1px;background:currentColor;transition:width .3s"></i>Nightfall</a>
+    <a href="#o1" data-nav style="display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)"><i style="display:block;width:13px;height:1px;background:currentColor;transition:width .3s"></i>Observer</a>
+    <a href="#o2" data-nav style="display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)"><i style="display:block;width:13px;height:1px;background:currentColor;transition:width .3s"></i>Log</a>
+    <a href="#o3" data-nav style="display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)"><i style="display:block;width:13px;height:1px;background:currentColor;transition:width .3s"></i>Spectrum</a>
+    <a href="#o4" data-nav style="display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)"><i style="display:block;width:13px;height:1px;background:currentColor;transition:width .3s"></i>Sightings</a>
+    <a href="#o5" data-nav style="display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)"><i style="display:block;width:13px;height:1px;background:currentColor;transition:width .3s"></i>Signal</a>
+  </nav>
 
-            <main style="position:relative;z-index:10">
+  <main style="position:relative;z-index:10">
 
-                <section id="o0" data-obs="Nightwatch" data-i="0.25" style="min-height:100vh;display:grid;grid-template-columns:1fr;align-content:center;gap:clamp(22px,4vh,46px);padding:clamp(96px,14vh,150px) clamp(14px,3vw,38px) clamp(80px,12vh,140px)">
-                    <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:9px 18px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)">
-                        <span style="border:1px solid var(--line);padding:5px 9px;color:var(--grn)">Obs 00</span>
-                        <span>Nightwatch</span>
-                        <span style="color:var(--line)">|</span>
-                        <span>19.0760&deg;N &nbsp;72.8777&deg;E</span>
-                        <span style="color:var(--line)">|</span>
-                        <span id="local">--:--</span>
-                    </div>
-                    <h1 class="dsp" style="line-height:.92;letter-spacing:-.03em;font-size:clamp(46px,10.5vw,178px);text-wrap:balance;font-variation-settings:'wdth' 112">I build things that hold up <span style="color:var(--grn)">after dark</span>.</h1>
-                    <div style="display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,52px);border-top:1px solid var(--line);padding-top:clamp(18px,2.4vh,28px)">
-                        <p style="font-size:15px;line-height:1.7;max-width:50ch;color:var(--dim);text-wrap:pretty">Software Engineer at <span style="color:var(--ink)">Tata Consultancy Services</span> in Mumbai. Java and Spring Boot on the server side, with a standing curiosity about AI and the cloud.</p>
-                        <dl style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px 22px;align-self:start">
-                            <div style="min-width:0"><dt style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:8px">Experience</dt>
-                                <dd class="dsp" style="font-size:clamp(21px,2.4vw,36px);line-height:1.05"><span id="yrs">4</span>+<span style="font-family:'IBM Plex Mono',monospace;font-size:.36em;letter-spacing:.14em;text-transform:uppercase;margin-left:.35em">yrs</span></dd>
-                            </div>
-                            <div style="min-width:0"><dt style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:8px">Layer</dt>
-                                <dd class="dsp" style="font-size:clamp(21px,2.4vw,36px);line-height:1.05">Backend</dd>
-                            </div>
-                            <div style="min-width:0"><dt style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:8px">Watching</dt>
-                                <dd class="dsp" style="font-size:clamp(21px,2.4vw,36px);line-height:1.05">AI&#8202;/&#8202;Cloud</dd>
-                            </div>
-                        </dl>
-                    </div>
-                    <p style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:10px"><span style="display:block;width:22px;height:1px;background:var(--grn)"></span>Scroll. The sky answers</p>
-                </section>
+    <section id="o0" data-obs="Nightfall" data-i="0.25" style="min-height:100vh;display:grid;grid-template-columns:1fr;align-content:center;gap:clamp(22px,4vh,46px);padding:clamp(96px,14vh,150px) clamp(14px,3vw,38px) clamp(80px,12vh,140px)">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:9px 18px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)">
+        <span style="border:1px solid var(--line);padding:5px 9px;color:var(--grn)">Obs 00</span>
+        <span>Nightfall</span>
+        <span style="color:var(--line)">|</span>
+        <span>19.0760&deg;N &nbsp;72.8777&deg;E</span>
+        <span style="color:var(--line)">|</span>
+        <span id="local">--:--</span>
+      </div>
+      <h1 class="dsp" style="line-height:.92;letter-spacing:-.03em;font-size:clamp(46px,10.5vw,178px);text-wrap:balance;font-variation-settings:'wdth' 112">I build things that hold up <span style="color:var(--grn)">after dark</span>.</h1>
+      <div style="display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,52px);border-top:1px solid var(--line);padding-top:clamp(18px,2.4vh,28px)">
+        <p style="font-size:15px;line-height:1.7;max-width:50ch;color:var(--dim);text-wrap:pretty">Software Engineer at <span style="color:var(--ink)">Tata Consultancy Services</span> in Mumbai. Java and Spring Boot on the server side, with a standing curiosity about AI and the cloud.</p>
+        <dl style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px 22px;align-self:start">
+          <div style="min-width:0"><dt style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:8px">Experience</dt><dd class="dsp" style="font-size:clamp(21px,2.4vw,36px);line-height:1.05"><span id="yrs">4</span>+<span style="font-family:'IBM Plex Mono',monospace;font-size:.36em;letter-spacing:.14em;text-transform:uppercase;margin-left:.35em">yrs</span></dd></div>
+          <div style="min-width:0"><dt style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:8px">Layer</dt><dd class="dsp" style="font-size:clamp(21px,2.4vw,36px);line-height:1.05">Backend</dd></div>
+          <div style="min-width:0"><dt style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:8px">Watching</dt><dd class="dsp" style="font-size:clamp(21px,2.4vw,36px);line-height:1.05">AI&#8202;/&#8202;Cloud</dd></div>
+        </dl>
+      </div>
+      <p style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:10px"><span style="display:block;width:22px;height:1px;background:var(--grn)"></span>Scroll. The sky answers</p>
+    </section>
 
-                <section id="o1" data-obs="Observer" data-i="0.5" style="padding:clamp(78px,12vh,158px) clamp(14px,3vw,38px);border-top:1px solid var(--line)">
-                    <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:9px 18px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:clamp(26px,4vh,52px)">
-                        <span style="border:1px solid var(--line);padding:5px 9px;color:var(--grn)">Obs 01</span><span>Observer</span>
-                    </div>
-                    <h2 class="dsp" style="line-height:.95;letter-spacing:-.025em;font-size:clamp(36px,7vw,124px);margin-bottom:clamp(30px,5vh,60px)">Who's watching</h2>
-                    <div style="display:grid;grid-template-columns:1fr;gap:clamp(26px,4vw,72px);align-items:start">
-                        <div style="display:grid;gap:20px;max-width:60ch">
-                            <p class="dsp" style="font-size:clamp(20px,2.1vw,30px);line-height:1.35;letter-spacing:-.012em;text-wrap:pretty">A Software Engineer at Tata Consultancy Services with a B.Tech in Computer Science Engineering. A career driven by genuine enthusiasm for technology and a steady commitment to learning.</p>
-                            <p style="font-size:15px;line-height:1.7;color:var(--dim);text-wrap:pretty">I like problems that need untangling. Most of my work comes down to finding a cleaner path through a process and shipping software that holds up once it's in someone's hands. Keeping pace with a field that never sits still
-                                is less a chore than the reason I'm here.</p>
-                            <p style="font-size:15px;line-height:1.7;color:var(--dim);text-wrap:pretty">Right now I'm going deeper on <span style="color:var(--ink);border-bottom:1px solid var(--grn)">Spring Boot</span>, while working through <span style="color:var(--ink);border-bottom:1px solid var(--grn)">AI</span> and the foundations
-                                of <span style="color:var(--ink);border-bottom:1px solid var(--grn)">cloud architecture</span>. Always up for a conversation about new tech, or nature, or history.</p>
-                        </div>
-                        <figure style="border:1px solid var(--line);background:var(--tint);padding:clamp(20px,2.4vw,34px);max-width:46ch;position:relative;overflow:hidden">
-                            <span aria-hidden="true" style="position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--mag),var(--grn))"></span>
-                            <figcaption style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:15px">Field note</figcaption>
-                            <blockquote>
-                                <p class="dsp" style="font-size:clamp(19px,2.1vw,29px);line-height:1.34;letter-spacing:-.014em;text-wrap:pretty">I architect solutions like I plan mountain treks, mapping every possible route, preparing for the unexpected, and enjoying the climb to the summit.</p>
-                            </blockquote>
-                        </figure>
-                    </div>
-                </section>
-
-                <section id="o2" data-obs="Log" data-i="0.62" style="padding:clamp(78px,12vh,158px) clamp(14px,3vw,38px);border-top:1px solid var(--line)">
-                    <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:9px 18px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:clamp(26px,4vh,52px)">
-                        <span style="border:1px solid var(--line);padding:5px 9px;color:var(--grn)">Obs 02</span><span>Log</span><span style="color:var(--line)">|</span><span>work &amp; study</span>
-                    </div>
-                    <h2 class="dsp" style="line-height:.95;letter-spacing:-.025em;font-size:clamp(36px,7vw,124px);margin-bottom:clamp(28px,5vh,56px)">2016 &rarr; now</h2>
-                    <ol id="log">
-                        <li data-row style="border-top:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:12px 34px;padding:clamp(24px,3.4vh,40px) 0">
-                            <p style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--grn);display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:var(--grn);box-shadow:0 0 10px var(--grn)"></span>2021 to now</p>
-                            <div>
-                                <h3 class="dsp" style="font-size:clamp(23px,2.9vw,44px);line-height:1.02;letter-spacing:-.018em;margin-bottom:8px">Software Engineer</h3>
-                                <p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:14px">Tata Consultancy Services &nbsp;<span style="color:var(--line)">/</span>&nbsp; Mumbai, India</p>
-                                <p style="font-size:15px;line-height:1.68;color:var(--dim);max-width:60ch;text-wrap:pretty">Building software for a range of clients, with a bias toward solutions that stay efficient under real load. A good part of the job is spotting where a workflow can be tightened and making that case to the team.</p>
-                            </div>
-                        </li>
-                        <li data-row style="border-top:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:12px 34px;padding:clamp(24px,3.4vh,40px) 0">
-                            <p style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">2021</p>
-                            <div>
-                                <h3 class="dsp" style="font-size:clamp(23px,2.9vw,44px);line-height:1.02;letter-spacing:-.018em;margin-bottom:8px">Software Developer</h3>
-                                <p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:14px">A2 Infotech &nbsp;<span style="color:var(--line)">/</span>&nbsp; Bhopal, India</p>
-                                <p style="font-size:15px;line-height:1.68;color:var(--dim);max-width:60ch;text-wrap:pretty">First industry role. Contributed to client projects and learned what core programming principles look like once they leave the classroom.</p>
-                            </div>
-                        </li>
-                        <li data-row style="border-top:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:12px 34px;padding:clamp(20px,2.8vh,30px) 0">
-                            <p style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">2017&ndash;2021 &nbsp;&middot;&nbsp; study</p>
-                            <div>
-                                <h3 style="font-size:clamp(16px,1.6vw,20px);font-weight:400;letter-spacing:-.005em;margin-bottom:6px">B.Tech, Computer Science Engineering</h3>
-                                <p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)">University Institute of Technology, RGPV</p>
-                            </div>
-                        </li>
-                        <li data-row style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:12px 34px;padding:clamp(20px,2.8vh,30px) 0">
-                            <p style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">2004&ndash;2016 &nbsp;&middot;&nbsp; study</p>
-                            <div>
-                                <h3 style="font-size:clamp(16px,1.6vw,20px);font-weight:400;letter-spacing:-.005em;margin-bottom:6px">Higher Secondary Education</h3>
-                                <p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)">Mithi Gobindram Public School</p>
-                            </div>
-                        </li>
-                    </ol>
-                </section>
-
-                <section id="o3" data-obs="Spectrum" data-i="0.78" style="padding:clamp(78px,12vh,158px) clamp(14px,3vw,38px);border-top:1px solid var(--line)">
-                    <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:9px 18px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:clamp(26px,4vh,52px)">
-                        <span style="border:1px solid var(--line);padding:5px 9px;color:var(--grn)">Obs 03</span><span>Spectrum</span><span style="color:var(--line)">|</span><span>emission bands</span>
-                    </div>
-                    <h2 class="dsp" style="line-height:.95;letter-spacing:-.025em;font-size:clamp(36px,7vw,124px);margin-bottom:clamp(28px,5vh,56px)">What I work with</h2>
-                    <div id="spec" style="border-top:1px solid var(--line)">
-                        <div data-band style="border-bottom:1px solid var(--line);padding:clamp(18px,2.4vh,26px) 0;display:grid;grid-template-columns:1fr;gap:12px 34px">
-                            <h3 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:10px"><span style="display:block;width:26px;height:2px;background:var(--grn)"></span>Languages</h3>
-                            <ul style="display:flex;flex-wrap:wrap;gap:7px 24px;font-size:clamp(16px,1.7vw,23px)">
-                                <li data-it>Java</li>
-                                <li data-it>Python</li>
-                                <li data-it>C++</li>
-                                <li data-it>C</li>
-                                <li data-it>JavaScript</li>
-                                <li data-it>SQL</li>
-                                <li data-it>JSON</li>
-                            </ul>
-                        </div>
-                        <div data-band style="border-bottom:1px solid var(--line);padding:clamp(18px,2.4vh,26px) 0;display:grid;grid-template-columns:1fr;gap:12px 34px">
-                            <h3 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:10px"><span style="display:block;width:26px;height:2px;background:var(--ice)"></span>Frameworks</h3>
-                            <ul style="display:flex;flex-wrap:wrap;gap:7px 24px;font-size:clamp(16px,1.7vw,23px)">
-                                <li data-it>Spring Boot</li>
-                                <li data-it>Hibernate</li>
-                                <li data-it>JSP</li>
-                                <li data-it>React</li>
-                                <li data-it>jQuery</li>
-                                <li data-it>AJAX</li>
-                                <li data-it>Bootstrap</li>
-                                <li data-it>Tkinter</li>
-                            </ul>
-                        </div>
-                        <div data-band style="border-bottom:1px solid var(--line);padding:clamp(18px,2.4vh,26px) 0;display:grid;grid-template-columns:1fr;gap:12px 34px">
-                            <h3 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:10px"><span style="display:block;width:26px;height:2px;background:var(--mag)"></span>Databases</h3>
-                            <ul style="display:flex;flex-wrap:wrap;gap:7px 24px;font-size:clamp(16px,1.7vw,23px)">
-                                <li data-it>Oracle</li>
-                                <li data-it>MySQL</li>
-                                <li data-it>DBMS</li>
-                            </ul>
-                        </div>
-                        <div data-band style="border-bottom:1px solid var(--line);padding:clamp(18px,2.4vh,26px) 0;display:grid;grid-template-columns:1fr;gap:12px 34px">
-                            <h3 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:10px"><span style="display:block;width:26px;height:2px;background:var(--grn)"></span>Tools &amp; platforms</h3>
-                            <ul style="display:flex;flex-wrap:wrap;gap:7px 24px;font-size:clamp(16px,1.7vw,23px)">
-                                <li data-it>Docker</li>
-                                <li data-it>Maven</li>
-                                <li data-it>GitHub</li>
-                                <li data-it>Microsoft Azure</li>
-                                <li data-it>Linux</li>
-                            </ul>
-                        </div>
-                        <div data-band style="border-bottom:1px solid var(--line);padding:clamp(18px,2.4vh,26px) 0;display:grid;grid-template-columns:1fr;gap:12px 34px">
-                            <h3 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:10px"><span style="display:block;width:26px;height:2px;background:var(--ice)"></span>Concepts</h3>
-                            <ul style="display:flex;flex-wrap:wrap;gap:7px 24px;font-size:clamp(16px,1.7vw,23px)">
-                                <li data-it>Generative AI</li>
-                                <li data-it>Agile</li>
-                                <li data-it>DevOps</li>
-                                <li data-it>Cloud Native</li>
-                                <li data-it>Data Structures</li>
-                                <li data-it>MVC</li>
-                                <li data-it>OOP</li>
-                                <li data-it>REST APIs</li>
-                                <li data-it>Algorithms</li>
-                            </ul>
-                        </div>
-                        <div data-band style="border-bottom:1px solid var(--line);padding:clamp(18px,2.4vh,26px) 0;display:grid;grid-template-columns:1fr;gap:12px 34px">
-                            <h3 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:10px"><span style="display:block;width:26px;height:2px;background:var(--mag)"></span>Working with people</h3>
-                            <ul style="display:flex;flex-wrap:wrap;gap:7px 24px;font-size:clamp(16px,1.7vw,23px)">
-                                <li data-it>Team Management</li>
-                                <li data-it>Communication</li>
-                                <li data-it>Collaboration</li>
-                                <li data-it>Problem Solving</li>
-                                <li data-it>Persistence</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="o4" data-obs="Sightings" data-i="0.9" style="padding:clamp(78px,12vh,158px) 0;border-top:1px solid var(--line)">
-                    <div style="padding:0 clamp(14px,3vw,38px)">
-                        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:9px 18px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:clamp(26px,4vh,52px)">
-                            <span style="border:1px solid var(--line);padding:5px 9px;color:var(--grn)">Obs 04</span><span>Sightings</span>
-                        </div>
-                        <h2 class="dsp" style="line-height:.95;letter-spacing:-.025em;font-size:clamp(36px,7vw,124px);margin-bottom:clamp(28px,5vh,56px)">Selected work</h2>
-                    </div>
-                    <ol>
-                        <li style="border-top:1px solid var(--line)">
-                            <a href="https://github.com/prakharindoria/MyCovidShop-Ecommerce-Web-Application" target="_blank" rel="noopener noreferrer" data-plate style="display:flex;flex-wrap:wrap;gap:14px 36px;align-items:flex-start;padding:clamp(26px,4vh,48px) clamp(14px,3vw,38px);transition:background .45s cubic-bezier(.22,1,.36,1)"
-                                style-hover="background:linear-gradient(90deg,var(--glow),transparent 62%)">
-                                <span style="display:flex;flex-direction:column;gap:8px;flex:0 0 200px;max-width:200px">
-              <span class="dsp" style="font-size:clamp(30px,4vw,64px);line-height:.9;color:var(--grn);letter-spacing:-.03em">01</span>
-                                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">E-commerce web application</span>
-                                </span>
-                                <span style="display:block;flex:1 1 380px;min-width:0">
-              <span class="dsp" style="display:block;font-size:clamp(26px,4vw,62px);line-height:1;letter-spacing:-.026em;margin-bottom:13px">Covid Shield<span data-arw aria-hidden="true" style="display:inline-block;margin-left:.34em;font-size:.42em;vertical-align:.5em;opacity:.32;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s">&#8599;</span></span>
-                                <span style="display:block;font-size:15px;line-height:1.68;color:var(--dim);max-width:58ch;text-wrap:pretty">A full-stack commerce platform built during the pandemic. Product catalogue, cart, and orders on a Java EE backend, with attention paid to how the storefront actually felt to use.</span>
-                                <span style="display:flex;flex-wrap:wrap;gap:5px 16px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--grn);margin-top:16px"><span>Java EE</span><span>JSP</span><span>Servlets</span><span>Hibernate</span><span>MySQL</span><span>jQuery</span><span>Bootstrap 5</span></span>
-                                </span>
-                            </a>
-                        </li>
-                        <li style="border-top:1px solid var(--line)">
-                            <a href="https://github.com/prakharindoria/Notepad-with-Sentiment-Analysis" target="_blank" rel="noopener noreferrer" data-plate style="display:flex;flex-wrap:wrap;gap:14px 36px;align-items:flex-start;padding:clamp(26px,4vh,48px) clamp(14px,3vw,38px);transition:background .45s cubic-bezier(.22,1,.36,1)"
-                                style-hover="background:linear-gradient(90deg,var(--glow),transparent 62%)">
-                                <span style="display:flex;flex-direction:column;gap:8px;flex:0 0 200px;max-width:200px">
-              <span class="dsp" style="font-size:clamp(30px,4vw,64px);line-height:.9;color:var(--grn);letter-spacing:-.03em">02</span>
-                                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">Desktop application</span>
-                                </span>
-                                <span style="display:block;flex:1 1 380px;min-width:0">
-              <span class="dsp" style="display:block;font-size:clamp(26px,4vw,62px);line-height:1;letter-spacing:-.026em;margin-bottom:13px">Notepad with Sentiment Analysis<span data-arw aria-hidden="true" style="display:inline-block;margin-left:.34em;font-size:.42em;vertical-align:.5em;opacity:.32;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s">&#8599;</span></span>
-                                <span style="display:block;font-size:15px;line-height:1.68;color:var(--dim);max-width:58ch;text-wrap:pretty">A notepad that reads the room. Sentiment analysis runs as you type, surfacing the emotional tone of the text without interrupting the writing.</span>
-                                <span style="display:flex;flex-wrap:wrap;gap:5px 16px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--grn);margin-top:16px"><span>Python</span><span>Tkinter</span><span>NLTK</span><span>VADER Sentiment</span></span>
-                                </span>
-                            </a>
-                        </li>
-                        <li style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-                            <a href="https://github.com/prakharindoria/MedGuide-Hospital-Management-System" target="_blank" rel="noopener noreferrer" data-plate style="display:flex;flex-wrap:wrap;gap:14px 36px;align-items:flex-start;padding:clamp(26px,4vh,48px) clamp(14px,3vw,38px);transition:background .45s cubic-bezier(.22,1,.36,1)"
-                                style-hover="background:linear-gradient(90deg,var(--glow),transparent 62%)">
-                                <span style="display:flex;flex-direction:column;gap:8px;flex:0 0 200px;max-width:200px">
-              <span class="dsp" style="font-size:clamp(30px,4vw,64px);line-height:.9;color:var(--grn);letter-spacing:-.03em">03</span>
-                                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">Hospital management system</span>
-                                </span>
-                                <span style="display:block;flex:1 1 380px;min-width:0">
-              <span class="dsp" style="display:block;font-size:clamp(26px,4vw,62px);line-height:1;letter-spacing:-.026em;margin-bottom:13px">Med Guide<span data-arw aria-hidden="true" style="display:inline-block;margin-left:.34em;font-size:.42em;vertical-align:.5em;opacity:.32;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s">&#8599;</span></span>
-                                <span style="display:block;font-size:15px;line-height:1.68;color:var(--dim);max-width:58ch;text-wrap:pretty">Patient records, appointments, and admin workflows for a medical facility, consolidated into one system so the staff stop working around the software.</span>
-                                <span style="display:flex;flex-wrap:wrap;gap:5px 16px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--grn);margin-top:16px"><span>Java</span><span>Spring Boot</span><span>MySQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span></span>
-                                </span>
-                            </a>
-                        </li>
-                    </ol>
-                    <p style="padding:26px clamp(14px,3vw,38px) 0;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">Full record on <a href="https://github.com/prakharindoria" target="_blank" rel="noopener noreferrer" style="border-bottom:1px solid var(--grn)">GitHub</a></p>
-                </section>
-
-                <section id="o5" data-obs="Signal" data-i="1" style="min-height:94vh;display:flex;flex-direction:column;justify-content:center;padding:clamp(78px,12vh,155px) clamp(14px,3vw,38px) clamp(90px,14vh,160px);border-top:1px solid var(--line)">
-                    <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:9px 18px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:clamp(24px,4vh,46px)">
-                        <span style="border:1px solid var(--line);padding:5px 9px;color:var(--grn)">Obs 05</span><span>Signal</span><span style="color:var(--line)">|</span><span>peak activity</span>
-                    </div>
-                    <h2 class="dsp" style="line-height:.9;letter-spacing:-.03em;font-size:clamp(42px,9.5vw,172px);text-wrap:balance">Let's build something worth <span style="color:var(--grn)">staying up for.</span></h2>
-                    <p style="font-size:15px;line-height:1.7;max-width:52ch;margin-top:clamp(24px,4vh,44px);color:var(--dim);text-wrap:pretty">Open to new projects, interesting problems, and conversations that go somewhere. The inbox is the fastest way to reach me.</p>
-                    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:clamp(26px,4vh,44px);border-top:1px solid var(--line);padding-top:clamp(20px,3vh,32px)">
-                        <a href="mailto:prakhar.indoria@gmail.com" class="dsp" style="font-size:clamp(19px,3.2vw,50px);line-height:1;letter-spacing:-.025em;border-bottom:1px solid var(--line)" style-hover="color:var(--grn);border-color:var(--grn)">prakhar.indoria@gmail.com</a>
-                        <button id="copy" type="button" style="appearance:none;border:1px solid var(--line);background:transparent;color:var(--dim);font:inherit;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:9px 14px;cursor:pointer" style-hover="border-color:var(--grn);color:var(--grn)">Copy</button>
-                    </div>
-                    <ul style="display:flex;flex-wrap:wrap;gap:12px 30px;margin-top:clamp(24px,4vh,40px);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">
-                        <li><a href="https://github.com/prakharindoria" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a></li>
-                        <li><a href="https://linkedin.com/in/prakharindoria" target="_blank" rel="noopener noreferrer">LinkedIn &nearr;</a></li>
-                        <li><a href="mailto:prakhar.indoria@gmail.com">Email &nearr;</a></li>
-                    </ul>
-                </section>
-            </main>
-
-            <footer style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 22px;padding:22px clamp(14px,3vw,38px);border-top:1px solid var(--line);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);position:relative;z-index:10">
-                <p>&copy; 2026 Prakhar Indoria</p>
-                <p>Hand-built. No frameworks, no trackers</p>
-                <a href="#o0">Back to nightwatch &uarr;</a>
-            </footer>
+    <section id="o1" data-obs="Observer" data-i="0.5" style="padding:clamp(78px,12vh,158px) clamp(14px,3vw,38px);border-top:1px solid var(--line)">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:9px 18px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:clamp(26px,4vh,52px)">
+        <span style="border:1px solid var(--line);padding:5px 9px;color:var(--grn)">Obs 01</span><span>Observer</span>
+      </div>
+      <h2 class="dsp" style="line-height:.95;letter-spacing:-.025em;font-size:clamp(36px,7vw,124px);margin-bottom:clamp(30px,5vh,60px)">Who's watching</h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:clamp(26px,4vw,72px);align-items:start">
+        <div style="display:grid;gap:20px;max-width:60ch">
+          <p class="dsp" style="font-size:clamp(20px,2.1vw,30px);line-height:1.35;letter-spacing:-.012em;text-wrap:pretty">A Software Engineer at Tata Consultancy Services with a B.Tech in Computer Science Engineering. A career driven by genuine enthusiasm for technology and a steady commitment to learning.</p>
+          <p style="font-size:15px;line-height:1.7;color:var(--dim);text-wrap:pretty">I like problems that need untangling. Most of my work comes down to finding a cleaner path through a process and shipping software that holds up once it's in someone's hands. Keeping pace with a field that never sits still is less a chore than the reason I'm here.</p>
+          <p style="font-size:15px;line-height:1.7;color:var(--dim);text-wrap:pretty">Right now I'm going deeper on <span style="color:var(--ink);border-bottom:1px solid var(--grn)">Spring Boot</span>, while working through <span style="color:var(--ink);border-bottom:1px solid var(--grn)">AI</span> and the foundations of <span style="color:var(--ink);border-bottom:1px solid var(--grn)">cloud architecture</span>. Always up for a conversation about new tech, or nature, or history.</p>
         </div>
-    </x-dc>
-    <script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#5ffbc0&quot;,&quot;options&quot;:[&quot;#5ffbc0&quot;,&quot;#7ee8ff&quot;,&quot;#b98cff&quot;,&quot;#c8ff8f&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Aurora&quot;},&quot;auroraIntensity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0,&quot;max&quot;:1.8,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Aurora&quot;},&quot;showStars&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Aurora&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0,&quot;max&quot;:2,&quot;step&quot;:0.25,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Aurora&quot;}}">
-        class Component extends DCLogic { componentDidMount() { const root = document.getElementById('aur'); if (!root) return; const html = document.documentElement; const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; const wide = matchMedia('(min-width:
-        900px)'); const gain = this.props.motion ?? 1; const base = this.props.auroraIntensity ?? 1; const grn = this.props.accent; if (grn && grn.toLowerCase() !== '#5ffbc0') html.style.setProperty('--grn', grn); else html.style.removeProperty('--grn');
-        const btn = root.querySelector('#theme'); const apply = t => { html.setAttribute('data-theme', t); if (btn) btn.textContent = t === 'day' ? 'Night' : 'Daylight'; }; let stored = null; try { stored = localStorage.getItem('pi-aur-theme'); } catch
-        (e) {} apply(stored || 'night'); if (btn) btn.onclick = () => { const next = html.getAttribute('data-theme') === 'day' ? 'night' : 'day'; apply(next); try { localStorage.setItem('pi-aur-theme', next); } catch (e) {} }; // starfield — static positions,
-        drawn once as CSS gradients const stars = root.querySelector('#stars'); if (stars && this.props.showStars !== false) { let bg = [], pos = [], size = []; for (let i = 0; i
-        < 46; i++) { const r=i % 7===0 ? 1.6 : 1; bg.push(
-            'radial-gradient(circle, var(--star) 0 ' + r + 'px, transparent ' + (r + 0.6) + 'px)'); pos.push((Math.random() * 100).toFixed(2) + '% ' + (Math.random() * 78).toFixed(2) + '%'); size.push( '3px 3px'); } stars.style.backgroundImage=b g.join( ','); stars.style.backgroundPosition=p os.join(
-            ','); stars.style.backgroundSize=s ize.join( ','); stars.style.backgroundRepeat='no-repeat' ; } const setWide=( )=> { const on = wide.matches; root.querySelectorAll('#o1 > div:last-of-type').forEach(el => { el.style.gridTemplateColumns = on ? '1.1fr .9fr' : '1fr'; }); root.querySelectorAll('#log li[data-row], #spec div[data-band]').forEach(el => { el.style.gridTemplateColumns
-            = on ? '200px 1fr' : '1fr'; }); const rail = root.querySelector('#rail'); if (rail) rail.style.display = on ? 'flex' : 'none'; const hud = root.querySelector('#hud'); if (hud) hud.style.display = on ? 'flex' : 'none'; root.querySelector('main').style.paddingLeft
-            = on ? '128px' : '0'; }; setWide(); wide.addEventListener('change', setWide); const local = root.querySelector('#local'); const tick = () => { if (!local) return; local.textContent = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata',
-            hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()) + ' IST'; }; tick(); this._t = setInterval(tick, 30000); const yrs = root.querySelector('#yrs'); if (yrs) yrs.textContent = String(Math.max(1, new Date().getFullYear()
-            - 2021)); // activity bars in the HUD const bars = root.querySelector('#bars'); const barEls = []; if (bars) for (let i = 0; i
-            < 7; i++) { const b=d ocument.createElement( 'i'); b.style.cssText='display:block;width:2px;height:3px;background:var(--dim);transition:height .28s,background .28s'
-                ; bars.appendChild(b); barEls.push(b); } // ---- aurora curtains ------------------------------------------------- const cv=r oot.querySelector( '#cv'); const ctx=c v && cv.getContext( '2d'); let W=0 , H=0 , dpr=1 ; const resize=( )=> { if (!cv) return; dpr = Math.min(1.4, devicePixelRatio || 1) * 0.62; // soft-render: cheap + blurry by design W = innerWidth; H = innerHeight; cv.width = Math.max(1, Math.round(W * dpr)); cv.height = Math.max(1, Math.round(H * dpr)); ctx
-                && ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }; resize(); // per-column ray brightness, stable across frames // sparse, high-contrast filaments: many near-dark columns, a few bright ones const rays = new Float32Array(320); for (let i = 0;
-                i
-                < rays.length; i++) { const r=M ath.random(); rays[i]=r < 0.34 ? r * 0.28 : Math.pow(r, 1.9); } const curtains=[ { y: 0.74, amp: 0.07, sp: 0.00019, k: 1.5, len: 0.52, a: 1.2, hue: 0, w: 1.0, ph: 0.2 }, { y: 0.64, amp: 0.10, sp: -0.00013,
-                    k: 2.3, len: 0.44, a: 0.85, hue: 1, w: 1.6, ph: 2.1 }, { y: 0.82, amp: 0.05, sp: 0.00027, k: 3.4, len: 0.32, a: 0.7, hue: 0, w: 2.2, ph: 4.4 } ]; let inten=0 .75, target=0 .75, vel=0 , lastY=s crollY, lastT=0 ; // the curtains lean toward
-                    the pointer — the sky notices you let px=0 .5, pxT=0 .5; if (!reduce) addEventListener( 'pointermove', e=> { pxT = e.clientX / Math.max(1, innerWidth); }, { passive: true }); const cols = (hue, alpha) => { const day = html.getAttribute('data-theme') === 'day'; if (hue === 1) return day ? 'rgba(107,63,176,' + alpha + ')' : 'rgba(185,140,255,'
-                    + alpha + ')'; return day ? 'rgba(7,131,106,' + alpha + ')' : 'rgba(95,251,192,' + alpha + ')'; }; const paint = t => { if (!ctx) return; const night = html.getAttribute('data-theme') !== 'day'; ctx.globalCompositeOperation = 'source-over';
-                    ctx.clearRect(0, 0, W, H); const I = Math.max(0, Math.min(1.9, inten * base)); if (I
-                    < 0.02) return; ctx.globalCompositeOperation=n ight ? 'lighter' : 'source-over'; const step=W> 1100 ? 4 : 5; for (let c = 0; c
-                        < curtains.length; c++) { const cu=c urtains[c]; const baseY=H * cu.y; const lenPx=H * cu.len * (0.6 + I * 0.7); const drift=M ath.sin(t * cu.sp * 260 + c) * H * 0.035; // 1 — bloom: the diffuse glow
-                            the curtain sits inside const bg=c tx.createLinearGradient(0, baseY - lenPx * 1.15 + drift, 0, baseY + H * 0.1 + drift); bg.addColorStop(0, cols(1, 0)); bg.addColorStop(0.3, cols(1, 0.025 * cu.a * I)); bg.addColorStop(0.66, cols(cu.hue,
-                            0.085 * cu.a * I)); bg.addColorStop(1, cols(cu.hue, 0)); ctx.globalAlpha=1 ; ctx.fillStyle=b g; ctx.fillRect(0, baseY - lenPx * 1.15 + drift, W, lenPx * 1.15 + H * 0.1); // 2 — rays: the vertical filament structure const g=c tx.createLinearGradient(0,
-                            baseY - lenPx, 0, baseY + H * 0.05); g.addColorStop(0, cols(1, 0)); g.addColorStop(0.12, cols(1, 0.34 * cu.a * I)); g.addColorStop(0.46, cols(cu.hue, 0.62 * cu.a * (0.45 + I))); g.addColorStop(0.86, cols(cu.hue, 0.28 * cu.a * I));
-                            g.addColorStop(1, cols(cu.hue, 0)); ctx.strokeStyle=g ; ctx.lineWidth=s tep * 0.95; for (let x=0 ; x <=W ; x +=s tep) { const u=x / W; const yy=b aseY + Math.sin(u * Math.PI * 2 * cu.k + t * cu.sp * 1000) * H * cu.amp + Math.sin(u
-                            * Math.PI * 2 * (cu.k * 2.7) + t * cu.sp * 1600) * H * cu.amp * 0.35; const r=r ays[Math.floor(u * (rays.length - 1))]; // auroral arc: each curtain fades in and out across x, and the window drifts const lean=( px - 0.5) * 0.5
-                            * (c + 1) / curtains.length; const env=M ath.max(0, Math.sin((u - lean) * Math.PI * cu.w + cu.ph + t * 0.00007)); const flick=0 .55 + 0.45 * Math.sin(t * 0.0021 + u * 26 + c); const av=r * flick * env * env * (0.6 + I * 0.7); if
-                            (av < 0.012) continue; ctx.globalAlpha=M ath.min(1, av); ctx.beginPath(); ctx.moveTo(x, yy); ctx.lineTo(x, yy - lenPx * (0.5 + r * 0.6)); ctx.stroke(); } } ctx.globalAlpha=1 ; ctx.globalCompositeOperation='source-over' ; }; const
-                            secs=[ ].slice.call(root.querySelectorAll( 'main section')); const navs=[ ].slice.call(root.querySelectorAll( '#rail a[data-nav]')); const kpEl=r oot.querySelector( '#kp'); const obsEl=r oot.querySelector( '#obs'); const bar=r
-                            oot.querySelector( '#prog'); const onScroll=( )=> { const d = Math.abs(scrollY - lastY); if (bar) { const doc = document.documentElement; bar.style.width = (Math.max(0, Math.min(1, scrollY / Math.max(1, doc.scrollHeight - innerHeight))) * 100).toFixed(2) + '%'; } lastY = scrollY;
-                            vel = Math.min(1, vel * 0.7 + d / 260); const mid = scrollY + innerHeight * 0.42; let cur = secs[0]; secs.forEach(s => { if (s.offsetTop
-                            <=m id) cur=s ; }); target=0 .55 + (+cur.dataset.i) * 0.55 + vel * 0.9 * gain; if (obsEl)
-                                obsEl.textContent=c ur.dataset.obs; navs.forEach(a=> { const on = a.getAttribute('href') === '#' + cur.id; a.style.color = on ? 'var(--grn)' : 'var(--dim)'; a.firstElementChild.style.width = on ? '30px' : '13px'; }); }; addEventListener('scroll', onScroll, { passive: true });
-                                addEventListener('resize', () => { resize(); onScroll(); }); onScroll(); const loop = t => { this._raf = requestAnimationFrame(loop); if (document.hidden) return; if (t - lastT
-                                < 33) return; // ~30fps ceiling lastT=t ;
-                                    vel *=0 .9; px +=( pxT - px) * 0.045; inten +=( target - inten) * 0.06; const kp=M ath.max(0, Math.min(9, inten * 5.6)); if (kpEl) kpEl.textContent=k p.toFixed(1); barEls.forEach((b, i)=> { const on = kp / 9 > (i + 0.4) / barEls.length; b.style.height = (3 + (on ? 3 + i * 1.5 : 0)) + 'px'; b.style.background = on ? 'var(--grn)' : 'var(--dim)'; }); paint(t); }; if (reduce) { inten = 0.95; paint(1200); } else
-                                    this._raf = requestAnimationFrame(loop); // sections settle into place on first sight if (!reduce && 'IntersectionObserver' in window) { const io = new IntersectionObserver((es, o) => es.forEach(e => { if (!e.isIntersecting)
-                                    return; [].slice.call(e.target.children).forEach((ch, i) => { ch.style.transition = 'opacity .7s cubic-bezier(.22,1,.36,1) ' + (i * 70) + 'ms, transform .7s cubic-bezier(.22,1,.36,1) ' + (i * 70) + 'ms'; ch.style.opacity
-                                    = '1'; ch.style.transform = 'none'; }); o.unobserve(e.target); }), { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }); secs.forEach((s, n) => { if (n === 0) return; [].slice.call(s.children).forEach(ch => { ch.style.opacity
-                                    = '0'; ch.style.transform = 'translateY(14px)'; }); io.observe(s); }); } // sighting plates: the arrow steps out on approach [].slice.call(root.querySelectorAll('#o4 a[data-plate]')).forEach(a => { const arw = a.querySelector('[data-arw]');
-                                    if (!arw) return; a.addEventListener('mouseenter', () => { arw.style.transform = 'translate(5px,-5px)'; arw.style.opacity = '1'; }); a.addEventListener('mouseleave', () => { arw.style.transform = 'none'; arw.style.opacity
-                                    = '.32'; }); }); // spectrum: hovering an item isolates it const spec = root.querySelector('#spec'); if (spec) { const items = [].slice.call(spec.querySelectorAll('[data-it]')); items.forEach(o => { o.style.transition
-                                    = 'opacity .25s, color .25s'; }); spec.addEventListener('mouseover', e => { const it = e.target.closest('[data-it]'); if (!it) return; items.forEach(o => { o.style.opacity = o === it ? '1' : '.2'; o.style.color = o
-                                    === it ? 'var(--grn)' : ''; }); }); spec.addEventListener('mouseleave', () => items.forEach(o => { o.style.opacity = '1'; o.style.color = ''; })); } const copy = root.querySelector('#copy'); if (copy) copy.onclick =
-                                    async () => { try { await navigator.clipboard.writeText('prakhar.indoria@gmail.com'); } catch (e) {} copy.textContent = 'Copied'; copy.style.color = 'var(--grn)'; copy.style.borderColor = 'var(--grn)'; setTimeout(()
-                                    => { copy.textContent = 'Copy'; copy.style.color = ''; copy.style.borderColor = ''; }, 1800); }; } componentWillUnmount() { clearInterval(this._t); if (this._raf) cancelAnimationFrame(this._raf); } renderVals() { return
-                                    {}; } }
-    </script>
-</body>
+        <figure style="border:1px solid var(--line);background:var(--tint);padding:clamp(20px,2.4vw,34px);max-width:46ch;position:relative;overflow:hidden">
+          <span aria-hidden="true" style="position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--mag),var(--grn))"></span>
+          <figcaption style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:15px">Field note</figcaption>
+          <blockquote><p class="dsp" style="font-size:clamp(19px,2.1vw,29px);line-height:1.34;letter-spacing:-.014em;text-wrap:pretty">I architect solutions like I plan mountain treks, mapping every possible route, preparing for the unexpected, and enjoying the climb to the summit.</p></blockquote>
+        </figure>
+      </div>
+    </section>
 
+    <section id="o2" data-obs="Log" data-i="0.62" style="padding:clamp(78px,12vh,158px) clamp(14px,3vw,38px);border-top:1px solid var(--line)">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:9px 18px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:clamp(26px,4vh,52px)">
+        <span style="border:1px solid var(--line);padding:5px 9px;color:var(--grn)">Obs 02</span><span>Log</span><span style="color:var(--line)">|</span><span>work &amp; study</span>
+      </div>
+      <h2 class="dsp" style="line-height:.95;letter-spacing:-.025em;font-size:clamp(36px,7vw,124px);margin-bottom:clamp(28px,5vh,56px)">2016 &rarr; now</h2>
+      <ol id="log">
+        <li data-row style="border-top:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:12px 34px;padding:clamp(24px,3.4vh,40px) 0">
+          <p style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--grn);display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:var(--grn);box-shadow:0 0 10px var(--grn)"></span>2021 to now</p>
+          <div>
+            <h3 class="dsp" style="font-size:clamp(23px,2.9vw,44px);line-height:1.02;letter-spacing:-.018em;margin-bottom:8px">Software Engineer</h3>
+            <p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:14px">Tata Consultancy Services &nbsp;<span style="color:var(--line)">/</span>&nbsp; Mumbai, India</p>
+            <p style="font-size:15px;line-height:1.68;color:var(--dim);max-width:60ch;text-wrap:pretty">Building software for a range of clients, with a bias toward solutions that stay efficient under real load. A good part of the job is spotting where a workflow can be tightened and making that case to the team.</p>
+          </div>
+        </li>
+        <li data-row style="border-top:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:12px 34px;padding:clamp(24px,3.4vh,40px) 0">
+          <p style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">2021</p>
+          <div>
+            <h3 class="dsp" style="font-size:clamp(23px,2.9vw,44px);line-height:1.02;letter-spacing:-.018em;margin-bottom:8px">Software Developer</h3>
+            <p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:14px">A2 Infotech &nbsp;<span style="color:var(--line)">/</span>&nbsp; Bhopal, India</p>
+            <p style="font-size:15px;line-height:1.68;color:var(--dim);max-width:60ch;text-wrap:pretty">First industry role. Contributed to client projects and learned what core programming principles look like once they leave the classroom.</p>
+          </div>
+        </li>
+        <li data-row style="border-top:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:12px 34px;padding:clamp(20px,2.8vh,30px) 0">
+          <p style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">2017&ndash;2021 &nbsp;&middot;&nbsp; study</p>
+          <div>
+            <h3 style="font-size:clamp(16px,1.6vw,20px);font-weight:400;letter-spacing:-.005em;margin-bottom:6px">B.Tech, Computer Science Engineering</h3>
+            <p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)">University Institute of Technology, RGPV</p>
+          </div>
+        </li>
+        <li data-row style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:12px 34px;padding:clamp(20px,2.8vh,30px) 0">
+          <p style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">2004&ndash;2016 &nbsp;&middot;&nbsp; study</p>
+          <div>
+            <h3 style="font-size:clamp(16px,1.6vw,20px);font-weight:400;letter-spacing:-.005em;margin-bottom:6px">Higher Secondary Education</h3>
+            <p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)">Mithi Gobindram Public School</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="o3" data-obs="Spectrum" data-i="0.78" style="padding:clamp(78px,12vh,158px) clamp(14px,3vw,38px);border-top:1px solid var(--line)">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:9px 18px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:clamp(26px,4vh,52px)">
+        <span style="border:1px solid var(--line);padding:5px 9px;color:var(--grn)">Obs 03</span><span>Spectrum</span><span style="color:var(--line)">|</span><span>emission bands</span>
+      </div>
+      <h2 class="dsp" style="line-height:.95;letter-spacing:-.025em;font-size:clamp(36px,7vw,124px);margin-bottom:clamp(28px,5vh,56px)">What I work with</h2>
+      <div id="spec" style="border-top:1px solid var(--line)">
+        <div data-band style="border-bottom:1px solid var(--line);padding:clamp(18px,2.4vh,26px) 0;display:grid;grid-template-columns:1fr;gap:12px 34px">
+          <h3 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:10px"><span style="display:block;width:26px;height:2px;background:var(--grn)"></span>Languages</h3>
+          <ul style="display:flex;flex-wrap:wrap;gap:7px 24px;font-size:clamp(16px,1.7vw,23px)">
+            <li data-it>Java</li><li data-it>Python</li><li data-it>C++</li><li data-it>C</li><li data-it>JavaScript</li><li data-it>SQL</li><li data-it>JSON</li>
+          </ul>
+        </div>
+        <div data-band style="border-bottom:1px solid var(--line);padding:clamp(18px,2.4vh,26px) 0;display:grid;grid-template-columns:1fr;gap:12px 34px">
+          <h3 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:10px"><span style="display:block;width:26px;height:2px;background:var(--ice)"></span>Frameworks</h3>
+          <ul style="display:flex;flex-wrap:wrap;gap:7px 24px;font-size:clamp(16px,1.7vw,23px)">
+            <li data-it>Spring Boot</li><li data-it>Hibernate</li><li data-it>JSP</li><li data-it>React</li><li data-it>jQuery</li><li data-it>AJAX</li><li data-it>Bootstrap</li><li data-it>Tkinter</li>
+          </ul>
+        </div>
+        <div data-band style="border-bottom:1px solid var(--line);padding:clamp(18px,2.4vh,26px) 0;display:grid;grid-template-columns:1fr;gap:12px 34px">
+          <h3 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:10px"><span style="display:block;width:26px;height:2px;background:var(--mag)"></span>Databases</h3>
+          <ul style="display:flex;flex-wrap:wrap;gap:7px 24px;font-size:clamp(16px,1.7vw,23px)">
+            <li data-it>Oracle</li><li data-it>MySQL</li><li data-it>DBMS</li>
+          </ul>
+        </div>
+        <div data-band style="border-bottom:1px solid var(--line);padding:clamp(18px,2.4vh,26px) 0;display:grid;grid-template-columns:1fr;gap:12px 34px">
+          <h3 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:10px"><span style="display:block;width:26px;height:2px;background:var(--grn)"></span>Tools &amp; platforms</h3>
+          <ul style="display:flex;flex-wrap:wrap;gap:7px 24px;font-size:clamp(16px,1.7vw,23px)">
+            <li data-it>Docker</li><li data-it>Maven</li><li data-it>GitHub</li><li data-it>Microsoft Azure</li><li data-it>Linux</li>
+          </ul>
+        </div>
+        <div data-band style="border-bottom:1px solid var(--line);padding:clamp(18px,2.4vh,26px) 0;display:grid;grid-template-columns:1fr;gap:12px 34px">
+          <h3 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:10px"><span style="display:block;width:26px;height:2px;background:var(--ice)"></span>Concepts</h3>
+          <ul style="display:flex;flex-wrap:wrap;gap:7px 24px;font-size:clamp(16px,1.7vw,23px)">
+            <li data-it>Generative AI</li><li data-it>Agile</li><li data-it>DevOps</li><li data-it>Cloud Native</li><li data-it>Data Structures</li><li data-it>MVC</li><li data-it>OOP</li><li data-it>REST APIs</li><li data-it>Algorithms</li>
+          </ul>
+        </div>
+        <div data-band style="border-bottom:1px solid var(--line);padding:clamp(18px,2.4vh,26px) 0;display:grid;grid-template-columns:1fr;gap:12px 34px">
+          <h3 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:10px"><span style="display:block;width:26px;height:2px;background:var(--mag)"></span>Working with people</h3>
+          <ul style="display:flex;flex-wrap:wrap;gap:7px 24px;font-size:clamp(16px,1.7vw,23px)">
+            <li data-it>Team Management</li><li data-it>Communication</li><li data-it>Collaboration</li><li data-it>Problem Solving</li><li data-it>Persistence</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="o4" data-obs="Sightings" data-i="0.9" style="padding:clamp(78px,12vh,158px) 0;border-top:1px solid var(--line)">
+      <div style="padding:0 clamp(14px,3vw,38px)">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:9px 18px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:clamp(26px,4vh,52px)">
+          <span style="border:1px solid var(--line);padding:5px 9px;color:var(--grn)">Obs 04</span><span>Sightings</span>
+        </div>
+        <h2 class="dsp" style="line-height:.95;letter-spacing:-.025em;font-size:clamp(36px,7vw,124px);margin-bottom:clamp(28px,5vh,56px)">Selected work</h2>
+      </div>
+      <ol>
+        <li style="border-top:1px solid var(--line)">
+          <a href="https://github.com/prakharindoria/MyCovidShop-Ecommerce-Web-Application" target="_blank" rel="noopener noreferrer" data-plate style="display:flex;flex-wrap:wrap;gap:14px 36px;align-items:flex-start;padding:clamp(26px,4vh,48px) clamp(14px,3vw,38px);transition:background .45s cubic-bezier(.22,1,.36,1)" style-hover="background:linear-gradient(90deg,var(--glow),transparent 62%)">
+            <span style="display:flex;flex-direction:column;gap:8px;flex:0 0 200px;max-width:200px">
+              <span class="dsp" style="font-size:clamp(30px,4vw,64px);line-height:.9;color:var(--grn);letter-spacing:-.03em">01</span>
+              <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">E-commerce web application</span>
+            </span>
+            <span style="display:block;flex:1 1 380px;min-width:0">
+              <span class="dsp" style="display:block;font-size:clamp(26px,4vw,62px);line-height:1;letter-spacing:-.026em;margin-bottom:13px">Covid Shield<span data-arw aria-hidden="true" style="display:inline-block;margin-left:.34em;font-size:.42em;vertical-align:.5em;opacity:.32;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s">&#8599;</span></span>
+              <span style="display:block;font-size:15px;line-height:1.68;color:var(--dim);max-width:58ch;text-wrap:pretty">A full-stack commerce platform built during the pandemic. Product catalogue, cart, and orders on a Java EE backend, with attention paid to how the storefront actually felt to use.</span>
+              <span style="display:flex;flex-wrap:wrap;gap:5px 16px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--grn);margin-top:16px"><span>Java EE</span><span>JSP</span><span>Servlets</span><span>Hibernate</span><span>MySQL</span><span>jQuery</span><span>Bootstrap 5</span></span>
+            </span>
+          </a>
+        </li>
+        <li style="border-top:1px solid var(--line)">
+          <a href="https://github.com/prakharindoria/Notepad-with-Sentiment-Analysis" target="_blank" rel="noopener noreferrer" data-plate style="display:flex;flex-wrap:wrap;gap:14px 36px;align-items:flex-start;padding:clamp(26px,4vh,48px) clamp(14px,3vw,38px);transition:background .45s cubic-bezier(.22,1,.36,1)" style-hover="background:linear-gradient(90deg,var(--glow),transparent 62%)">
+            <span style="display:flex;flex-direction:column;gap:8px;flex:0 0 200px;max-width:200px">
+              <span class="dsp" style="font-size:clamp(30px,4vw,64px);line-height:.9;color:var(--grn);letter-spacing:-.03em">02</span>
+              <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">Desktop application</span>
+            </span>
+            <span style="display:block;flex:1 1 380px;min-width:0">
+              <span class="dsp" style="display:block;font-size:clamp(26px,4vw,62px);line-height:1;letter-spacing:-.026em;margin-bottom:13px">Notepad with Sentiment Analysis<span data-arw aria-hidden="true" style="display:inline-block;margin-left:.34em;font-size:.42em;vertical-align:.5em;opacity:.32;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s">&#8599;</span></span>
+              <span style="display:block;font-size:15px;line-height:1.68;color:var(--dim);max-width:58ch;text-wrap:pretty">A notepad that reads the room. Sentiment analysis runs as you type, surfacing the emotional tone of the text without interrupting the writing.</span>
+              <span style="display:flex;flex-wrap:wrap;gap:5px 16px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--grn);margin-top:16px"><span>Python</span><span>Tkinter</span><span>NLTK</span><span>VADER Sentiment</span></span>
+            </span>
+          </a>
+        </li>
+        <li style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+          <a href="https://github.com/prakharindoria/MedGuide-Hospital-Management-System" target="_blank" rel="noopener noreferrer" data-plate style="display:flex;flex-wrap:wrap;gap:14px 36px;align-items:flex-start;padding:clamp(26px,4vh,48px) clamp(14px,3vw,38px);transition:background .45s cubic-bezier(.22,1,.36,1)" style-hover="background:linear-gradient(90deg,var(--glow),transparent 62%)">
+            <span style="display:flex;flex-direction:column;gap:8px;flex:0 0 200px;max-width:200px">
+              <span class="dsp" style="font-size:clamp(30px,4vw,64px);line-height:.9;color:var(--grn);letter-spacing:-.03em">03</span>
+              <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">Hospital management system</span>
+            </span>
+            <span style="display:block;flex:1 1 380px;min-width:0">
+              <span class="dsp" style="display:block;font-size:clamp(26px,4vw,62px);line-height:1;letter-spacing:-.026em;margin-bottom:13px">Med Guide<span data-arw aria-hidden="true" style="display:inline-block;margin-left:.34em;font-size:.42em;vertical-align:.5em;opacity:.32;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s">&#8599;</span></span>
+              <span style="display:block;font-size:15px;line-height:1.68;color:var(--dim);max-width:58ch;text-wrap:pretty">Patient records, appointments, and admin workflows for a medical facility, consolidated into one system so the staff stop working around the software.</span>
+              <span style="display:flex;flex-wrap:wrap;gap:5px 16px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--grn);margin-top:16px"><span>Java</span><span>Spring Boot</span><span>MySQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span></span>
+            </span>
+          </a>
+        </li>
+      </ol>
+      <p style="padding:26px clamp(14px,3vw,38px) 0;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">Full record on <a href="https://github.com/prakharindoria" target="_blank" rel="noopener noreferrer" style="border-bottom:1px solid var(--grn)">GitHub</a></p>
+    </section>
+
+    <section id="o5" data-obs="Signal" data-i="1" style="min-height:94vh;display:flex;flex-direction:column;justify-content:center;padding:clamp(78px,12vh,155px) clamp(14px,3vw,38px) clamp(90px,14vh,160px);border-top:1px solid var(--line)">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:9px 18px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:clamp(24px,4vh,46px)">
+        <span style="border:1px solid var(--line);padding:5px 9px;color:var(--grn)">Obs 05</span><span>Signal</span><span style="color:var(--line)">|</span><span>peak activity</span>
+      </div>
+      <h2 class="dsp" style="line-height:.9;letter-spacing:-.03em;font-size:clamp(42px,9.5vw,172px);text-wrap:balance">Let's build something worth <span style="color:var(--grn)">staying up for.</span></h2>
+      <p style="font-size:15px;line-height:1.7;max-width:52ch;margin-top:clamp(24px,4vh,44px);color:var(--dim);text-wrap:pretty">Open to new projects, interesting problems, and conversations that go somewhere. The inbox is the fastest way to reach me.</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:clamp(26px,4vh,44px);border-top:1px solid var(--line);padding-top:clamp(20px,3vh,32px)">
+        <a href="mailto:prakhar.indoria@gmail.com" class="dsp" style="font-size:clamp(19px,3.2vw,50px);line-height:1;letter-spacing:-.025em;border-bottom:1px solid var(--line)" style-hover="color:var(--grn);border-color:var(--grn)">prakhar.indoria@gmail.com</a>
+        <button id="copy" type="button" style="appearance:none;border:1px solid var(--line);background:transparent;color:var(--dim);font:inherit;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:9px 14px;cursor:pointer" style-hover="border-color:var(--grn);color:var(--grn)">Copy</button>
+      </div>
+      <ul style="display:flex;flex-wrap:wrap;gap:12px 30px;margin-top:clamp(24px,4vh,40px);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">
+        <li><a href="https://github.com/prakharindoria" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a></li>
+        <li><a href="https://linkedin.com/in/prakharindoria" target="_blank" rel="noopener noreferrer">LinkedIn &nearr;</a></li>
+        <li><a href="mailto:prakhar.indoria@gmail.com">Email &nearr;</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 22px;padding:22px clamp(14px,3vw,38px);border-top:1px solid var(--line);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);position:relative;z-index:10">
+    <p>&copy; 2026 Prakhar Indoria</p>
+    <p>Hand-built. No frameworks, no trackers</p>
+    <a href="#o0">Back to nightfall &uarr;</a>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#5ffbc0&quot;,&quot;options&quot;:[&quot;#5ffbc0&quot;,&quot;#7ee8ff&quot;,&quot;#b98cff&quot;,&quot;#c8ff8f&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Aurora&quot;},&quot;auroraIntensity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0,&quot;max&quot;:1.8,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Aurora&quot;},&quot;showStars&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Aurora&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0,&quot;max&quot;:2,&quot;step&quot;:0.25,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Aurora&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const root = document.getElementById('aur');
+    if (!root) return;
+    const html = document.documentElement;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const wide = matchMedia('(min-width: 900px)');
+    const gain = this.props.motion ?? 1;
+    const base = this.props.auroraIntensity ?? 1;
+    const grn = this.props.accent;
+    if (grn && grn.toLowerCase() !== '#5ffbc0') html.style.setProperty('--grn', grn);
+    else html.style.removeProperty('--grn');
+
+    const btn = root.querySelector('#theme');
+    const apply = t => { html.setAttribute('data-theme', t); if (btn) btn.textContent = t === 'day' ? 'Night' : 'Daylight'; };
+    let stored = null;
+    try { stored = localStorage.getItem('pi-aur-theme'); } catch (e) {}
+    apply(stored || 'night');
+    if (btn) btn.onclick = () => {
+      const next = html.getAttribute('data-theme') === 'day' ? 'night' : 'day';
+      apply(next);
+      try { localStorage.setItem('pi-aur-theme', next); } catch (e) {}
+    };
+
+    // starfield — static positions, drawn once as CSS gradients
+    const stars = root.querySelector('#stars');
+    if (stars && this.props.showStars !== false) {
+      let bg = [], pos = [], size = [];
+      for (let i = 0; i < 46; i++) {
+        const r = i % 7 === 0 ? 1.6 : 1;
+        bg.push('radial-gradient(circle, var(--star) 0 ' + r + 'px, transparent ' + (r + 0.6) + 'px)');
+        pos.push((Math.random() * 100).toFixed(2) + '% ' + (Math.random() * 78).toFixed(2) + '%');
+        size.push('3px 3px');
+      }
+      stars.style.backgroundImage = bg.join(',');
+      stars.style.backgroundPosition = pos.join(',');
+      stars.style.backgroundSize = size.join(',');
+      stars.style.backgroundRepeat = 'no-repeat';
+    }
+
+    const setWide = () => {
+      const on = wide.matches;
+      root.querySelectorAll('#o1 > div:last-of-type').forEach(el => {
+        el.style.gridTemplateColumns = on ? '1.1fr .9fr' : '1fr';
+      });
+      root.querySelectorAll('#log li[data-row], #spec div[data-band]').forEach(el => {
+        el.style.gridTemplateColumns = on ? '200px 1fr' : '1fr';
+      });
+      const rail = root.querySelector('#rail');
+      if (rail) rail.style.display = on ? 'flex' : 'none';
+      const hud = root.querySelector('#hud');
+      if (hud) hud.style.display = on ? 'flex' : 'none';
+      root.querySelector('main').style.paddingLeft = on ? '128px' : '0';
+    };
+    setWide();
+    wide.addEventListener('change', setWide);
+
+    const local = root.querySelector('#local');
+    const tick = () => {
+      if (!local) return;
+      local.textContent = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', hour12: false
+      }).format(new Date()) + ' IST';
+    };
+    tick(); this._t = setInterval(tick, 30000);
+
+    const yrs = root.querySelector('#yrs');
+    if (yrs) yrs.textContent = String(Math.max(1, new Date().getFullYear() - 2021));
+
+    // activity bars in the HUD
+    const bars = root.querySelector('#bars');
+    const barEls = [];
+    if (bars) for (let i = 0; i < 7; i++) {
+      const b = document.createElement('i');
+      b.style.cssText = 'display:block;width:2px;height:3px;background:var(--dim);transition:height .28s,background .28s';
+      bars.appendChild(b); barEls.push(b);
+    }
+
+    // ---- aurora curtains -------------------------------------------------
+    const cv = root.querySelector('#cv');
+    const ctx = cv && cv.getContext('2d');
+    let W = 0, H = 0, dpr = 1;
+    const resize = () => {
+      if (!cv) return;
+      dpr = Math.min(1.4, devicePixelRatio || 1) * 0.62; // soft-render: cheap + blurry by design
+      W = innerWidth; H = innerHeight;
+      cv.width = Math.max(1, Math.round(W * dpr));
+      cv.height = Math.max(1, Math.round(H * dpr));
+      ctx && ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    resize();
+
+    // per-column ray brightness, stable across frames
+    // sparse, high-contrast filaments: many near-dark columns, a few bright ones
+    const rays = new Float32Array(320);
+    for (let i = 0; i < rays.length; i++) {
+      const r = Math.random();
+      rays[i] = r < 0.34 ? r * 0.28 : Math.pow(r, 1.9);
+    }
+
+    const curtains = [
+      { y: 0.74, amp: 0.07, sp: 0.00019, k: 1.5, len: 0.52, a: 1.2, hue: 0, w: 1.0, ph: 0.2 },
+      { y: 0.64, amp: 0.10, sp: -0.00013, k: 2.3, len: 0.44, a: 0.85, hue: 1, w: 1.6, ph: 2.1 },
+      { y: 0.82, amp: 0.05, sp: 0.00027, k: 3.4, len: 0.32, a: 0.7, hue: 0, w: 2.2, ph: 4.4 }
+    ];
+
+    let inten = 0.75, target = 0.75, vel = 0, lastY = scrollY, lastT = 0;
+    // the curtains lean toward the pointer — the sky notices you
+    let px = 0.5, pxT = 0.5;
+    if (!reduce) addEventListener('pointermove', e => { pxT = e.clientX / Math.max(1, innerWidth); }, { passive: true });
+
+    const cols = (hue, alpha) => {
+      const day = html.getAttribute('data-theme') === 'day';
+      if (hue === 1) return day ? 'rgba(107,63,176,' + alpha + ')' : 'rgba(185,140,255,' + alpha + ')';
+      return day ? 'rgba(7,131,106,' + alpha + ')' : 'rgba(95,251,192,' + alpha + ')';
+    };
+
+    const paint = t => {
+      if (!ctx) return;
+      const night = html.getAttribute('data-theme') !== 'day';
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.clearRect(0, 0, W, H);
+      const I = Math.max(0, Math.min(1.9, inten * base));
+      if (I < 0.02) return;
+      ctx.globalCompositeOperation = night ? 'lighter' : 'source-over';
+      const step = W > 1100 ? 4 : 5;
+
+      for (let c = 0; c < curtains.length; c++) {
+        const cu = curtains[c];
+        const baseY = H * cu.y;
+        const lenPx = H * cu.len * (0.6 + I * 0.7);
+        const drift = Math.sin(t * cu.sp * 260 + c) * H * 0.035;
+
+        // 1 — bloom: the diffuse glow the curtain sits inside
+        const bg = ctx.createLinearGradient(0, baseY - lenPx * 1.15 + drift, 0, baseY + H * 0.1 + drift);
+        bg.addColorStop(0, cols(1, 0));
+        bg.addColorStop(0.3, cols(1, 0.025 * cu.a * I));
+        bg.addColorStop(0.66, cols(cu.hue, 0.085 * cu.a * I));
+        bg.addColorStop(1, cols(cu.hue, 0));
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = bg;
+        ctx.fillRect(0, baseY - lenPx * 1.15 + drift, W, lenPx * 1.15 + H * 0.1);
+
+        // 2 — rays: the vertical filament structure
+        const g = ctx.createLinearGradient(0, baseY - lenPx, 0, baseY + H * 0.05);
+        g.addColorStop(0, cols(1, 0));
+        g.addColorStop(0.12, cols(1, 0.34 * cu.a * I));
+        g.addColorStop(0.46, cols(cu.hue, 0.62 * cu.a * (0.45 + I)));
+        g.addColorStop(0.86, cols(cu.hue, 0.28 * cu.a * I));
+        g.addColorStop(1, cols(cu.hue, 0));
+        ctx.strokeStyle = g;
+        ctx.lineWidth = step * 0.95;
+        for (let x = 0; x <= W; x += step) {
+          const u = x / W;
+          const yy = baseY
+            + Math.sin(u * Math.PI * 2 * cu.k + t * cu.sp * 1000) * H * cu.amp
+            + Math.sin(u * Math.PI * 2 * (cu.k * 2.7) + t * cu.sp * 1600) * H * cu.amp * 0.35;
+          const r = rays[Math.floor(u * (rays.length - 1))];
+          // auroral arc: each curtain fades in and out across x, and the window drifts
+          const lean = (px - 0.5) * 0.5 * (c + 1) / curtains.length;
+          const env = Math.max(0, Math.sin((u - lean) * Math.PI * cu.w + cu.ph + t * 0.00007));
+          const flick = 0.55 + 0.45 * Math.sin(t * 0.0021 + u * 26 + c);
+          const av = r * flick * env * env * (0.6 + I * 0.7);
+          if (av < 0.012) continue;
+          ctx.globalAlpha = Math.min(1, av);
+          ctx.beginPath();
+          ctx.moveTo(x, yy);
+          ctx.lineTo(x, yy - lenPx * (0.5 + r * 0.6));
+          ctx.stroke();
+        }
+      }
+      ctx.globalAlpha = 1;
+      ctx.globalCompositeOperation = 'source-over';
+    };
+
+    const secs = [].slice.call(root.querySelectorAll('main section'));
+    const navs = [].slice.call(root.querySelectorAll('#rail a[data-nav]'));
+    const kpEl = root.querySelector('#kp');
+    const obsEl = root.querySelector('#obs');
+
+    const bar = root.querySelector('#prog');
+    const onScroll = () => {
+      const d = Math.abs(scrollY - lastY);
+      if (bar) {
+        const doc = document.documentElement;
+        bar.style.width = (Math.max(0, Math.min(1, scrollY / Math.max(1, doc.scrollHeight - innerHeight))) * 100).toFixed(2) + '%';
+      }
+      lastY = scrollY;
+      vel = Math.min(1, vel * 0.7 + d / 260);
+      const mid = scrollY + innerHeight * 0.42;
+      let cur = secs[0];
+      secs.forEach(s => { if (s.offsetTop <= mid) cur = s; });
+      target = 0.55 + (+cur.dataset.i) * 0.55 + vel * 0.9 * gain;
+      if (obsEl) obsEl.textContent = cur.dataset.obs;
+      navs.forEach(a => {
+        const on = a.getAttribute('href') === '#' + cur.id;
+        a.style.color = on ? 'var(--grn)' : 'var(--dim)';
+        a.firstElementChild.style.width = on ? '30px' : '13px';
+      });
+    };
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', () => { resize(); onScroll(); });
+    onScroll();
+
+    const loop = t => {
+      this._raf = requestAnimationFrame(loop);
+      if (document.hidden) return;
+      if (t - lastT < 33) return;               // ~30fps ceiling
+      lastT = t;
+      vel *= 0.9;
+      px += (pxT - px) * 0.045;
+      inten += (target - inten) * 0.06;
+      const kp = Math.max(0, Math.min(9, inten * 5.6));
+      if (kpEl) kpEl.textContent = kp.toFixed(1);
+      barEls.forEach((b, i) => {
+        const on = kp / 9 > (i + 0.4) / barEls.length;
+        b.style.height = (3 + (on ? 3 + i * 1.5 : 0)) + 'px';
+        b.style.background = on ? 'var(--grn)' : 'var(--dim)';
+      });
+      paint(t);
+    };
+    if (reduce) { inten = 0.95; paint(1200); }
+    else this._raf = requestAnimationFrame(loop);
+
+    // sections settle into place on first sight
+    if (!reduce && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver((es, o) => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        [].slice.call(e.target.children).forEach((ch, i) => {
+          ch.style.transition = 'opacity .7s cubic-bezier(.22,1,.36,1) ' + (i * 70) + 'ms, transform .7s cubic-bezier(.22,1,.36,1) ' + (i * 70) + 'ms';
+          ch.style.opacity = '1';
+          ch.style.transform = 'none';
+        });
+        o.unobserve(e.target);
+      }), { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      secs.forEach((s, n) => {
+        if (n === 0) return;
+        [].slice.call(s.children).forEach(ch => { ch.style.opacity = '0'; ch.style.transform = 'translateY(14px)'; });
+        io.observe(s);
+      });
+    }
+
+    // sighting plates: the arrow steps out on approach
+    [].slice.call(root.querySelectorAll('#o4 a[data-plate]')).forEach(a => {
+      const arw = a.querySelector('[data-arw]');
+      if (!arw) return;
+      a.addEventListener('mouseenter', () => { arw.style.transform = 'translate(5px,-5px)'; arw.style.opacity = '1'; });
+      a.addEventListener('mouseleave', () => { arw.style.transform = 'none'; arw.style.opacity = '.32'; });
+    });
+
+    // spectrum: hovering an item isolates it
+    const spec = root.querySelector('#spec');
+    if (spec) {
+      const items = [].slice.call(spec.querySelectorAll('[data-it]'));
+      items.forEach(o => { o.style.transition = 'opacity .25s, color .25s'; });
+      spec.addEventListener('mouseover', e => {
+        const it = e.target.closest('[data-it]');
+        if (!it) return;
+        items.forEach(o => { o.style.opacity = o === it ? '1' : '.2'; o.style.color = o === it ? 'var(--grn)' : ''; });
+      });
+      spec.addEventListener('mouseleave', () => items.forEach(o => { o.style.opacity = '1'; o.style.color = ''; }));
+    }
+
+    const copy = root.querySelector('#copy');
+    if (copy) copy.onclick = async () => {
+      try { await navigator.clipboard.writeText('prakhar.indoria@gmail.com'); } catch (e) {}
+      copy.textContent = 'Copied';
+      copy.style.color = 'var(--grn)';
+      copy.style.borderColor = 'var(--grn)';
+      setTimeout(() => { copy.textContent = 'Copy'; copy.style.color = ''; copy.style.borderColor = ''; }, 1800);
+    };
+  }
+  componentWillUnmount() { clearInterval(this._t); if (this._raf) cancelAnimationFrame(this._raf); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
 </html>
